@@ -1,0 +1,1028 @@
+
+@import 'kiss/obj/reset.less';
+@import 'kiss/obj/grids.less';
+@import 'kiss/obj/typography.less';
+@import 'kiss/obj/navs.less';
+@import 'kiss/obj/fonts.less';
+@import 'kiss/obj/mods.less';
+@import 'kiss/obj/media.less';
+@import 'kiss/obj/lists.less';
+@import 'kiss/obj/layout.less';
+@import 'kiss/obj/forms.less';
+@import 'kiss/obj/buttons.less';
+@import 'kiss/examples/gradients.less';
+@import 'vars.less';
+
+
+body {
+	position: relative;
+	background:  @green;
+
+}
+
+
+
+ .wrap {
+
+ 	background: white;
+ 	min-height: 100%;
+ 	margin: auto;
+ 	width: 100%;
+	max-width: 1000px;
+	z-index: 20;
+ }
+
+
+ /* 
+    Gutters
+    ========================================================================== */
+ 
+ .wrap {
+ 		padding-left: @line / 2;
+ 		padding-right: @line / 2;
+ 	}
+
+ .gutter {
+		margin-right: @line / 2;
+}	
+
+ 
+ @media only screen and (min-width : 940px) {
+
+ 	.wrap {
+ 		padding-left: @line * 1;
+ 		padding-right: 0;
+ 	}
+
+	.gutter {
+		margin-right: @line * 1;
+	}
+
+
+.gutter--left {
+	margin-left: @line;
+}
+
+}
+
+.gutter-left-fixed {
+	padding-left: @line / 2;
+}
+
+
+.vertical {
+	margin-top: @line;
+	margin-bottom: @line;
+}
+
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.grid {
+	.kiss-obj-grids-float-system ();
+}
+
+.grid__item {
+	float: left;
+	width: 100%;
+}
+
+.kiss-obj-grids-fractions ();
+
+
+.inline__item {
+	 display:inline-block;
+	 vertical-align: top;
+	 
+}
+
+.first {
+	clear: left;
+}
+
+
+/* 
+   Responsive Blocks
+   ========================================================================== */
+@media only screen and (min-width : 940px) {
+/* Styles */
+
+
+
+.r-one-third {
+.kiss-obj-grids-percent(@fraction : 1 / 3)
+	}
+
+.r-two-thirds {
+.kiss-obj-grids-percent(@fraction : 2 / 3)
+	}			
+
+
+}
+
+.vanish {
+	display: none;
+}
+
+.vanish--bertie {
+	@media only screen and (max-width : 710px) {
+		display: none;
+	}
+
+
+}
+
+
+@media only screen and (min-width : 710px) {
+.r-one-half {
+.kiss-obj-grids-percent(@fraction : 1 / 2)
+	}
+
+.vanish {
+	display: block;
+}
+
+
+}	
+
+
+
+
+
+/* 
+   floats
+   ========================================================================== */
+
+
+.flex {
+	overflow: hidden !important;
+	display: block !important;
+	float: none !important;
+
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.right--r,
+.left--r {
+	white-space: nowrap;
+}
+
+
+@media only screen and (min-width: 730px) {
+
+	.right--r {	
+		float: right;
+	}
+
+	.left--r {	
+		float: left;
+	}
+
+}
+
+
+.clear {
+	clear: both;
+}
+
+.clearfix {
+	.kiss-obj-layout-clearfix ();
+}
+
+
+.col {
+	padding-left: @line;
+}
+
+.align-right {
+	display: block;
+	width: 100%;
+	text-align: right;
+}
+
+
+
+/* 
+   Positioning
+   ========================================================================== */
+
+
+.abs {
+	position: absolute;
+}
+
+
+.off-top {
+	top: -100%;
+}
+
+.off-right {
+	right: -100%;
+}
+
+.off-bottom {
+	bottom: -100%;
+}
+
+.off-left {
+	left: -100%;
+}
+
+
+
+
+.float-right {
+	float: right;
+	text-align: right;
+}
+
+
+/* ==========================================================================
+   Typography
+
+   ========================================================================== */
+
+body {
+	color: #222;
+//.mu-overlay (@baseline : @line);
+ //.type-check ()
+ font-family: "Sanchez, serif";
+
+}
+
+p {
+	/* Modern Georgia-based serif stack */
+/* Traditional Garamond-based serif stack */
+font-family: "Sanchez, serif";
+
+}
+
+.drop {
+	p:nth-child(2):first-letter { float: left; color: @green; font-size: 75px; line-height: 60px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: Georgia, serif; }
+}
+
+
+.check {
+.mu-overlay (@baseline : 16px);
+.type-check ();
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+
+//.fourteen ();
+//.kiss-exam-type-scales-fifteen-gold ();
+//.sixteen ();
+//sixteen-over-twenty-five ();
+//.sixteen-over-twenty-six ();
+//.eighteen ();
+.twenty ();
+
+.site-title, h2, .strap, .brand, a {
+	color: @green;
+	
+}
+
+
+
+@font-face {
+    font-family: 'fontesquesanscompregular';
+    src: url('/wp-content/themes/decisions2/library/fonts/fontesque/fontesquesanscomp-webfont.eot');
+    src: url('/wp-content/themes/decisions2/library/fonts/fontesque/fontesquesanscomp-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/wp-content/themes/decisions2/library/fonts/fontesque/fontesquesanscomp-webfont.woff') format('woff'),
+         url('/wp-content/themes/decisions2/library/fonts/fontesque/fontesquesanscomp-webfont.ttf') format('truetype'),
+         url('/wp-content/themes/decisions2/library/fonts/fontesque/fontesquesanscomp-webfont.svg#fontesquesanscompregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1,h2,h3,
+.fancy {
+	font-family: 'fontesquesanscompregular';
+	letter-spacing: 3px;
+}
+
+
+h1.site-title {	
+	margin: 0;
+	padding: 0;	line-height: 81px;	
+	float: right;
+	font-size: 48px;
+}
+
+
+@media only screen and (min-width: 700px) {
+	
+	h1.site-title {	
+		font-size: 64px;
+	}
+
+}	
+
+	h2.title-cat a {
+
+		text-decoration: none;
+
+	}
+
+.header-site {
+
+
+}
+
+
+
+blockquote {
+.kiss-obj-type-blockquote();
+}
+
+
+/* ==========================================================================
+   fonts and icons
+   ========================================================================== */
+
+.font-face ();
+
+.icon {
+	.icon ();
+	color: @green;
+}
+
+.icon.center {
+	padding-left: @base;
+}
+
+.glphicons ();
+
+
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+/*ul*/.article-list,
+.list--article
+ {
+	padding-left: @line / 2;
+	list-style: circle;
+}
+
+.list-numbered {
+	padding-left: @line ;
+}
+
+.stacked {
+	.kiss-obj-lists-vertical ();
+}
+
+.nav {
+	width: 100%;
+	margin: 0;
+}
+
+.bordered  {
+
+	width: 100%;
+
+	li {
+		margin-left: 0;
+		padding-left: @base;
+
+	}
+
+	li a:hover {
+		margin-left: 0;
+	}
+	
+	a {
+	overflow: hidden;
+	padding-top: @base ;
+	padding-bottom: @base - 1px;
+	border-bottom: 1px solid rgb(221,221,221);
+	}
+
+	a:hover {
+		background-color: rgb(221,221,221);
+
+	}
+}
+
+.list-icons {
+	span {
+		font-size: 1em;
+		padding-right: @base;
+	}
+}
+
+.list--full-click {
+
+	a, .img, img {
+		line-height: 95px;
+	}
+}
+
+.list--highlight {
+	li:hover {
+		background-color: rgb(221,221,221);
+	}
+
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+}
+
+
+.media--list {
+
+
+	img {
+		height: 95px;
+		display: block;
+	}
+
+	a:hover {
+		background-color: rgb(221,221,221);
+	}
+li {
+	border-bottom: 1px solid rgb(221,221,221);
+	}
+}
+
+.inline a {
+	line-height: @base;
+}
+
+
+/*list*/.example li {
+	padding-right: @base;
+}
+
+
+
+.table {
+	display: table;
+}
+
+.cell {
+	vertical-align: top;
+    display: table-cell;
+    height: 100%;
+}
+
+
+
+h3.menu-title {
+	border-bottom: 1px solid rgb(221,221,221);
+	margin: 0;
+	padding-left: @base;
+	font-size: 18px;
+	line-height: 47px;
+}
+
+.list-border,
+ul.border {
+.kiss-obj-lists-stacked (
+				 @border-top: 0px,
+				 @border-bottom: 1px,
+				 @padding-top: 8px, 
+				 @padding-bottom:8px 
+				);
+
+	position: relative;
+
+	> li {
+		border-color: rgb(221,221,221);
+
+		}
+}
+
+ul.media a {
+	//line-height: 100px;
+}
+
+ul.border--flush  li {
+	border-top: 1px solid gray;
+	padding: 0;
+	img {
+		max-height: 95px;
+	}
+  
+  line-height: 95px;
+
+}
+
+
+ul.list-horiz{
+	width: 100%;
+	li {
+		float: left;
+
+	}
+}
+
+
+/* ==========================================================================
+   carousel
+   ========================================================================== */
+
+.carousel {
+	position: relative;
+	overflow: hidden;
+background: pink;
+	width: 400px;
+	height: 400px;
+
+	ul {
+		position: relative;
+		width: 300%;
+		list-style: none;
+	}	
+		li {
+			clear: none;
+			display: block;
+			width: 33.33333%;
+			float: left;
+			height: 200px;
+			text-align: center;
+			height: 800px;
+		}
+}
+
+
+/* ==========================================================================
+   Navs
+   ========================================================================== */
+
+.lock {
+	position: absolute;
+	top: 0;
+	left:0;
+	bottom:0;
+	right:0;
+	height: 100%;
+	margin: auto;
+	overflow: hidden;
+}
+
+
+nav,.nav {
+
+	.kiss-obj-lists-nav ();
+	margin-bottom: @line;
+}
+
+.nav--header {
+
+	border-bottom: 3px solid @green;
+	margin-bottom: @line - 3px;
+}
+
+.logo {
+	padding-left: @line / 2;
+}
+
+
+
+
+#sidebar {
+	position: absolute;
+	top: 0%;
+	left: -100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	width: 300px; // it needs a width in px not % to close reliably.
+	z-index: 30;
+	height: 100%;
+	background: white;
+	border-right: 1px solid gray;
+	-webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+transition: all 1s;
+	
+
+}
+
+.carot {
+	.kiss-obj-nav-carot ();
+
+}
+
+
+body {
+	position: relative;
+}
+
+.overlay, 
+.overlay:after{
+	 content: "";
+  display: block;
+  position: fixed; /* could also be absolute */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 11;
+  background-color: rgba(0,0,0,0.1);
+  cursor: pointer;
+
+}
+
+
+/* ul */.nav-stacked {
+	.kiss-obj-nav-ul-vertical ();
+}
+
+.list-neg {
+	background: #222;
+	border-color: white;
+	a,
+	h3 {
+		color: white;
+	}
+}
+
+.list--linear > li {
+	float: left;
+}
+
+.nav--group {
+	.kiss-obj-lists-ul-group (@color: gray, @radius: 5px);
+
+	& > li:hover {
+		background: rgb(230,230,230);
+
+	}
+}
+
+.nav--group--default > li a{
+	padding: ( @base * 2 ) - 1px;
+}
+
+.nav--group--bar > li a{
+
+	padding: ( ( @base / 2 ) - 1px )( @line * 2 );
+}
+
+.nav--group--pages > li a {
+	padding: ( @base - 1px )( @base * 2  );
+}
+
+.nav--group--bar > li a {
+
+
+}
+
+/* ==========================================================================
+   Mods
+   ========================================================================== */
+
+
+.archives__item {
+	margin-bottom: @line;
+	padding-top: @line - 1px;
+	border-top: 1px solid gray;
+
+}
+
+
+.box,
+.note,
+.notice,
+.notify,
+.pullout,
+.card,
+pre 
+{
+.kiss-obj-mods-box (@space: @base * 3, @border: 1px);
+}
+
+
+.box {
+	background: white;
+}
+
+.notice {
+	border-color: @green;
+	border-radius: 0.3em;
+	margin-top: 0;
+}
+
+.notify {
+	
+}
+
+
+
+.mod header,
+.mod footer,
+.pullout,
+.notify {
+	background: rgb(245,242,240);
+}
+
+.pullout {
+	border-left: 5px solid @green;
+}
+
+pre {
+	overflow: scroll;
+	background: rgb(245,242,240);
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	font-size: 14px;
+	line-height: @base * 3;
+}
+
+.modtwo,
+.card {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px 0px;
+	border-radius: 0.3em;
+	margin-right: @line;
+	width: auto;
+}
+
+.panel.modthree .panel__body {
+	border-bottom-color: rgb( 221,221,221 ) ;
+	border-bottom-left-radius: 0.3em;
+	border-bottom-right-radius: 0.3em;
+}
+
+.panel {
+	.kiss-obj-mods-panel (@vert-space: @base, @hor-space: (@base * 3), @border: 1px);
+
+}
+
+.badge,
+.label {
+	  display: inline;
+  padding: .2em .6em .2em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: white;
+  background: @green;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  	position: relative;
+	top: -0.1em;
+}
+
+
+.blob,
+ .badge {
+ 	padding: 0.2em 0.1;
+ 	font-weight: normal;
+ 	 border-radius: 1em;
+ }
+
+.blob {
+	padding: 1em;
+	border-radius: 2em;
+	background:  #D0011B;
+	color: white;
+}
+
+
+
+.thumb {
+	padding: 0;
+	width: 250px;
+	margin: auto;
+	
+	img {
+		max-width: 100%;
+	}
+
+	figcaption {
+		padding: @base * 3;
+	}
+}
+
+
+
+
+.media {
+	.kiss-obj-media-mediaobj (@space: @line);
+}
+
+.media--portrait img,
+.media--landscape img {
+	margin-right: @line;
+	margin-bottom: @line;
+}
+
+
+@media only screen and (min-width: 630px) {
+	.media--portrait {
+		.kiss-obj-media-mediaobj (@space: @line);
+
+	}
+
+}
+
+@media only screen and (min-width: 720px) {
+	.media--landscape {
+		.kiss-obj-media-mediaobj (@space: @line);
+
+	}
+
+}
+
+
+.media.table {
+	.table ();
+
+}
+
+
+ th {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle;
+	overflow: hidden;
+
+	img {
+		 max-width: none; // chrome shrinks images in table cells, but is this responsive?
+		display: inline-block;
+		height: 100px;
+		padding-right: @base * 2;
+	}
+}
+
+
+img {
+	max-width: 100%;
+}
+
+img.icon {
+	float: left
+}
+
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+label,
+textarea,
+input {
+	font-size: 1em;
+}
+
+.btn {
+	.kiss-obj-buttons-base ();
+	line-height: @line;
+	padding: 0 @base;
+}
+
+.btn.full {
+	width: 100%;
+	max-width: 500px;
+	margin: auto;
+}
+
+.btn.default {
+	line-height: @base* 6;
+	padding: 0 @line;
+	background: @green;
+	color: white;
+	border-radius: 100px;
+	.icon {
+		color: white;
+	}
+
+}
+
+btn.default.submit {
+	background: blue;
+}
+
+.btn.default:hover {
+	background: darken(@green, 10%);
+}
+
+.btn.default:active{
+	background: darken(@green, 10%);
+	color: @blue;
+}
+
+.input--text {
+	.kiss-obj-forms-text-input (@space: 8px, @border: 1px);
+	font-size: 16px;
+	line-height: 16px;
+	margin-bottom: @line / 2;
+}
+
+
+
+label {
+	font-weight: 400;
+	font-size: 0.75em;
+}
+
+.form--inline {
+	.kiss-obj-forms-inputs-inline (@spacing: 1em);
+}
+
+.form--stacked {
+	.kiss-obj-forms-inputs-stacked ();
+}
+
+
+.form--aligned {
+	.kiss-obj-forms-inputs-aligned ( @input-width: 90%;)
+}
+
+
+textarea.comment {
+	width: 100%;
+	height: ( @base * 25 ) - 2px;
+	border: 1px solid gray;
+	padding: @base;
+
+}
+
+.input-group {
+
+.kiss-obk-forms-input-group ();
+	
+}
+
+.input-group.default .input--text {
+	border-radius: 0;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.input-group.default button {
+	border: 1px solid gray;
+}
+
+
+/* ==========================================================================
+   gradients
+   ========================================================================== */
+
+
+.nav--group.gradient--bam > li a,
+.gradient--bam {
+	.gradient-bam ( @background:  rgba(98,186,236,0.8) );
+	border-color: #222;	
+
+	
+}
+
+.nav--group.gradient--bam > li a:hover {
+	.gradient-bam ( @background:  rgba(98,186,236,1) );
+}
+
+.nav--group.soft li {
+
+	  &:first-child > a {
+         
+            border-top-left-radius: 2em;
+            border-bottom-left-radius: 2em;
+        }
+
+        &:last-child > a {
+            border-top-right-radius: 2em;
+            border-bottom-right-radius: 2em;
+        }
+
+}
+
+
+/* 
+   Page layouts sub sections
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   images
+   ========================================================================== */
+.thumb {
+	width: 100px;
+	height: 100px;
+}
+
+
+.img--left  {
+	float: left;
+	padding-right: @line;
+}
+
+
+
