@@ -3,7 +3,9 @@
 @import 'kiss/obj/grids.less';
 @import 'kiss/obj/typography.less';
 @import 'kiss/obj/navs.less';
+
 @import 'kiss/obj/fonts.less';
+@import 'icons.less';
 @import 'kiss/obj/mods.less';
 @import 'kiss/obj/media.less';
 @import 'kiss/obj/lists.less';
@@ -23,24 +25,32 @@ body {
 
 
  .wrap {
-
+ 	overflow: hidden;
  	background: white;
  	min-height: 100%;
  	margin: auto;
  	width: 100%;
 	max-width: 1000px;
 	z-index: 20;
+	padding-top: @line / 2;
+	padding-left: @line / 2;
  }
+
+
+.space {
+	margin-bottom: @line / 2; 
+}
+
+.space--top {
+	margin-top: @line / 2;
+}
 
 
  /* 
     Gutters
     ========================================================================== */
  
- .wrap {
- 		padding-left: @line / 2;
- 		padding-right: @line / 2;
- 	}
+
 
  .gutter {
 		margin-right: @line / 2;
@@ -50,13 +60,12 @@ body {
  @media only screen and (min-width : 940px) {
 
  	.wrap {
- 		padding-left: @line * 1;
+ 		padding-left: @line / 2;
  		padding-right: 0;
+ 		
  	}
 
-	.gutter {
-		margin-right: @line * 1;
-	}
+	
 
 
 .gutter--left {
@@ -126,6 +135,13 @@ body {
 	display: none;
 }
 
+@media screen and (min-width: @vanish) {
+
+	.vanish--r {
+		display: none;
+	}
+}
+
 .vanish--bertie {
 	@media only screen and (max-width : 710px) {
 		display: none;
@@ -133,6 +149,23 @@ body {
 
 
 }
+
+.vanish--tab {
+
+	@media only screen and (max-width : 980px) {
+		display: none;
+	}
+
+}
+
+.vanish--small-tab {
+
+@media only screen and (max-width : 870px) {
+		display: none;
+	}
+}
+
+
 
 
 @media only screen and (min-width : 710px) {
@@ -289,7 +322,7 @@ font-family: "Sanchez, serif";
 //.eighteen ();
 .twenty ();
 
-.site-title, h2, .strap, .brand, a {
+.site-title, h2, .brand, a {
 	color: @green;
 	
 }
@@ -298,17 +331,18 @@ font-family: "Sanchez, serif";
 
 @font-face {
     font-family: 'fontesquesanscompregular';
-    src: url('/wp-content/themes/decisions2/library/fonts/fontesque/fontesquesanscomp-webfont.eot');
-    src: url('/wp-content/themes/decisions2/library/fonts/fontesque/fontesquesanscomp-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/wp-content/themes/decisions2/library/fonts/fontesque/fontesquesanscomp-webfont.woff') format('woff'),
-         url('/wp-content/themes/decisions2/library/fonts/fontesque/fontesquesanscomp-webfont.ttf') format('truetype'),
-         url('/wp-content/themes/decisions2/library/fonts/fontesque/fontesquesanscomp-webfont.svg#fontesquesanscompregular') format('svg');
+    src: url('/wp-content/themes/story5/library/fonts/fontesque/fontesquesanscomp-webfont.eot');
+    src: url('/wp-content/themes/story5/library/fonts/fontesque/fontesquesanscomp-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/wp-content/themes/story5/library/fonts/fontesque/fontesquesanscomp-webfont.woff') format('woff'),
+         url('/wp-content/themes/story5/library/fonts/fontesque/fontesquesanscomp-webfont.ttf') format('truetype'),
+         url('/wp-content/themes/story5/library/fonts/fontesque/fontesquesanscomp-webfont.svg#fontesquesanscompregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 
 h1,h2,h3,
+
 .fancy {
 	font-family: 'fontesquesanscompregular';
 	letter-spacing: 3px;
@@ -317,19 +351,25 @@ h1,h2,h3,
 
 h1.site-title {	
 	margin: 0;
-	padding: 0;	line-height: 81px;	
+	padding: 0;	
+	line-height: 1;	
 	float: right;
-	font-size: 48px;
+	font-size: 54px;
+	  text-shadow: 
+	      -1px -1px 0 @blue,
+    1px -1px 0 @blue,
+    -1px 1px 0 @blue,
+    1px 1px 0 @blue;  
+    -webkit-font-smoothing: antialiased;
+
+    @media only screen and (min-width: 750px) {
+    	font-size: 80px;
+    }
+   
 }
 
 
-@media only screen and (min-width: 700px) {
-	
-	h1.site-title {	
-		font-size: 64px;
-	}
 
-}	
 
 	h2.title-cat a {
 
@@ -337,10 +377,7 @@ h1.site-title {
 
 	}
 
-.header-site {
 
-
-}
 
 
 
@@ -353,18 +390,32 @@ blockquote {
    fonts and icons
    ========================================================================== */
 
-.font-face ();
+//.font-face ();
 
 .icon {
+	font-family: 'icomoon';
 	.icon ();
 	color: @green;
+}
+
+.icon-right {
+	padding-left: @base;
 }
 
 .icon.center {
 	padding-left: @base;
 }
 
-.glphicons ();
+.icon--full { // goes on a link
+	background: @gold;
+	color: @green;
+	border-radius: 4px;
+	line-height: @base * 4;
+	padding:  @base;
+	margin-right: @base * 2;
+}
+
+//.glphicons ();
 
 
 
@@ -391,30 +442,57 @@ blockquote {
 	margin: 0;
 }
 
-.bordered  {
+nav ul li {
+	margin-bottom: 0;
+}
+
+
+	.bordered  {
 
 	width: 100%;
 
+
 	li {
 		margin-left: 0;
-		padding-left: @base;
+		
 
 	}
 
 	li a:hover {
 		margin-left: 0;
 	}
-	
+
 	a {
 	overflow: hidden;
-	padding-top: @base ;
-	padding-bottom: @base - 1px;
-	border-bottom: 1px solid rgb(221,221,221);
+	padding-top: @base * 2 ;
+	padding-bottom: ( @base * 2 ) - 1px;
+	border-bottom: 1px solid @gold;
+	font-size: 24px;
+	line-height: 40px;
+	border-bottom: 1px solid @gold;
+
 	}
 
-	a:hover {
-		background-color: rgb(221,221,221);
+	a:hover
+	 {
+	color: white;
+	}
 
+	.icon {
+		padding-right: @line;
+
+	}
+
+}
+
+.social {
+	overflow: hidden;
+	background: lighten(@green, 30%);
+
+	border-radius: 4px;
+	padding: @base;
+	.search {
+		margin: 0;
 	}
 }
 
@@ -485,12 +563,81 @@ li {
 
 
 h3.menu-title {
-	border-bottom: 1px solid rgb(221,221,221);
+
 	margin: 0;
 	padding-left: @base;
 	font-size: 18px;
-	line-height: 47px;
+	line-height: 48px;
 }
+
+.strap {
+	position: relative;
+	font-size: 16px;
+	line-height: 1;
+	color: @red;
+	left: @base;
+	overflow: hidden;
+
+@media only screen and (max-width: 400px ) {
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: -8px;
+	left: 128px;
+	font-size: 14px;
+
+
+}
+
+
+	@media only screen and  (min-width: 400px) and (max-width: 800px ){
+		display: block;
+	
+		width: 150px;
+		font-size: 24px;
+		line-height: 1;
+		width: 200px;
+		margin-right: @line;
+		margin-top: @line / 2;		
+
+	}
+
+	
+
+@media only screen and (max-width: 750px ){
+		margin-top: @base;
+	}
+
+
+@media only screen and (min-width: 800px) {
+	
+	font-size: 24px;
+			float: left;
+			top: 24px
+
+	}
+
+	
+			
+}
+
+.bertie {
+	height: 100px;
+	margin-left: @line / 4;
+@media only screen and (max-width: 750px) {
+
+	height: 60px;
+}
+
+}
+
+
+
+
+
+
+
+
 
 .list-border,
 ul.border {
@@ -581,13 +728,17 @@ background: pink;
 nav,.nav {
 
 	.kiss-obj-lists-nav ();
-	margin-bottom: @line;
+//	margin-bottom: @line;
 }
 
 .nav--header {
+ 	padding-top: @line / 2;
+   position: relative;
+   background: @gold;
+   border-radius: 4px;
+   margin-bottom: @base;
 
-	border-bottom: 3px solid @green;
-	margin-bottom: @line - 3px;
+
 }
 
 .logo {
@@ -595,27 +746,161 @@ nav,.nav {
 }
 
 
+/* 
+   Sidebar
+   ========================================================================== */
 
 
-#sidebar {
-	position: absolute;
-	top: 0%;
-	left: -100%;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	width: 300px; // it needs a width in px not % to close reliably.
-	z-index: 30;
-	height: 100%;
-	background: white;
-	border-right: 1px solid gray;
-	-webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
-transition: all 1s;
+
+
+.table {
+	display: table !important;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+
+
+.dropper {
+	overflow: visible;
+}
+
+.menu--group {
+	width: 100%;
+	position: relative;
+	float: left;
+	overflow: visible;
+
+
+		color: @gold;
+
+	//.kiss-obj-lists-ul-group (@color: @green, @radius: 0em);
+
+
+
+	li {
+		border: none;
+		padding: 0;
+		margin: 0;
+			width: 20%;
+		border-right: 1px solid @gold;
+	}
+
+	li:last-child {
+			border-right: none;
+	}
+
+	.icon {
+		color: @gold;
+
+	}
+
+	@media only screen and (max-width: 870px) {
+		.menu-title .icon {
+			width: 100%;
+		}
+
+	}
+
+	a {
+		padding: ( @base - 1 ) @base * 2;
+		color: @blue;
+		background: lighten(@blue, 10%);
 	
+
+	}
+
+	a:hover {
+		background: lighten(@blue, 30%);
+	}
+
+	//.kiss-obj-nav-ul-dropdown-outer();
+
+	h3.menu-title {
+		border-bottom-color: transparent;
+		color: @gold;
+		font-size: 24px;
+		line-height: 32px; 
+
+	}
+
+@media only screen and (max-width: 700px) {
+
+	.icon-right,
+	.carot,
+	.title {
+		display: none;
+	
+
+	}
+
+	.menu-title .icon {
+		padding-right: 0;
+		text-align: center;
+	}
 
 }
 
+
+	@media only screen and (max-width: 995px) {
+			h3.menu-title {
+			font-size: 18px;
+			line-height: 24px;
+		}
+
+	}
+
+}
+
+
+.drop  {
+	position: static;
+	z-index: 1000;
+
+> ul {
+	
+	position: absolute;
+	top: -1000%;
+	left: -1000%;
+	z-index: 1000;
+	width: 100%;
+	background: @blue;
+	padding: @base 0 @base @line;
+
+
+	li {
+		width: 100%;
+	
+		padding-right: @line;
+	
+	}
+
+	a {
+		
+		color: @gold;
+	}
+
+}
+}
+
+.drop.active a {
+	background: @blue;
+}
+
+.menu--group li.drop > a {
+	
+}
+
+
+.drop > ul.open {
+
+	top: 100%;
+	left: 0%;
+
+}
+
+
+
 .carot {
-	.kiss-obj-nav-carot ();
+	.kiss-obj-nav-carot (@carot: '\25BE')
 
 }
 
@@ -624,17 +909,22 @@ body {
 	position: relative;
 }
 
-.overlay, 
+nav {
+	position: relative;
+	
+}
+
+ 
 .overlay:after{
 	 content: "";
   display: block;
-  position: fixed; /* could also be absolute */
+  position: absolute; /* could also be absolute */
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   z-index: 11;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0);
   cursor: pointer;
 
 }
@@ -881,6 +1171,7 @@ input {
 	font-size: 1em;
 }
 
+
 .btn {
 	.kiss-obj-buttons-base ();
 	line-height: @line;
@@ -909,6 +1200,9 @@ btn.default.submit {
 	background: blue;
 }
 
+
+
+
 .btn.default:hover {
 	background: darken(@green, 10%);
 }
@@ -923,6 +1217,8 @@ btn.default.submit {
 	font-size: 16px;
 	line-height: 16px;
 	margin-bottom: @line / 2;
+	border-color: @green;
+	border-radius: 4px;
 }
 
 

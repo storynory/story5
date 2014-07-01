@@ -130,6 +130,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/library\/css\/icons.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/css\/icons.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/library\/css\/ie.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -301,138 +310,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/img\/iebk.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6984,
-		"inputAbbreviatedPath": "\/library\/img\/iebk.png",
-		"outputAbbreviatedPath": "\/library\/img\/iebk.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/img\/logo-7d.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 8208,
-		"inputAbbreviatedPath": "\/library\/img\/logo-7d.png",
-		"outputAbbreviatedPath": "\/library\/img\/logo-7d.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/img\/logo-long.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 7908,
-		"inputAbbreviatedPath": "\/library\/img\/logo-long.png",
-		"outputAbbreviatedPath": "\/library\/img\/logo-long.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/img\/logo-medium.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 7271,
-		"inputAbbreviatedPath": "\/library\/img\/logo-medium.png",
-		"outputAbbreviatedPath": "\/library\/img\/logo-medium.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/img\/slides\/apple.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 81588,
-		"inputAbbreviatedPath": "\/library\/img\/slides\/apple.jpg",
-		"outputAbbreviatedPath": "\/library\/img\/slides\/apple.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/img\/slides\/bee-transparent.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 46192,
-		"inputAbbreviatedPath": "\/library\/img\/slides\/bee-transparent.png",
-		"outputAbbreviatedPath": "\/library\/img\/slides\/bee-transparent.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/img\/slides\/cheetah.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 98140,
-		"inputAbbreviatedPath": "\/library\/img\/slides\/cheetah.jpg",
-		"outputAbbreviatedPath": "\/library\/img\/slides\/cheetah.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/img\/slides\/eagle.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 41975,
-		"inputAbbreviatedPath": "\/library\/img\/slides\/eagle.jpg",
-		"outputAbbreviatedPath": "\/library\/img\/slides\/eagle.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/img\/slides\/flower-bee-complete.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 56432,
-		"inputAbbreviatedPath": "\/library\/img\/slides\/flower-bee-complete.jpg",
-		"outputAbbreviatedPath": "\/library\/img\/slides\/flower-bee-complete.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/img\/slides\/flower.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 42642,
-		"inputAbbreviatedPath": "\/library\/img\/slides\/flower.jpg",
-		"outputAbbreviatedPath": "\/library\/img\/slides\/flower.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/img\/slides\/flowers-bee.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 61405,
-		"inputAbbreviatedPath": "\/library\/img\/slides\/flowers-bee.jpg",
-		"outputAbbreviatedPath": "\/library\/img\/slides\/flowers-bee.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/img\/slides\/kingfisher.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 91193,
-		"inputAbbreviatedPath": "\/library\/img\/slides\/kingfisher.jpg",
-		"outputAbbreviatedPath": "\/library\/img\/slides\/kingfisher.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/library\/js\/jquery-ck.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -461,6 +338,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/library\/js\/jquery.js",
 		"outputAbbreviatedPath": "\/library\/js\/min\/jquery-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/library\/js\/min\/scripts-ck.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/js\/min\/scripts-ck.js",
+		"outputAbbreviatedPath": "\/library\/js\/min\/min\/scripts-ck-ck.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -520,6 +408,35 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
+		},
+	"\/library\/less\/icons.less": {
+		"allowInsecureImports": 0,
+		"createSourceMap": 0,
+		"disableJavascript": 0,
+		"fileType": 1,
+		"ieCompatibility": 1,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/less\/icons.less",
+		"outputAbbreviatedPath": "\/library\/css\/icons.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"relativeURLS": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"strictImports": 0,
+		"strictMath": 0,
+		"strictUnits": 0
+		},
+	"\/library\/less\/kiss\/css\/text-shadows.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/less\/kiss\/css\/text-shadows.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/library\/less\/kiss\/examples\/box-shadows.less": {
 		"allowInsecureImports": 0,
@@ -1032,6 +949,18 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/README.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/README.md",
+		"outputAbbreviatedPath": "\/README.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/screenshot.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1096,8 +1025,8 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "decisions2",
-	"displayValueWasSetByUser": 0,
+	"displayValue": "Story 5",
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_yellow"
 	},
 "projectSettings": {

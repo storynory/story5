@@ -3,12 +3,21 @@
 Template Name: homepage
 */
 ?><?php get_header(); // meta, html, body, opens .wrap ?>
+	
+
+
 	<div class="grid">
 		
 		<div class="grid__item one-whole">
 
+
 		
 		<?php include_once "masthead.php" ?>
+		
+		<div id="sidebar" class="sidebar grid__item two-thirds">
+	
+		<?php get_sidebar(); ?>	
+</div>
 
 		</div><!--
 			
@@ -89,10 +98,7 @@ $the_query = new WP_Query( $args); ?>
 
 </div>
 
-<div id="sidebar" class="sidebar grid__item two-thirds">
-	
-		<?php get_sidebar(); ?>	
-</div>
+
 
 	<div class="grid__item one-whole">
 

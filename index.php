@@ -20,15 +20,9 @@
 		
 	 --><div class="grid__item one-whole">
 
-	hello
-		<? // include main article loops //
-
-
-
-
-			include_once "loops/loop-category.php" ;
-
-		 ?>
+		<?php// include main article loops //
+				get_template_part( 'loops/loop-category' ); 
+			?>
 
 </div>
 

@@ -21,12 +21,10 @@
 	 --><div class="grid__item one-whole">
 
 	
-		<? // include main article loops //
+		<?php // include main article loops //
 
+			get_template_part( 'loops/loop-archive' ); 
 
-
-
-			include_once "loops/loop-archive.php" ;
 
 		 ?>
 

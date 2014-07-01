@@ -6,12 +6,12 @@
 
 						<h1 class="page-title"><?php the_title(); ?></h1>
 					 
-					 <div class="vertical"><span class="icon glyphicon-bookmark"></span> <span>You are here:  <?php $bread = archivebox(); ?>
+					 <div class="vertical"><span class="icon icon-direction"></span> <span>  <?php $bread = archivebox(); ?>
 							<a  href="/<?php echo $bread['pageSlug']?>/" ><?php echo $bread["sectionName"]?></a>   
-							<span>  <span class="icon center glyphicon-arrow-right"></span></span>
+							<span>  <span class="icon center icon-arrow-right"></span></span>
 							<a class="nowrap" href="/category/<?php echo $bread["postCatSlug"]?>/" ><?php echo $bread["postCatName"] ?></a>  </span> 
 
-					 	<span class="Commments right--r"><span class="icon glyphicon-comment "></span><a href="#comments"><?php comments_number( 'no comments yet', 'one comment', '% comments' ); ?></a></span>
+					 	<span class="Commments right--r"><span class="icon icon-bubble "></span><a href="#comments"><?php comments_number( 'no comments yet', 'one comment', '% comments' ); ?></a></span>
 
 						</div>
 						

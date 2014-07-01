@@ -29,8 +29,9 @@ Template Name: archives
 	
 	
 		
-		<? // include main article loop that does for most pages here //
-			include_once "loops/loop-archives.php" ;
+		<?php // include main article loop that does for most pages here //
+		
+			get_template_part( 'loops/loop-archives' ); 
 
 		 ?>
 
