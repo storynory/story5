@@ -392,6 +392,8 @@ blockquote {
 
 .icon.center {
 	padding-left: @base;
+
+
 }
 
 .icon--full { // goes on a link
@@ -820,14 +822,15 @@ nav,.nav {
 
 	a {
 		padding: ( @base - 1 ) @base * 2;
-		color: @blue;
+	
 		background: lighten(@blue, 10%);
+
 	
 
 	}
 
 	a:hover {
-		background: lighten(@blue, 30%);
+		background: @blue;
 	}
 
 	//.kiss-obj-nav-ul-dropdown-outer();
@@ -891,9 +894,19 @@ nav,.nav {
 	
 	}
 
+
 	a {
 		
 		color: @gold;
+		&:hover
+
+		 {
+			color: pink
+		}
+	}
+
+	a:hover .icon {
+		color: pink;
 	}
 
 }
@@ -901,11 +914,16 @@ nav,.nav {
 
 .drop.active a {
 	background: @blue;
+	&:hover {
+		background: lighten(@green,20%);
+	}
 }
 
-.menu--group li.drop > a {
-	
+.drop.active a.drop__title:hover {
+
+	background: @blue;
 }
+
 
 
 .drop > ul.open {
@@ -918,30 +936,52 @@ nav,.nav {
 
 a.original span, a.original .icon {
 	color: @green;
+	&:hover {
+		color: pink;
+
+	}
 }
 
 .fairytales span, a.fairytales .icon {
 	color: @turq;
+	&:hover {
+		color: pink;
+	}
 }
 
 .classic span, a.classic .icon {
 	color: @light-blue;
+	&:hover {
+		color: pink;
+	}
 }
 
 .edu span, a.edu .icon {
 	color: orange;
+		&:hover {
+		color: pink;
+	}
 }
 
 .myths span, a.myths .icon {
 	color: @gray;
+		&:hover {
+		color: pink;
+	}
 }
 
 .music span, a.music .icon {
 	color: @gold;
+		&:hover {
+		color: pink;
+	}
 }
 
 .junior span, a.junior .icon {
 	color: @red;
+		&:hover {
+		color: pink;
+	}
 }
 
 

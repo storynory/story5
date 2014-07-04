@@ -1021,11 +1021,10 @@ nav .nav__heading,
 }
 .menu--group a {
   padding: 7px 16px;
-  color: #5a6886;
   background: #7281a1;
 }
 .menu--group a:hover {
-  background: #afb8ca;
+  background: #5a6886;
 }
 .menu--group h3.menu-title {
   border-bottom-color: transparent;
@@ -1070,7 +1069,19 @@ nav .nav__heading,
 .drop > ul a {
   color: #efd480;
 }
+.drop > ul a:hover {
+  color: #ffc0cb;
+}
+.drop > ul a:hover .icon {
+  color: pink;
+}
 .drop.active a {
+  background: #5a6886;
+}
+.drop.active a:hover {
+  background: #a7c9a6;
+}
+.drop.active a.drop__title:hover {
   background: #5a6886;
 }
 .drop > ul.open {
@@ -1081,29 +1092,57 @@ a.original span,
 a.original .icon {
   color: #69a366;
 }
+a.original span:hover,
+a.original .icon:hover {
+  color: pink;
+}
 .fairytales span,
 a.fairytales .icon {
   color: #ffa0d6;
+}
+.fairytales span:hover,
+a.fairytales .icon:hover {
+  color: pink;
 }
 .classic span,
 a.classic .icon {
   color: #c3b9ff;
 }
+.classic span:hover,
+a.classic .icon:hover {
+  color: pink;
+}
 .edu span,
 a.edu .icon {
   color: orange;
+}
+.edu span:hover,
+a.edu .icon:hover {
+  color: pink;
 }
 .myths span,
 a.myths .icon {
   color: #e5e5e5;
 }
+.myths span:hover,
+a.myths .icon:hover {
+  color: pink;
+}
 .music span,
 a.music .icon {
   color: #efd480;
 }
+.music span:hover,
+a.music .icon:hover {
+  color: pink;
+}
 .junior span,
 a.junior .icon {
   color: #e55d3a;
+}
+.junior span:hover,
+a.junior .icon:hover {
+  color: pink;
 }
 body {
   position: relative;
