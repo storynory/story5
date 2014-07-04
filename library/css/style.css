@@ -1077,17 +1077,33 @@ nav .nav__heading,
   top: 100%;
   left: 0%;
 }
-.carot:after {
-  content: '\25BE';
-  margin-left: 3px;
-  /* These specific fonts have the Unicode char we need. */
-  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'DejaVu Sans', sans-serif;
+a.original span,
+a.original .icon {
+  color: #69a366;
 }
-.carot:after {
-  content: '\25BE';
-  margin-left: 3px;
-  /* These specific fonts have the Unicode char we need. */
-  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'DejaVu Sans', sans-serif;
+.fairytales span,
+a.fairytales .icon {
+  color: #ffa0d6;
+}
+.classic span,
+a.classic .icon {
+  color: #c3b9ff;
+}
+.edu span,
+a.edu .icon {
+  color: orange;
+}
+.myths span,
+a.myths .icon {
+  color: #e5e5e5;
+}
+.music span,
+a.music .icon {
+  color: #efd480;
+}
+.junior span,
+a.junior .icon {
+  color: #e55d3a;
 }
 body {
   position: relative;
