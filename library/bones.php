@@ -143,8 +143,10 @@ function bones_scripts_and_styles() {
      //adding jquery file in the footer
     wp_register_script( 'jquery', get_stylesheet_directory_uri() . '/library/js/jquery-ck.js', array( 'jquery' ), '', true );
 
+    wp_register_script( 'CaptainFade', get_stylesheet_directory_uri() . '/library/js/jquery.CaptainFade.js', array( 'jquery' ), '', true );
+
     //adding scripts file in the footer
-    wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/library/js/min/scripts-ck.js', array( 'jquery' ), '', true );
+    wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
     // enqueue styles and scripts
   //  wp_enqueue_script( 'bones-modernizr' );
@@ -159,6 +161,7 @@ function bones_scripts_and_styles() {
     and your site will load faster.
     */
     wp_enqueue_script( 'jquery' );
+     wp_enqueue_script( 'CaptainFade' );
     wp_enqueue_script( 'scripts' );
 
   }
@@ -346,7 +349,7 @@ function bones_page_navi($before = '', $after = '') {
 	if($start_page <= 0) {
 		$start_page = 1;
 	}
-	echo $before.'<nav class="page-navigation"><ol class="bones_page_navi clearfix">'."";
+	echo $before.'<nav class="page-navigation"><ul class="bones_page_navi clearfix">'."";
 	if ($start_page >= 2 && $pages_to_show < $max_page) {
 		$first_page_text = __( "First", 'bonestheme' );
 		echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
@@ -356,7 +359,7 @@ function bones_page_navi($before = '', $after = '') {
 	echo '</li>';
 	for($i = $start_page; $i  <= $end_page; $i++) {
 		if($i == $paged) {
-			echo '<li class="bpn-current">'.$i.'</li>';
+			echo '<li class="bpn-current"><a href="">'.$i.'</a></li>';
 		} else {
 			echo '<li><a href="'.get_pagenum_link($i).'">'.$i.'</a></li>';
 		}
@@ -368,7 +371,7 @@ function bones_page_navi($before = '', $after = '') {
 		$last_page_text = __( "Last", 'bonestheme' );
 		echo '<li class="bpn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
 	}
-	echo '</ol></nav>'.$after."";
+	echo '</ul></nav>'.$after."";
 } /* end page navi */
 
 /*********************
@@ -407,3 +410,4 @@ function bones_get_the_author_posts_link() {
 }
 
 ?>
+                                                                                                                                                                                                                                                                                                                                                                                                                            

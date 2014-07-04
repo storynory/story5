@@ -344,10 +344,16 @@ body {
   padding-left: 16px;
 }
 .space {
-  margin-bottom: 16px;
+  overflow: hidden;
+  margin-bottom: 16px -1;
+  border-bottom: 1px solid transparent;
 }
 .space--top {
   margin-top: 16px;
+}
+.space--border {
+  border-color: gray;
+  padding-bottom: 16px;
 }
 /* 
     Gutters
@@ -453,26 +459,6 @@ body {
 }
 .vanish {
   display: none;
-}
-@media screen and (min-width: 400px) {
-  .vanish--r {
-    display: none;
-  }
-}
-@media only screen and (max-width: 710px) {
-  .vanish--bertie {
-    display: none;
-  }
-}
-@media only screen and (max-width: 980px) {
-  .vanish--tab {
-    display: none;
-  }
-}
-@media only screen and (max-width: 870px) {
-  .vanish--small-tab {
-    display: none;
-  }
 }
 @media only screen and (min-width: 710px) {
   .r-one-half {
@@ -646,6 +632,10 @@ h2,
 h3,
 .fancy {
   font-family: 'fontesquesanscompregular';
+}
+h1,
+h2,
+h3 {
   letter-spacing: 3px;
 }
 h1.site-title {
@@ -653,16 +643,17 @@ h1.site-title {
   padding: 0;
   line-height: 1;
   float: right;
-  font-size: 54px;
   text-shadow: -1px -1px 0 #5a6886, 1px -1px 0 #5a6886, -1px 1px 0 #5a6886, 1px 1px 0 #5a6886;
   -webkit-font-smoothing: antialiased;
 }
-@media only screen and (min-width: 750px) {
-  h1.site-title {
-    font-size: 80px;
-  }
-}
 h2.title-cat a {
+  text-decoration: none;
+}
+h2 {
+  line-height: 40px;
+  padding-bottom: 16px;
+}
+h2 a {
   text-decoration: none;
 }
 blockquote {
@@ -827,54 +818,60 @@ h3.menu-title {
   font-size: 18px;
   line-height: 48px;
 }
+/* 
+   Responsive sizes in header
+   ========================================================================== */
+h1.site-title {
+  font-size: 40px;
+  padding-bottom: 32px;
+}
 .strap {
-  position: relative;
+  position: absolute;
   font-size: 16px;
   line-height: 1;
   color: #e55d3a;
-  left: 8px;
+  left: 95px;
+  top: 44px;
   overflow: hidden;
+  letter-spacing: 0.5px;
+}
+.nav--header .sticker {
+  height: 65px;
+}
+.fader {
+  margin-right: 4px;
 }
 @media only screen and (max-width: 400px) {
-  .strap {
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: -8px;
-    left: 128px;
-    font-size: 14px;
+  .fader {
+    display: none;
   }
 }
-@media only screen and (min-width: 400px) and (max-width: 800px) {
-  .strap {
-    display: block;
-    width: 150px;
-    font-size: 24px;
-    line-height: 1;
-    width: 200px;
-    margin-right: 32px;
-    margin-top: 16px;
+@media only screen and (max-width: 500px) {
+  .beatrice {
+    display: none;
   }
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (min-width: 620px) {
+  .nav--header .sticker {
+    height: 100px;
+  }
+  h1.site-title {
+    font-size: 56px;
+  }
   .strap {
-    margin-top: 8px;
+    left: 146px;
+    top: 60px;
+    font-size: 22px;
   }
 }
-@media only screen and (min-width: 800px) {
-  .strap {
-    font-size: 24px;
-    float: left;
-    top: 24px;
+@media only screen and (min-width: 700px) {
+  h1.site-title {
+    font-size: 80px;
   }
-}
-.bertie {
-  height: 100px;
-  margin-left: 8px;
-}
-@media only screen and (max-width: 750px) {
-  .bertie {
-    height: 60px;
+  .strap {
+    left: 146px;
+    top: 80px;
+    font-size: 34px;
   }
 }
 .list-border,
@@ -889,7 +886,7 @@ ul.border > li {
   overflow: hidden;
   float: left;
   margin: 0;
-  padding: 8px 0 7px;
+  padding: 16px 0 15px;
 }
 .list-border > li,
 ul.border > li {
@@ -972,11 +969,16 @@ nav .nav__heading,
   height: 100%;
 }
 .nav--header {
-  padding-top: 16px;
+  padding: 16px 0;
   position: relative;
   background: #efd480;
   border-radius: 4px;
   margin-bottom: 8px;
+}
+@media only screen and (min-width: 700px) {
+  .nav--header {
+    padding: 24px 0;
+  }
 }
 .logo {
   padding-left: 16px;
@@ -1123,23 +1125,28 @@ nav {
 .list--linear > li {
   float: left;
 }
+.bones_page_navi > li,
 .nav--group > li {
   float: left;
 }
+.bones_page_navi > li > a,
 .nav--group > li > a {
   border: 0 solid #808080;
   border-width: 1px;
   border-left-width: 0;
 }
+.bones_page_navi > li:first-child > a,
 .nav--group > li:first-child > a {
   border-left-width: 1px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+.bones_page_navi > li:last-child > a,
 .nav--group > li:last-child > a {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+.bones_page_navi > li:hover,
 .nav--group > li:hover {
   background: #e6e6e6;
 }
@@ -1151,6 +1158,17 @@ nav {
 }
 .nav--group--pages > li a {
   padding: 7px 16px;
+}
+.bones_page_navi > li a {
+  padding: 7px 32px;
+}
+.bpn-current a {
+  color: #efd480;
+}
+.page-navigation {
+  margin-bottom: 32px;
+  margin-left: 32px;
+  margin-right: auto;
 }
 /* ==========================================================================
    Mods
@@ -1181,6 +1199,17 @@ pre {
 .pullout p:last-of-type,
 .card p:last-of-type,
 pre p:last-of-type {
+  margin-bottom: 0;
+}
+.note-tiny {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 15px;
+  overflow: hidden;
+  zoom: 1;
+  border: 1px solid transparent;
+}
+.note-tiny p:last-of-type {
   margin-bottom: 0;
 }
 .box {
@@ -1329,18 +1358,13 @@ pre {
   position: relative;
   overflow: hidden;
 }
-.media--portrait img,
-.media--landscape img {
-  margin-right: 32px;
-  margin-bottom: 32px;
-}
-@media only screen and (min-width: 630px) {
-  .media--portrait {
+@media only screen and (min-width: 570px) {
+  .media--r {
     overflow: hidden;
   }
-  .media--portrait,
-  .media--portrait figcaption,
-  .media--portrait .media__item {
+  .media--r,
+  .media--r figcaption,
+  .media--r .media__item {
     overflow: hidden;
     _overflow: visible;
     zoom: 1;
@@ -1348,15 +1372,47 @@ pre {
     float: none;
     height: 100%;
   }
-  .media--portrait img,
-  .media--portrait .img {
+  .media--r img,
+  .media--r .img {
     float: left;
     margin: 0;
     padding: 0;
     display: block;
     margin-right: 32px;
   }
-  .media--portrait li {
+  .media--r li {
+    position: relative;
+    overflow: hidden;
+  }
+}
+.media--port img,
+.media--landscape img {
+  margin-right: 32px;
+  margin-bottom: 32px;
+}
+@media only screen and (min-width: 850px) {
+  .media--port {
+    overflow: hidden;
+  }
+  .media--port,
+  .media--port figcaption,
+  .media--port .media__item {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+    display: block;
+    float: none;
+    height: 100%;
+  }
+  .media--port img,
+  .media--port .img {
+    float: left;
+    margin: 0;
+    padding: 0;
+    display: block;
+    margin-right: 32px;
+  }
+  .media--port li {
     position: relative;
     overflow: hidden;
   }
@@ -1615,7 +1671,13 @@ textarea.comment {
   width: 100px;
   height: 100px;
 }
+img {
+  max-width: 100% !important;
+  height: auto;
+  display: block;
+}
 .img--left {
   float: left;
   padding-right: 32px;
+  padding-bottom: 8px;
 }

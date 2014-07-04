@@ -29,10 +29,10 @@
 				// jQuery(selector).pluginName(options);
 				var visible = options.visible;
 				var length = options.images.length;
-				var first = options.images[0];
-				var pagenumber = 0;
-				var page = 0;
-				var counter = 0;
+			//	var first = options.images[0];
+			var pagenumber = 0;
+			var page = 0;
+			var counter = 0;
 				var play; // need to declare outside of setInterval function so can clear it and start it again
 
 				var goTo = function (page) {
@@ -49,7 +49,7 @@
 					pagenumber = page;
 					//console.log ("pagenumber " + pagenumber);
 					options.pagenumber = page;
-				}
+				};
 
 
 				var loop = function () {
@@ -59,32 +59,32 @@
 					if (counter === length) {	
 						counter = 0;
 					}     	
-					goTo (counter);
+					goTo(counter);
 
-				}
+				};
 
-		setTimeout(function () {
+				setTimeout(function () {
 
-			
-				var start = function() {
-					play = setInterval(function()
-					{ 
+					
+					var start = function() {
+						play = setInterval(function()
+						{ 
 
-						loop ();
+							loop ();
 
 
-					},8000);
-				}	
+						},8000);
+					};
 
-				if (options.loop === true) {
-					start();
-				}
+					if (options.loop === true) {
+						start();
+					}
 
-			}, 200);	
+				}, 200);	
 
 				var pause = function () {
 					clearInterval(play); 
-				}
+				};
 
 				var next = function ()  {
 					pause ();
@@ -99,7 +99,7 @@
 					}
 					goTo(page);
 
-				}
+				};
 
 				var prev = function ()  {
 					pause ();
@@ -113,7 +113,7 @@
 					}
 					goTo(page);
 
-				}
+				};
 
 				// click to go to next slide
 				$(options.next).click(function() {
@@ -137,13 +137,11 @@
 
 				// click to go to play
 				$(options.play).click(function() {
-					start();
-					return false;	
+					//start();
+					//return false;	
 				});
 
-				var getpagenumber = function () {
-					return pagenumber;
-				}
+				
 
 
 			});

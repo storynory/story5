@@ -38,11 +38,19 @@ body {
 
 
 .space {
-	margin-bottom: @line / 2; 
+	overflow: hidden;
+	margin-bottom: (@line / 2) -1; 
+	border-bottom: 1px solid transparent;
 }
 
 .space--top {
 	margin-top: @line / 2;
+
+}
+
+.space--border {
+	border-color: gray;
+	padding-bottom: (@line / 2);
 }
 
 
@@ -135,35 +143,11 @@ body {
 	display: none;
 }
 
-@media screen and (min-width: @vanish) {
-
-	.vanish--r {
-		display: none;
-	}
-}
-
-.vanish--bertie {
-	@media only screen and (max-width : 710px) {
-		display: none;
-	}
 
 
-}
 
-.vanish--tab {
 
-	@media only screen and (max-width : 980px) {
-		display: none;
-	}
 
-}
-
-.vanish--small-tab {
-
-@media only screen and (max-width : 870px) {
-		display: none;
-	}
-}
 
 
 
@@ -345,27 +329,25 @@ h1,h2,h3,
 
 .fancy {
 	font-family: 'fontesquesanscompregular';
-	letter-spacing: 3px;
+	
 }
 
+
+h1,h2,h3  {
+	letter-spacing: 3px;
+}
 
 h1.site-title {	
 	margin: 0;
 	padding: 0;	
 	line-height: 1;	
 	float: right;
-	font-size: 54px;
 	  text-shadow: 
 	      -1px -1px 0 @blue,
     1px -1px 0 @blue,
     -1px 1px 0 @blue,
     1px 1px 0 @blue;  
-    -webkit-font-smoothing: antialiased;
-
-    @media only screen and (min-width: 750px) {
-    	font-size: 80px;
-    }
-   
+    -webkit-font-smoothing: antialiased; 
 }
 
 
@@ -378,8 +360,14 @@ h1.site-title {
 	}
 
 
+h2 {
+	line-height: 40px;
+	padding-bottom: @line / 2;
+}
 
-
+h2 a {
+	text-decoration: none;
+}
 
 blockquote {
 .kiss-obj-type-blockquote();
@@ -570,68 +558,94 @@ h3.menu-title {
 	line-height: 48px;
 }
 
+/* 
+   Responsive sizes in header
+   ========================================================================== */
+
+h1.site-title {
+	font-size: 40px;
+	padding-bottom: @line ;
+}
+
+
+
 .strap {
-	position: relative;
+	position: absolute;
 	font-size: 16px;
 	line-height: 1;
 	color: @red;
-	left: @base;
+	left: 95px;
+	top: 44px;
 	overflow: hidden;
+	letter-spacing: 0.5px;
+	
+	
+}	
 
-@media only screen and (max-width: 400px ) {
-	display: block;
-	width: 100%;
-	position: absolute;
-	top: -8px;
-	left: 128px;
-	font-size: 14px;
-
+.nav--header .sticker {
+	height: 65px;
 
 }
 
 
-	@media only screen and  (min-width: 400px) and (max-width: 800px ){
-		display: block;
-	
-		width: 150px;
-		font-size: 24px;
-		line-height: 1;
-		width: 200px;
-		margin-right: @line;
-		margin-top: @line / 2;		
-
-	}
-
-	
-
-@media only screen and (max-width: 750px ){
-		margin-top: @base;
-	}
-
-
-@media only screen and (min-width: 800px) {
-	
-	font-size: 24px;
-			float: left;
-			top: 24px
-
-	}
-
-	
-			
+.fader {
+	margin-right: @base / 2 ;
 }
 
-.bertie {
+@media only screen and (max-width: 400px) {
+.fader
+		 {
+			display: none;
+		}
+
+
+}	
+
+		
+	@media only screen and (max-width: 500px) {
+		.beatrice
+		 {
+			display: none;
+		}
+}
+	
+@media only screen and (min-width: 620px) {
+		
+.nav--header .sticker {
 	height: 100px;
-	margin-left: @line / 4;
-@media only screen and (max-width: 750px) {
+}
 
-	height: 60px;
+h1.site-title {
+	font-size: 56px;
+}
+
+.strap {
+	left: 146px;
+	top: 60px;
+	font-size: 22px;
 }
 
 }
 
+@media only screen and (min-width: 700px) {
+		
 
+
+h1.site-title {
+	font-size: 80px;
+}
+
+.strap {
+	left: 146px;
+	top: 80px;
+	font-size: 34px;
+
+}
+
+
+
+
+}
 
 
 
@@ -644,8 +658,8 @@ ul.border {
 .kiss-obj-lists-stacked (
 				 @border-top: 0px,
 				 @border-bottom: 1px,
-				 @padding-top: 8px, 
-				 @padding-bottom:8px 
+				 @padding-top: @base * 2, 
+				 @padding-bottom: @base * 2 
 				);
 
 	position: relative;
@@ -732,11 +746,15 @@ nav,.nav {
 }
 
 .nav--header {
- 	padding-top: @line / 2;
+ 	padding: ( @line / 2 ) 0;
    position: relative;
    background: @gold;
    border-radius: 4px;
    margin-bottom: @base;
+
+   @media only screen  and (min-width: 700px) {
+   	padding: ( @base * 3 ) 0;
+   }
 
 
 }
@@ -947,6 +965,7 @@ nav {
 	float: left;
 }
 
+.bones_page_navi,
 .nav--group {
 	.kiss-obj-lists-ul-group (@color: gray, @radius: 5px);
 
@@ -960,14 +979,34 @@ nav {
 	padding: ( @base * 2 ) - 1px;
 }
 
+
 .nav--group--bar > li a{
 
 	padding: ( ( @base / 2 ) - 1px )( @line * 2 );
 }
 
+
 .nav--group--pages > li a {
 	padding: ( @base - 1px )( @base * 2  );
 }
+
+.bones_page_navi > li a {
+	padding: ( @base - 1px )( @base * 4  );
+
+
+}
+
+.bpn-current a {
+	color: @gold;
+}
+
+.page-navigation {
+	margin-bottom: @line;
+   margin-left: @line;
+	margin-right: auto;
+
+}
+
 
 .nav--group--bar > li a {
 
@@ -996,6 +1035,10 @@ nav {
 pre 
 {
 .kiss-obj-mods-box (@space: @base * 3, @border: 1px);
+}
+
+.note-tiny {
+	.kiss-obj-mods-box (@space: @base * 2, @border: 1px);
 }
 
 
@@ -1105,18 +1148,31 @@ pre {
 
 
 .media {
+
+
 	.kiss-obj-media-mediaobj (@space: @line);
+
 }
 
-.media--portrait img,
+.media--r {
+
+@media only screen and (min-width: 570px) {	
+	.kiss-obj-media-mediaobj (@space: @line);
+}
+}
+
+
+.media--port img,
 .media--landscape img {
 	margin-right: @line;
 	margin-bottom: @line;
 }
 
 
-@media only screen and (min-width: 630px) {
-	.media--portrait {
+
+
+@media only screen and (min-width: 850px) {
+	.media--port {
 		.kiss-obj-media-mediaobj (@space: @line);
 
 	}
@@ -1314,10 +1370,17 @@ textarea.comment {
 	height: 100px;
 }
 
+img {
+	 max-width:100% !important;
+    height:auto;
+    display:block;
+}
+
 
 .img--left  {
 	float: left;
 	padding-right: @line;
+	padding-bottom: @base;
 }
 
 
