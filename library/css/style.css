@@ -1102,7 +1102,7 @@ a.fairytales .icon {
 }
 .fairytales span:hover,
 a.fairytales .icon:hover {
-  color: pink;
+  color: white;
 }
 .classic span,
 a.classic .icon {
@@ -1110,7 +1110,7 @@ a.classic .icon {
 }
 .classic span:hover,
 a.classic .icon:hover {
-  color: pink;
+  color: white;
 }
 .edu span,
 a.edu .icon {
@@ -1118,7 +1118,7 @@ a.edu .icon {
 }
 .edu span:hover,
 a.edu .icon:hover {
-  color: pink;
+  color: white;
 }
 .myths span,
 a.myths .icon {
@@ -1126,7 +1126,7 @@ a.myths .icon {
 }
 .myths span:hover,
 a.myths .icon:hover {
-  color: pink;
+  color: white;
 }
 .music span,
 a.music .icon {
@@ -1134,7 +1134,7 @@ a.music .icon {
 }
 .music span:hover,
 a.music .icon:hover {
-  color: pink;
+  color: white;
 }
 .junior span,
 a.junior .icon {
@@ -1142,7 +1142,7 @@ a.junior .icon {
 }
 .junior span:hover,
 a.junior .icon:hover {
-  color: pink;
+  color: white;
 }
 body {
   position: relative;
