@@ -56,6 +56,7 @@ var stickers = [
   "/wp-content/themes/story5/library/img/frog-teacher.svg",
   "/wp-content/themes/story5/library/img/tadpole.svg",
   "/wp-content/themes/story5/library/img/sadie.svg",
+  "/wp-content/themes/story5/library/img/bertie-young-man-b.png",
   "/wp-content/themes/story5/library/img/boris-human.svg",
   "/wp-content/themes/story5/library/img/boris-frog.svg",
   "/wp-content/themes/story5/library/img/duck.svg",

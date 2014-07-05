@@ -24,7 +24,7 @@
 					</li>
 					<li class="face right"><img height="100" class="sticker beatrice" src ="/wp-content/themes/story5/library/img/beatrice.svg" /></li>
 
-					<li  class=" face right fader "><div><img id="sticker01" class="sticker sticker--rotate" height="100"  src="/wp-content/uploads/2014/06/bertie-young-man.png" /></div></li>
+					<li  class=" face right fader "><div><img id="sticker01" class="sticker sticker--rotate" height="100"  src="/wp-content/themes/story5/library/img/bertie-young-man-b.png" /></div></li>
 
 				
 					
