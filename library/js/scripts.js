@@ -88,10 +88,11 @@ var fadeStickers = function (img) {
  
 };
 
-var run  = setInterval(function() {
+
+var run  = setTimeout(function() {
 fadeStickers (stickers[count]);
   counter();
-
+  run();
 },6000);
 
 run ();
