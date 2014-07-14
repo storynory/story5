@@ -101,6 +101,7 @@ body {
 	.kiss-obj-grids-float-system ();
 }
 
+
 .grid__item {
 	float: left;
 	width: 100%;
@@ -108,11 +109,10 @@ body {
 
 .kiss-obj-grids-fractions ();
 
-
+.gallery-item,
 .inline__item {
 	 display:inline-block;
-	 vertical-align: top;
-	 
+	 vertical-align: top;	 
 }
 
 .first {
@@ -566,19 +566,16 @@ h3.menu-title {
 
 h1.site-title {
 	font-size: 40px;
-	padding-bottom: @line ;
+	padding-bottom: @base; ;
+	line-height: 1;
 }
 
 
 
 .strap {
-	position: absolute;
-	font-size: 16px;
+
 	line-height: 1;
 	color: @red;
-	left: 95px;
-	top: 44px;
-	overflow: hidden;
 	letter-spacing: 0.5px;
 	
 	
@@ -631,7 +628,6 @@ h1.site-title {
 
 @media only screen and (min-width: 700px) {
 		
-
 
 h1.site-title {
 	font-size: 80px;
@@ -1063,10 +1059,15 @@ nav {
 	color: @gold;
 }
 
+
+//centered list
 .page-navigation {
+	display: table;
+	margin: auto;
 	margin-bottom: @line;
-   margin-left: @line;
-	margin-right: auto;
+	> ul li {
+		display: inline;
+	}
 
 }
 
@@ -1445,6 +1446,5 @@ img {
 	padding-right: @line;
 	padding-bottom: @base;
 }
-
 
 

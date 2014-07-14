@@ -1,25 +1,10 @@
-<?php
+<?php 
 
-add_shortcode('carousel', 'custom_gallery');
+//http://wordpress.stackexchange.com/questions/4343/how-to-customise-the-output-of-the-wp-image-gallery-shortcode-from-a-plugin
+add_filter( 'post_gallery', 'my_post_gallery', 10, 2 );
 
-function gallery_js() { ?>
-<script>
-    yepnope([{
-  test : /* boolean(ish) - Something truthy that you want to test             */,
-  yep  : /* array (of strings) | string - The things to load if test is true  */,
-  nope : /* array (of strings) | string - The things to load if test is false */,
-  both : /* array (of strings) | string - Load everytime (sugar)              */,
-  load : /* array (of strings) | string - Load everytime (sugar)              */,
-  callback : /* function ( testResult, key ) | object { key : fn }            */,
-  complete : /* function                                                      */
-}, ... ]);
-</script>
-
-
-<?php }
-
-function custom_gallery($attr,$content,$tag) {
-      global $post, $wp_locale;
+function my_post_gallery( $output, $attr) {
+    global $post, $wp_locale;
 
     static $instance = 0;
     $instance++;
@@ -30,26 +15,6 @@ function custom_gallery($attr,$content,$tag) {
         if ( !$attr['orderby'] )
             unset( $attr['orderby'] );
     }
-
-    // add yeahnope to footer
-    if ($tag == "carousel") {
-
-    add_action ('wp_footer','gallery_js');
-
-        }
-
-   # hard-coding these values so that they can't be broken  - seem to need this to make it work
-    
-    $attr['columns'] = 1;
-    $attr['size'] = 'full';
-    $attr['link'] = 'none';
-
-    $attr['orderby'] = 'post__in';
-    $attr['include'] = $attr['ids'];        
-
-    #Allow plugins/themes to override the default gallery template.
-    $output = apply_filters('post_gallery', '', $attr);     
-
 
     extract(shortcode_atts(array(
         'order'      => 'ASC',
@@ -94,29 +59,39 @@ function custom_gallery($attr,$content,$tag) {
     }
 
     
-  
-    $output .= '<ul class="media">';
-  
-    
+    $output .=  '<div class="carousel-wrap logo-wrap">';
+    $output .= '<div id="logos" class="carousel">';
+    $output .= '<ul class="slides logos carousel__slides carousel-horizontal"><li>';
+    $count = 0;
+    $length =  count($attachments);
     foreach ( $attachments as $id => $attachment ) {
 
-     $caption =    get_post_field('post_excerpt', $id);
-
-        $output .= '<li></figure>';
+                    $count ++;
+                   $check = ($count - 0 ) / 3;
                     //if (is_int($check)){ } // if check is an integer
-        $large_image = wp_get_attachment_image_src($id,'large',false);
+    	$large_image = wp_get_attachment_image_src($id,'large',false);
        
-        $output .= '<img src ="' . $large_image[0] .  '" />';
-
-     $output .="<figcaption>". $caption . "</figcaption>" ;  
-     $output .= '</figure></li>';
+    	$output .= '<img src ="' . $large_image[0] .  '" class="blank" />';
+       // $output .= " check ";
+          if (is_int($check) && $count != $length ){  // if check is an integer
+    	$output .='</li><li>';
+             // $output .= " checked ";
+    }
    
     }
    
-   $output .= '</ul>';
- 
- 
+   $output .= '</li></ul>';
+   $output .= '</div>';
+ // $output .='<div class="page-control page-control-logos">';
+  // 	$output .='<a href="#" class="prev">&#xe002;</a>';
+   //$output .='<a href="#" class="next">&#xe001;</a>';
+   //$output .= '</div>';
+   $output .= '</div>';
 
-    
+	
     return $output;
-}?>
+  
+}
+
+
+?>

@@ -51,7 +51,7 @@ require_once('library/custom-post-type.php'); // you can disable this if you lik
 //* Basic SEO
 
 //	require_once('library/seo.php'); // you can disable this if you like
-	require_once('library/gallery.php'); // you can disable this if you like
+	require_once('library/gallery-tad.php'); // you can disable this if you like
 
 
 add_theme_support( 'post-thumbnails' );
@@ -224,93 +224,11 @@ function bones_comments($comment, $args, $depth) {
  
    add_action('wp_print_styles', 'load_fonts');
 
-function image_carousel() {
-
-global $post;
-
-
-	$args = array(
-		'post_type' => 'attachment',
-		'numberposts' => -1,
-		'post_status' => null,
-		'post_parent' => $post->ID,
-		'order'      => 'ASC',
-		'orderby'    => 'menu_order ID'
-		
-	);
- 
-	$attachments = get_posts( $args );
- 
-	if ( $attachments ) {
-		$gallery .= '<div class="carousel_wrap">';
-		$gallery .= '<div class="carousel flexslider" id="carousel">';
-		$gallery .= '<ul  class="slides">';
-			
-			foreach ( $attachments as $attachment ) {
-				$large_image = wp_get_attachment_image_src($attachment->ID,'large',false);
-				$gallery .= '<li><img src="' . $large_image[0] . '" /></li>';
-			}
-		
-		$gallery .='</ul>';
-		$gallery .='</div>';
-	
-			
-				foreach ( $attachments as $attachment ) {
-					$title =  $attachment->post_excerpt;
-					$gallery .= '<div class="layer">';
-					$gallery .= $title;
-					$gallery .= '</div>';
-				}
-	
-		
-		//$gallery .='<div class="page-control page-control-slides">';
-		//	$gallery .='<a href="#" class="prev">&#xe002;</a>';
-		//	$gallery .='<a href="#" class="next">&#xe001;</a>';
-		//$gallery .='</div>';
-		
-		$gallery .="</div>";
-	/****************************/	
-		//$gallery .= " <script> ";
-	
-		/****************************
-
-	 $gallery .= '
-
-		 var slides = [
-
-"http://www.decisionsforgrowth.com/wp/wp-content/uploads/2013/07/kingfisher.jpg", 
-"http://www.decisionsforgrowth.com/wp/wp-content/uploads/2013/07/apples-full-color.jpg", 
-"http://www.decisionsforgrowth.com/wp/wp-content/uploads/2013/07/eagle.jpg",
- "http://www.decisionsforgrowth.com/wp/wp-content/uploads/2013/07/flower-bee-complete.jpg", 
- "http://www.decisionsforgrowth.com/wp/wp-content/uploads/2013/07/cheetah.jpg"
-]';
 
 
 
 
-		$gallery .= "var slides = [";
 
-
-				foreach ( $attachments as $attachment ) {
-					$large_image = wp_get_attachment_image_src($attachment->ID,'large',false);
-					$gallery .= " ". $large_image[0]. " ,";
-	
-				}
-
-		$gallery .= " ] ";
-		 *********************************/
-	//	$gallery .= " </script> ";
-
-
-		return $gallery;
-	}
-
-}
-
-
-
-
-add_shortcode( 'carousel', 'image_carousel' );
 
 
 /************* BreadCrumb *********************/

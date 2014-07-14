@@ -438,6 +438,7 @@ body {
 .one-twelth {
   width: 8.33333333%;
 }
+.gallery-item,
 .inline__item {
   display: inline-block;
   vertical-align: top;
@@ -823,16 +824,12 @@ h3.menu-title {
    ========================================================================== */
 h1.site-title {
   font-size: 40px;
-  padding-bottom: 32px;
+  padding-bottom: 8px;
+  line-height: 1;
 }
 .strap {
-  position: absolute;
-  font-size: 16px;
   line-height: 1;
   color: #e55d3a;
-  left: 95px;
-  top: 44px;
-  overflow: hidden;
   letter-spacing: 0.5px;
 }
 .nav--header .sticker {
@@ -1221,9 +1218,12 @@ nav {
   color: #efd480;
 }
 .page-navigation {
+  display: table;
+  margin: auto;
   margin-bottom: 32px;
-  margin-left: 32px;
-  margin-right: auto;
+}
+.page-navigation > ul li {
+  display: inline;
 }
 /* ==========================================================================
    Mods

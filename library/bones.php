@@ -29,9 +29,7 @@ function bones_ahoy() {
     add_filter( 'wp_head', 'bones_remove_wp_widget_recent_comments_style', 1 );
     // clean up comment styles in the head
     add_action('wp_head', 'bones_remove_recent_comments_style', 1);
-    // clean up gallery output in wp
-    add_filter('gallery_style', 'bones_gallery_style');
-
+    
     // enqueue base scripts and styles
     add_action('wp_enqueue_scripts', 'bones_scripts_and_styles', 999);
     // ie conditional wrapper
@@ -110,10 +108,8 @@ function bones_remove_recent_comments_style() {
   }
 }
 
-// remove injected CSS from gallery
-function bones_gallery_style($css) {
-  return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
-}
+// remove injected CSS from gallery  - hugh's version
+add_filter( 'use_default_gallery_style', '__return_false' );
 
 
 /*********************
@@ -318,6 +314,8 @@ function bones_related_posts() {
 PAGE NAVI
 *********************/
 
+//page navi has been hacked by hugh to fit kiss css
+
 // Numeric Page Navi (built into the theme by default)
 function bones_page_navi($before = '', $after = '') {
 	global $wpdb, $wp_query;
@@ -354,12 +352,19 @@ function bones_page_navi($before = '', $after = '') {
 		$first_page_text = __( "First", 'bonestheme' );
 		echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
 	}
+
+	if ($paged > 1) {
 	echo '<li class="bpn-prev-link">';
 	previous_posts_link('<<');
 	echo '</li>';
+	}
+
 	for($i = $start_page; $i  <= $end_page; $i++) {
+
+
+
 		if($i == $paged) {
-			echo '<li class="bpn-current"><a href="">'.$i.'</a></li>';
+			echo '<li class="bpn-current"><a class="current" href="#">'.$i.'</a></li>';
 		} else {
 			echo '<li><a href="'.get_pagenum_link($i).'">'.$i.'</a></li>';
 		}
