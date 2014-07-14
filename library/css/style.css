@@ -854,6 +854,7 @@ h1.site-title {
 @media only screen and (min-width: 620px) {
   .nav--header .sticker {
     height: 100px;
+    width: 100px;
   }
   h1.site-title {
     font-size: 56px;
