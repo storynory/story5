@@ -37,6 +37,13 @@
 
 			<!-- drop Google Analytics Here -->
 			<!-- end analytics -->
+<!--[if lt IE 9]>
+
+<script src="/wp-content/themes/story5/library/js/respond.js" />
+
+
+<![endif]-->
+
 
 		</head>
 
