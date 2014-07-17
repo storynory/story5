@@ -56,46 +56,23 @@ var stickers = [
   "/wp-content/themes/story5/library/img/frog-teacher.svg",
   "/wp-content/themes/story5/library/img/tadpole.svg",
   "/wp-content/themes/story5/library/img/sadie.svg",
-  "/wp-content/themes/story5/library/img/bertie-young-man-b.png",
   "/wp-content/themes/story5/library/img/boris-human.svg",
   "/wp-content/themes/story5/library/img/boris-frog.svg",
   "/wp-content/themes/story5/library/img/duck.svg",
   "/wp-content/themes/story5/library/img/freddie.svg",
-  "/wp-content/themes/story5/library/img/studious-tadpole.svg"
+  "/wp-content/themes/story5/library/img/studious-tadpole.svg",
+  "/wp-content/themes/story5/library/img/bertie-young-man-b.png"
 
 ];
 
-var count = 0;
 
-var length = stickers.length;
+jQuery(".visible").CaptainFade 
+({
+  images: stickers // REQUIRED an array of images for the slideshow
 
-var counter = function () {
-
- count = count + 1;
-  if (length === count) {
-      count = 0;
-    } 
-
-   return count; 
-};
-
-var fadeStickers = function (img) {
-    
-        jQuery("#sticker01").fadeOut(2000, function() {
-        jQuery("#sticker01").attr("src",img).fadeIn(1000);
-     
-      });
  
-};
+});
 
-
-var run  = setTimeout(function() {
-fadeStickers (stickers[count]);
-  counter();
-  run();
-},6000);
-
-run ();
 
 jQuery('.bpn-current a').on("click", function() {
   return false;

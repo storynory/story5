@@ -38,7 +38,8 @@
 				var goTo = function (page) {
 					options.before(); // first callback
 					$(visible).fadeOut(options.fadeOutspeed, function() {
-						visible.src = options.images[page];
+						$(visible).attr("src", options.images[page]);
+
 						options.middle(); // second callback	
 						$(visible).fadeIn(options.fadeInspeed, function() {
 							options.after(); // last callback
@@ -56,9 +57,12 @@
 
 					counter = counter + 1;
 
+
 					if (counter === length) {	
 						counter = 0;
-					}     	
+					}   
+
+
 					goTo(counter);
 
 				};
@@ -149,6 +153,7 @@
 
 });
 })({
+	visible: " .visible", // REQUIRED a starting image whose src we will fade in and out - should also match first src in array of images
 	images: "an array of images please",  // REQUIRED an array of images for the slideshow
 	prev : ".prev",
 	next : ".next",
