@@ -384,11 +384,11 @@ function thumb () {
 	
 	 		if($thumb !== '') { ?>
 	 	
-				<a class="img" href="<?php the_permalink() ?>"><img  src="/wp-content/themes/story5/library/img/bertie.svg" alt="<?php echo the_title(); ?>" width="100" height="100" /></a>
+				<a class="img" href="<?php the_permalink() ?>"><img  src="<?php echo $thumb; ?>" alt="<?php echo the_title(); ?>" width="100" height="100" /></a>
 	
 			<?php } 
 			
-			else { echo 'class="thumb" <img src="http://storynory.com/wp-content/themes/storynory/img/bertie100.png" alt="bertie"/>'; 
+			else { echo '<img src="/wp-content/themes/story5/library/img/bertie.svg" />'; 
 			}
 }
 
