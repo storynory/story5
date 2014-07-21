@@ -1,4 +1,12 @@
-  h3.menu-title {
-      font-size: 18px;
-      line-height: 24px;
-    }
+.wrap {
+  zoom: 1;
+  clear: left;
+  margin: auto;
+}
+body {
+  position: relative;
+}
+.grid,
+.grid__item {
+  zoom: 1;
+}

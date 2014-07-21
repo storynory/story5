@@ -53,6 +53,49 @@ require_once('library/custom-post-type.php'); // you can disable this if you lik
 //	require_once('library/seo.php'); // you can disable this if you like
 	require_once('library/gallery-tad.php'); // you can disable this if you like
 
+//Title in header format
+
+
+
+
+
+/**
+ * Filters wp_title to print a neat <title> tag based on what is being viewed.
+ *
+ * @param string $title Default title text for current view.
+ * @param string $sep Optional separator.
+ * @return string The filtered title.
+ */
+function theme_name_wp_title( $title, $sep ) {
+	if ( is_feed() ) {
+		return $title;
+	}
+
+	
+	global $page, $paged;
+
+	// Add the blog name
+	$title .= get_bloginfo( 'name', 'display' );
+
+
+	
+
+	// Add the blog description for the home/front page.
+	//$site_description = get_bloginfo( 'description', 'display' );
+	//if ( $site_description && ( is_home() || is_front_page() ) ) {
+	//	$title .= " $sep $site_description";
+	//}
+
+	// Add a page number if necessary:
+	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+		$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+	}
+
+	return $title;
+}
+add_filter( 'wp_title', 'theme_name_wp_title', 10, 2 );
+
+
 
 add_theme_support( 'post-thumbnails' );
 	
@@ -340,12 +383,17 @@ function thumb () {
 	
 	
 	 		if($thumb !== '') { ?>
-				<a href="<?php the_permalink() ?>"><img class="thumb" src="<?php echo $thumb; ?>" alt="<?php echo the_title(); ?>" width="100" height="100" /></a>
+	 	
+				<a class="img" href="<?php the_permalink() ?>"><img  src="<?php echo $thumb; ?>" alt="<?php echo the_title(); ?>" width="100" height="100" /></a>
+	
 			<?php } 
 			
 			else { echo 'class="thumb" <img src="http://storynory.com/wp-content/themes/storynory/img/bertie100.png" alt="bertie"/>'; 
 			}
 }
+
+
+
 
 
 	?>

@@ -6,6 +6,10 @@
   jQuery(function() {
   //  FastClick.attach(document.body);
 
+jQuery('false').on("click", function() {
+  return false;
+
+});
 
 
  
@@ -37,6 +41,8 @@ else {
         jQuery('.drop ul').removeClass("open");
         jQuery("ul", this).addClass("open");
       }   
+
+return false;
 
   });
 

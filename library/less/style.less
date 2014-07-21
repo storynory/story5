@@ -1,4 +1,5 @@
-
+@import 'kiss/normalize.less';
+@import 'kiss/obj/reset.less';
 @import 'kiss/obj/reset.less';
 @import 'kiss/obj/grids.less';
 @import 'kiss/obj/typography.less';
@@ -34,6 +35,7 @@ body {
 	z-index: 20;
 	padding-top: @line / 2;
 	padding-left: @line / 2;
+	zoom: 1;
  }
 
 
@@ -325,7 +327,7 @@ font-family: "Sanchez, serif";
 
 }
 
-h1,h2,h3,
+h1,h2,h3, h4,
 
 .fancy {
 	font-family: 'fontesquesanscompregular';
@@ -333,8 +335,18 @@ h1,h2,h3,
 }
 
 
-h1,h2,h3  {
+h1,h2,h3, h4  {
 	letter-spacing: 3px;
+}
+
+h4 a {
+	text-decoration: none;
+}
+
+h4 {
+	font-size: @base * 3;
+	line-height: @base * 4;
+	padding-bottom: @base * 2;
 }
 
 ul.site-title {
@@ -1121,9 +1133,7 @@ pre
 	margin-top: 0;
 }
 
-.notify {
-	
-}
+
 
 
 

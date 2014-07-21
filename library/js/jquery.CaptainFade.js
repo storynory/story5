@@ -52,7 +52,6 @@
 					options.pagenumber = page;
 				};
 
-
 				var loop = function () {
 
 					counter = counter + 1;
@@ -69,22 +68,21 @@
 
 				setTimeout(function () {
 
-					
-					var start = function() {
-						play = setInterval(function()
-						{ 
+						var start = function() {
+							play = setInterval(function()
+							{ 
 
-							loop ();
+								loop ();
 
 
-						},8000);
-					};
+							},8000);
+						};
 
-					if (options.loop === true) {
-						start();
-					}
+						if (options.loop === true) {
+							start();
+						}
 
-				}, 200);	
+					}, 200);	
 
 				var pause = function () {
 					clearInterval(play); 
