@@ -673,9 +673,6 @@ h1.site-title {
 
 }
 
-
-
-
 }
 
 
@@ -842,7 +839,7 @@ nav,.nav {
 
 	}
 
-	@media only screen and (max-width: 870px) {
+	@media only screen and (max-width: 1100px) {
 		.menu-title .icon {
 			width: 100%;
 		}
@@ -1149,12 +1146,6 @@ pre
 	margin-top: 0;
 }
 
-.add:before  {
-	content : "Advertisement";
-	color: gray;
-	font-size: 12px;
-	line-height: @base * 2;
-}
 
 
 
@@ -1325,6 +1316,7 @@ label,
 textarea,
 input {
 	font-size: 1em;
+	line-height: (@base * 4) -2px;
 }
 
 
@@ -1375,8 +1367,12 @@ btn.default.submit {
 	margin-bottom: @line / 2;
 	border-color: @green;
 	border-radius: 4px;
+	height: @base * 4;
 }
 
+#cse-search-box {
+	height: @base * 4;
+}
 
 
 label {
@@ -1422,6 +1418,17 @@ textarea.comment {
 	border: 1px solid gray;
 }
 
+
+#cse-search-box input[type=submit] {
+	background: @green;
+	height: @base * 4;
+	padding-left: @base;
+	padding-right: @base;
+	border-color: @green;
+	 font-family: 'fontesquesanscompregular';
+
+
+}
 
 /* ==========================================================================
    gradients

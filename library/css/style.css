@@ -1368,7 +1368,7 @@ nav .nav__heading,
 .menu--group .icon {
   color: #efd480;
 }
-@media only screen and (max-width: 870px) {
+@media only screen and (max-width: 1100px) {
   .menu--group .menu-title .icon {
     width: 100%;
   }
@@ -1631,12 +1631,6 @@ pre p:last-of-type {
   border-color: #69a366;
   border-radius: 0.3em;
   margin-top: 0;
-}
-.add:before {
-  content: "Advertisement";
-  color: gray;
-  font-size: 12px;
-  line-height: 16px;
 }
 .mod header,
 .mod footer,
@@ -1902,6 +1896,7 @@ label,
 textarea,
 input {
   font-size: 1em;
+  line-height: 32px -2px;
 }
 .btn {
   /* Structure */
@@ -1960,6 +1955,10 @@ btn.default.submit {
   margin-bottom: 16px;
   border-color: #69a366;
   border-radius: 4px;
+  height: 32px;
+}
+#cse-search-box {
+  height: 32px;
 }
 label {
   font-weight: 400;
@@ -2047,6 +2046,14 @@ textarea.comment {
 }
 .input-group.default button {
   border: 1px solid gray;
+}
+#cse-search-box input[type=submit] {
+  background: #69a366;
+  height: 32px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-color: #69a366;
+  font-family: 'fontesquesanscompregular';
 }
 /* ==========================================================================
    gradients
