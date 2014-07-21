@@ -42,7 +42,7 @@ else {
         jQuery("ul", this).addClass("open");
       }   
 
-return false;
+
 
   });
 
