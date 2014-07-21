@@ -140,7 +140,9 @@ foreach($lastposts as $post) :
 			<h4> <a href="<?php the_permalink() ?>"><?php the_title(); ?> </a></h4>
 			<?php thumb (); ?>
 			<figcaption>
-				<?php the_excerpt (); ?>
+				<a class="a-trans" href="<?php the_permalink() ?>">
+				<?php the_excerpt (); ?></a>
+
 			</figcaption>
 		</figure>
 

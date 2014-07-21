@@ -974,9 +974,6 @@ h3,
 h4 {
   letter-spacing: 3px;
 }
-h4 a {
-  text-decoration: none;
-}
 h4 {
   font-size: 24px;
   line-height: 32px;
@@ -1000,9 +997,6 @@ h2 {
   line-height: 40px;
   padding-bottom: 16px;
 }
-h2 a {
-  text-decoration: none;
-}
 blockquote {
   position: relative;
 }
@@ -1024,6 +1018,22 @@ blockquote p:after {
 blockquote p:last-of-type:after {
   content: "\201D";
   content: close-quote;
+}
+/* 
+   Links
+   ========================================================================== */
+h2 a,
+h4 a {
+  text-decoration: none;
+}
+a:hover {
+  color: #5a6886;
+  text-decoration: underline;
+}
+.a-trans,
+.a-trans:hover {
+  color: #222;
+  text-decoration: none;
 }
 /* ==========================================================================
    fonts and icons
@@ -1621,6 +1631,12 @@ pre p:last-of-type {
   border-color: #69a366;
   border-radius: 0.3em;
   margin-top: 0;
+}
+.add:before {
+  content: "Advertisement";
+  color: gray;
+  font-size: 12px;
+  line-height: 16px;
 }
 .mod header,
 .mod footer,

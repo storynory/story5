@@ -339,9 +339,6 @@ h1,h2,h3, h4  {
 	letter-spacing: 3px;
 }
 
-h4 a {
-	text-decoration: none;
-}
 
 h4 {
 	font-size: @base * 3;
@@ -381,12 +378,31 @@ h2 {
 	padding-bottom: @line / 2;
 }
 
-h2 a {
-	text-decoration: none;
-}
+
 
 blockquote {
 .kiss-obj-type-blockquote();
+}
+
+
+/* 
+   Links
+   ========================================================================== */
+
+h2 a, h4 a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: @blue;
+	text-decoration: underline;
+
+}
+
+.a-trans, .a-trans:hover {
+	color: #222;
+	text-decoration: none;
+
 }
 
 
@@ -1133,7 +1149,12 @@ pre
 	margin-top: 0;
 }
 
-
+.add:before  {
+	content : "Advertisement";
+	color: gray;
+	font-size: 12px;
+	line-height: @base * 2;
+}
 
 
 
