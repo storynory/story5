@@ -379,7 +379,7 @@ function thumb () {
 	$thumb= str_replace("storynory.dev", "storynory.cachefly.net", $thumb);
 	$thumb= str_replace("static.storynory.com", "storynory.cachefly.net", $thumb);  
 	$thumb= str_replace("storynory.com", "storynory.cachefly.net", $thumb);
-	$thumb= str_replace("storynory.co.uk", "storynory.com", $thumb);
+	$thumb= str_replace("hughfraser.co.uk", "storynory.com", $thumb);
 	
 	
 	 		if($thumb !== '') { ?>
