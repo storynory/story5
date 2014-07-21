@@ -384,7 +384,7 @@ function thumb () {
 	
 	 		if($thumb !== '') { ?>
 	 	
-				<a class="img" href="<?php the_permalink() ?>"><img  src="<?php echo $thumb; ?>" alt="<?php echo the_title(); ?>" width="100" height="100" /></a>
+				<a class="img" href="<?php the_permalink() ?>"><img  src="/wp-content/themes/story5/library/img/bertie.svg" alt="<?php echo the_title(); ?>" width="100" height="100" /></a>
 	
 			<?php } 
 			
