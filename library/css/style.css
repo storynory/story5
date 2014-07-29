@@ -1407,7 +1407,7 @@ nav .nav__heading,
   font-size: 24px;
   line-height: 32px;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 710px) {
   .menu--group .icon-right,
   .menu--group .carot,
   .menu--group .title {
