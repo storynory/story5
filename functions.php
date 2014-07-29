@@ -263,11 +263,11 @@ function bones_comments($comment, $args, $depth) {
 				?>
 		
 				<?php if ( $bgauthemail == "bertie@storynory.com") { ?>
-				<img class="left" src="http://storynory.dev/wp-content/themes/story5/library/img/bertie.svg" width=100 height=100 />
+				<img class="left" src="/wp-content/themes/story5/library/img/bertie.svg" width=100 height=100 />
 				<?php } 
 				else if ( $bgauthemail == "natasha@storynory.com"){
 				?>	
-				<img class="left" src="http://hughs-macbook-pro-2.local:5757/wp-content/themes/story5/library/img/beatrice.svg" width=100 height=100 />
+				<img class="left" src="/wp-content/themes/story5/library/img/beatrice.svg" width=100 height=100 />
 			<?php }
 				else  { ?>
 

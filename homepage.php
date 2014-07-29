@@ -119,7 +119,7 @@ Template Name: homepage
 
 
 	<figure class="notice media gutter">
-		<img src="http://storynory.dev/wp-content/uploads/2014/06/beatrice-frog.png" alt="Beatrice Fog" width="100" height="100" class="alignnone size-full wp-image-12822" />
+		<img src="/wp-content/uploads/2014/06/beatrice-frog.png" alt="Beatrice Fog" width="100" height="100" class="alignnone size-full wp-image-12822" />
 		<figcaption>
 			Listen to 100s of free audio books for kids beautifully read.  Bertie has: 
 <ul class="list--inline">
