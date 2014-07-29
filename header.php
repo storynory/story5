@@ -156,7 +156,7 @@
         </li>
 
         <li>
-            <a href="/about-storynory/benefits-audio-books-children/"><span class=
+            <a href="/2014/07/28/benefits-audio-books-children/"><span class=
             "icon icon-headphones"></span><span class="fancy">Benefits of Audio
             Books For Children</span></a>
         </li>
@@ -188,13 +188,25 @@
 						</a>
 					</li>	
 
-					<li class="left">
-						<a href="/share/">
+					<li class="left drop">
+						<a class="drop__title false">
 							<h3 class="menu-title">
 								<span class="icon icon-share"></span>
 								<span class="title">Share</span>
 							</h3>
 						</a>
+						<ul class="bordered">
+							<li><a href="http://feedburner.google.com/fb/a/mailverify?uri=Storynory&loc=en_US"><span class=
+            "icon icon-mail-send"></span><span class="fancy">Stories by email</span></a></li>							
+							<li><a href="https://www.facebook.com/Storynory"><span class=
+            "icon icon-facebook"></span><span class="fancy">Facebook</span></a></li>
+							<li><a href="https://plus.google.com/117579767918946827158/posts"><span class=
+            "icon icon-googleplus"></span><span class="fancy">Google + </span></a></li>
+							<li><a href="https://twitter.com/storynory"><span class=
+            "icon icon-twitter"></span><span class="fancy">Twitter </span></a></li>
+            							<li><a href="https://twitter.com/storynory"><span class=
+            "icon icon-feed"></span><span class="fancy">RSS podcast feed </span></a></li>
+						</ul>	
 
 
 					</li>	
