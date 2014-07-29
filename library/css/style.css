@@ -779,6 +779,10 @@ body {
 .first {
   clear: left;
 }
+#main-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
 /* 
    Responsive Blocks
    ========================================================================== */
@@ -1171,6 +1175,37 @@ nav ul li {
 }
 .social .search {
   margin: 0;
+}
+.social-icons-horiz {
+  overflow: hidden;
+  padding: 0;
+  line-height: 48px;
+  font-size: 30px;
+  vertical-align: middle;
+}
+.social-icons-horiz .icon {
+  color: white;
+  width: 48px;
+  line-height: 48px;
+  margin-bottom: 16px;
+}
+.social-icons-horiz .icon-facebook {
+  background: #3D5A99;
+}
+.social-icons-horiz .icon-mail-send {
+  background: #69a366;
+}
+.social-icons-horiz .icon-twitter {
+  background: #55ACEE;
+}
+.social-icons-horiz .icon-googleplus {
+  background: #D34836;
+}
+.social-icons-horiz .icon-feed {
+  background: red;
+}
+.social-icons-horiz a {
+  padding-right: 24px;
 }
 .list-icons span {
   font-size: 1em;

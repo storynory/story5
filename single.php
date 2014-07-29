@@ -1,4 +1,6 @@
 <?php get_header(); // meta, html, body, opens .wrap ?>
+
+
 	<div class="grid">
 		
 		<div class="grid__item one-whole">

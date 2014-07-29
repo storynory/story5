@@ -204,7 +204,7 @@
             "icon icon-googleplus"></span><span class="fancy">Google + </span></a></li>
 							<li><a href="https://twitter.com/storynory"><span class=
             "icon icon-twitter"></span><span class="fancy">Twitter </span></a></li>
-            							<li><a href="https://twitter.com/storynory"><span class=
+            							<li><a href="http://feeds.feedburner.com/storynory"><span class=
             "icon icon-feed"></span><span class="fancy">RSS podcast feed </span></a></li>
 						</ul>	
 

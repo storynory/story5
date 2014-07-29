@@ -122,6 +122,12 @@ body {
 }
 
 
+#main-content {
+	max-width: 600px;
+	margin: 0 auto;
+
+}
+
 /* 
    Responsive Blocks
    ========================================================================== */
@@ -572,6 +578,51 @@ nav ul li {
 	padding: @base;
 	.search {
 		margin: 0;
+	}
+}
+
+
+
+.social-icons-horiz {
+	overflow: hidden;
+	padding: 0;
+	line-height: @base * 6;
+	font-size: 30px;
+	vertical-align: middle;
+	
+.icon {
+	color: white;
+	width: @base * 6;
+	line-height: @base * 6;
+	margin-bottom: @base * 2;
+}	
+.icon-facebook {
+	background: #3D5A99;
+
+}	
+
+.icon-mail-send {
+	background: @green;
+}
+
+.icon-twitter {
+	background:#55ACEE;
+}
+
+.icon-googleplus {
+	background: #D34836;
+}
+
+.icon-feed {
+	background: red;
+}
+
+	
+	a {
+		
+		padding-right:  ( @base * 3 );
+
+
 	}
 }
 
