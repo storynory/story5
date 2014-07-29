@@ -784,6 +784,45 @@ body {
   margin: 0 auto;
 }
 /* 
+   comments
+   ========================================================================== */
+.comment {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 8px;
+}
+.comment .icon-wink {
+  color: #e55d3a;
+}
+.comment .icon-happy {
+  color: #5a6886;
+}
+.comment .icon-happy2 {
+  color: #fa1414;
+}
+.comment .icon-cool {
+  color: #69a366;
+}
+.comment .icon-cool2 {
+  color: #eeaaee;
+}
+.comment-author-matthew {
+  background: #c7dcc6;
+}
+.comment .icon {
+  font-size: 50px;
+}
+.comment.odd {
+  border: 8px solid #f7ccc1;
+}
+.comment.even {
+  border: 8px solid #afb8ca;
+}
+.comment.comment-author-matthew {
+  background: #c7dcc6;
+}
+/* 
    Responsive Blocks
    ========================================================================== */
 @media only screen and (min-width: 940px) {
@@ -1047,6 +1086,8 @@ cite {
 }
 cite:before {
   content: "- ";
+  float: left;
+  padding-right: 4px;
 }
 /* 
    Links

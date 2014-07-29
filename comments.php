@@ -29,10 +29,12 @@ The comments page for Bones
 				<li><?php next_comments_link() ?></li>
 		</ul>
 	</nav>
-
+<nav>
 	<ul class="commentlist list-numbered">
 		<?php wp_list_comments('type=comment&callback=bones_comments'); ?>
 	</ul>
+</nav>
+
 
 	<nav id="comment-nav">
 		<ul class="clearfix">

@@ -196,6 +196,7 @@
 							</h3>
 						</a>
 						<ul class="bordered">
+							<li><a href="#"><span class="fancy">You must be 13 or over to use social media or email subscription</span></a></li>
 							<li><a href="http://feedburner.google.com/fb/a/mailverify?uri=Storynory&loc=en_US"><span class=
             "icon icon-mail-send"></span><span class="fancy">Stories by email</span></a></li>							
 							<li><a href="https://www.facebook.com/Storynory"><span class=

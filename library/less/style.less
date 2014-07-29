@@ -129,6 +129,63 @@ body {
 }
 
 /* 
+   comments
+   ========================================================================== */
+
+
+
+
+.comment {
+	margin-top: @base * 1;
+	margin-bottom: @base * 1;
+	padding: @base * 1 ;
+	border-radius: @base;
+
+}
+
+.comment .icon-wink {
+	color: @yellow;
+}
+
+.comment .icon-happy{
+	color: @blue;
+}
+
+.comment .icon-happy2{
+	color: rgb(250,20,20);
+}
+
+.comment .icon-cool{
+	color: @green;
+}
+
+.comment .icon-cool2{
+	color: @purple;
+}
+
+
+.comment-author-matthew {
+	background: lighten(@green, 30%);
+}
+
+.comment .icon {
+	font-size: 50px;
+}
+
+
+
+.comment.odd{
+	border : @base solid lighten(@yellow, 30%);;
+}
+
+.comment.even{
+	border: @base solid lighten(@blue, 30%);;
+}
+
+.comment.comment-author-matthew {
+	background: lighten(@green, 30%);
+}
+/* 
    Responsive Blocks
    ========================================================================== */
 @media only screen and (min-width : 940px) {
@@ -417,6 +474,8 @@ cite {
 	font-style: italic;
 	&:before {
 		content: "- ";
+		float: left;
+		padding-right: @base / 2;
 	}
 }
 
