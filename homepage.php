@@ -115,11 +115,25 @@ Template Name: homepage
 
 <div class="grid__item one-whole">
 
+
+
 	<figure class="notice media gutter">
 		<img src="http://storynory.dev/wp-content/uploads/2014/06/beatrice-frog.png" alt="Beatrice Fog" width="100" height="100" class="alignnone size-full wp-image-12822" />
 		<figcaption>
-			Listen to 100s of free audio books for kids beautifully read.  Bertie has original stories, classic audio books, poems, fairy tales, myths, legends and more.
+			Listen to 100s of free audio books for kids beautifully read.  Bertie has: 
+<ul class="list--inline">
+			<li><a href="/archives/">Original Stories</a></li>
+			<li><a href="/archives/classic-authors/">Classic Audio Books</a></li>
+			<li><a href="/archives/poems-music/">Poems and Music</a></li>
+			<li><a href="/archives/fairy-tales/">Fairy Tales</a></li>
+			<li><a href="/archives/educational-stories/">Educational Stories</a></li>
+			<li><a href="/archives/myths-world-stories/">Myths and World Stories</a></li>
+			<li><a href="/archives/stories-for-younger-children/">Junior Stories</a></li>
+</ul>
+
+
 		</figcaption>
+
 	</figure>
 
 </div>
@@ -156,10 +170,22 @@ foreach($lastposts as $post) :
 <div class="grid__item one-whole">
 
 	<footer class="footer" role="contentinfo">
+
+
+
+
 		<nav role="navigation">
 
 			<?php bones_footer_links(); ?>
 		</nav>
+	 
+<div class="notice small gutter">
+<p>Storynory Ltd, 26 Star Street, London UK.  +44 (0) 7941 190 740.   Bertie@storynory.com.<p>
+<p>Audio, text and images are Copyright Storynory Ltd unless otherwise stated<p>
+<p>Our Terms and Conditions make it easy for schools to use our materials for free, please see our <a href="/about-storynory/privacy/" >legal page</a> for details</p>
+</div>
+
+
 	 </footer> <!-- 
 
 	 end footer 

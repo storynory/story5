@@ -30,9 +30,9 @@ The comments page for Bones
 		</ul>
 	</nav>
 
-	<ol class="commentlist list-numbered">
+	<ul class="commentlist list-numbered">
 		<?php wp_list_comments('type=comment&callback=bones_comments'); ?>
-	</ol>
+	</ul>
 
 	<nav id="comment-nav">
 		<ul class="clearfix">

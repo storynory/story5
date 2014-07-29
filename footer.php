@@ -1,5 +1,4 @@
 
-
 </div><!-- ends .wrap -->
 
 		<!-- all js scripts are loaded in library/bones.php -->
@@ -9,3 +8,4 @@
 	</body>
 
 </html> <!-- end page.  -->
+

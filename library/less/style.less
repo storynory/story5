@@ -285,6 +285,15 @@ font-family: "Sanchez, serif";
 
 }
 
+.small,
+.small p
+ {
+	font-size: 14px;
+	line-height: @base * 3;
+	margin-bottom: @base;
+}
+
+
 .drop {
 	p:nth-child(2):first-letter { float: left; color: @green; font-size: 75px; line-height: 60px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: Georgia, serif; }
 }
@@ -451,6 +460,13 @@ a:hover {
 	list-style: circle;
 }
 
+.list--compact {
+	padding-top: @line;
+	padding-left: @line ;
+	line-height: 1;
+	list-style-type:circle
+}
+
 .list-numbered {
 	padding-left: @line ;
 }
@@ -504,6 +520,21 @@ nav ul li {
 		padding-right: @line;
 
 	}
+
+}
+
+.list--inline {
+
+	list-style-type: disc;
+	padding-top: @base * 2;
+	list-style-position: inside;
+
+	& li {
+		float: left;
+		margin-left: @base;
+
+	}
+
 
 }
 

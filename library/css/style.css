@@ -879,6 +879,12 @@ p {
   /* Traditional Garamond-based serif stack */
   font-family: "Sanchez, serif";
 }
+.small,
+.small p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
 .drop p:nth-child(2):first-letter {
   float: left;
   color: #69a366;
@@ -1079,6 +1085,12 @@ a:hover {
   padding-left: 16px;
   list-style: circle;
 }
+.list--compact {
+  padding-top: 32px;
+  padding-left: 32px;
+  line-height: 1;
+  list-style-type: circle;
+}
 .list-numbered {
   padding-left: 32px;
 }
@@ -1119,6 +1131,15 @@ nav ul li {
 }
 .bordered .icon {
   padding-right: 32px;
+}
+.list--inline {
+  list-style-type: disc;
+  padding-top: 16px;
+  list-style-position: inside;
+}
+.list--inline li {
+  float: left;
+  margin-left: 8px;
 }
 .social {
   overflow: hidden;
