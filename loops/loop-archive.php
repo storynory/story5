@@ -53,6 +53,10 @@
 									<?php thumb() ?>
 									<figcaption>
 									<?php the_excerpt(); ?>
+									<?php $mp3 = getEnclosure (); ?>
+									<a href="<?php echo $mp3 ?>" class="btn round playPause" title="Play : Pause"><span class="icon icon-play"></span></a>
+
+
 								</figcaption>
 
 								</section> <!-- end article section -->

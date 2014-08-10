@@ -56,6 +56,7 @@ require_once('library/custom-post-type.php'); // you can disable this if you lik
 //Title in header format
 
 
+require_once('library/audio-player.php'); // audio player plugin
 
 
 
@@ -439,6 +440,22 @@ function thumb () {
 			}
 }
 
+function getEnclosure () {
+$post_id = $GLOBALS['post']->ID; 
+	$enclosure = get_enclosed($post_id);
+			if ($enclosure) {
+			 foreach ($enclosure as $mp3) {
+						  // get file extension
+				  			$fext = strtolower(substr(strrchr($mp3,"."),1));
+				  				if ($fext == 'mp3') {
+					return $mp3;
+				  	
+                               }
+
+	         }
+		}
+	  			
+}
 
 
 

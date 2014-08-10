@@ -1,19 +1,15 @@
-// var  isTouch      = 'ontouchstart' in window,
-  //eStart      = isTouch ? 'touchstart'  : 'mousedown',
-  //eMove     = isTouch ? 'touchmove' : 'mousemove';
-  //eEnd     = isTouch ? 'touchend' : 'mouseup';
 
-  jQuery(function() {
-  //  FastClick.attach(document.body);
+  (function( $ ){
+   
 
-jQuery('false').on("click", function() {
+$('false').on("click", function() {
   return false;
 
 });
 
 
  
-jQuery('.side-open').on("click", function() {
+$('.side-open').on("click", function() {
 
 
          jQuery("#sidebar").css("left","0%");
@@ -34,6 +30,8 @@ jQuery('.drop').on("click", function() {
         jQuery('.drop').removeClass("active");
 
   }
+
+
 
 else {
         jQuery('.drop').removeClass("active");
@@ -72,8 +70,7 @@ var stickers = [
 ];
 
 
-jQuery(".visible").CaptainFade 
-({
+jQuery(".visible").CaptainFade ({
   images: stickers // REQUIRED an array of images for the slideshow
 
  
@@ -87,4 +84,10 @@ jQuery('.bpn-current a').on("click", function() {
 });
 
 
-});
+
+ })( jQuery );
+
+
+
+
+

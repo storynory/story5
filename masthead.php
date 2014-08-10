@@ -1,6 +1,6 @@
 
 
-<header class="gutter ">
+<header class="gutter clearleft">
 
 
 	

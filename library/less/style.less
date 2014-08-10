@@ -17,6 +17,11 @@
 @import 'vars.less';
 
 
+html, body {
+    -webkit-overflow-scrolling: touch;
+    // improves overflow scrolling - eg in scrub bar of audio
+}
+
 body {
 	position: relative;
 	background:  @green;
@@ -36,6 +41,7 @@ body {
 	padding-top: @line / 2;
 	padding-left: @line / 2;
 	zoom: 1;
+	clear: both;
  }
 
 
@@ -240,6 +246,7 @@ body {
 
 .flex {
 	overflow: hidden !important;
+	
 	display: block !important;
 	float: none !important;
 
@@ -274,6 +281,10 @@ body {
 
 .clear {
 	clear: both;
+}
+
+.clearleft {
+	clear: left;
 }
 
 .clearfix {
@@ -1491,8 +1502,23 @@ input {
 
 .btn {
 	.kiss-obj-buttons-base ();
-	line-height: @line;
-	padding: 0 @base;
+	-webkit-box-shadow: 1px 1px 4px -2px #9C9C9C, 2px 2px 3px  #1F1F1F ;
+ box-shadow: 1px 1px 4px -2px #9C9C9C , 2px 2px 3px  #1F1F1F;;
+	position: relative;
+	bottom: @base;
+	.icon {
+		line-height: @base * 6;
+		font-size: 32px;
+		padding: 0 @base;
+		margin: 0;
+
+	}
+}
+
+.btn.round {
+	background: @gold;
+	padding: @base;
+	border-radius: 50%;
 }
 
 .btn.full {
@@ -1652,6 +1678,11 @@ img {
     display:block;
 }
 
+.size-medium {
+	float: left;
+	margin: 0 24px 24px 0;
+}
+
 
 .img--left  {
 	float: left;
@@ -1660,3 +1691,184 @@ img {
 }
 
 
+audio {
+   margin-bottom: @line / 2;
+    width: 100%;
+    max-width: 500px;
+}
+
+
+/* 
+   Audio Player
+   ========================================================================== */
+
+.audio-container {
+	max-width: 500px;
+	margin-bottom: @line / 2;
+	.download {
+		display: block;
+		width: 100%;
+		text-align: right;
+	}
+}
+
+.audioPlayer {
+	 width: 100%;
+    max-width: 500px;
+	height: @base * 5;
+	background: #424242;
+	overflow: hidden;
+	margin-bottom: @base;
+	border-radius: 5px;
+	padding-left: @line / 4;
+	padding-right: @line / 4;
+	
+
+
+
+	.time {
+		margin-right: @base;
+		margin-left: @base;
+		color: @gold;
+	}
+
+}
+
+
+
+
+
+
+.audioPlayer .icon, 
+.audioPlayer span,
+.audioPalayer b {
+color: @green;
+	line-height: @base * 5;
+
+}
+
+.audioPlayer .flex {
+	padding: 8px 0;
+	position: relative;
+
+}
+
+.audioPlayer .icon {
+	font-size: @line;
+	width: @line;
+}
+
+
+.buffer {
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	margin-top: 8px;
+	height: 12px;
+	//background: #CDC9C9;
+	border-radius: 5px;
+	//background: white;
+	
+}
+
+
+
+input.audio-bar {
+ outline: 0;
+  -webkit-appearance: none !important;
+  width: 100%;
+  height: @base;
+  background-color: @gold;
+  border: 1px solid darken(@gold, 4%);
+   border-radius: @base;
+  margin: auto;
+
+  	position: relative;
+	bottom: @line / 8;
+
+
+
+	&::-webkit-slider-thumb {
+		 position: relative;		
+		bottom: 12px;
+	
+		}
+
+	&::-moz-range-thumb {	
+		position: relative;		
+		bottom: 6px;
+	}	
+
+ }
+
+.audio-bar::-webkit-slider-runnable-track {
+	width: 100%;
+  height: @base - 6px;
+	 border-radius: @base;
+  margin: auto;
+ 
+  	position: relative;
+ 
+}
+
+::-moz-range-track {
+	background: transparent;
+	border: none;
+	outline: 0;
+	//background: @gold;
+
+	&:focus {
+	border: none;
+	outline: 0;
+	}
+}
+
+.audio-bar::-moz-range-thumb {
+
+width: @base * 3;
+  height: @base * 2;
+  background: @green;
+  border-radius: @base;
+  box-shadow: 0px 0px 3px darken(@green, 15%);
+
+  position: relative;
+  bottom: 6px;
+
+}
+
+::-moz-range-thumb {
+	background: @green;
+}
+
+
+ ::-webkit-slider-thumb {
+  -webkit-appearance: none !important ; 
+  width: @base * 3;
+  height: @base * 3;
+  background: @green;
+  box-shadow: 0px 0px 3px darken(@green, 15%);
+border-radius: 50%;
+ opacity: 0.8;
+
+
+  
+
+}
+
+//volume 
+
+input.range-volume {
+	 -webkit-appearance: none !important;
+	max-width: 120px;
+	margin: @base;
+	height: @base;
+		background: @gold;
+		border-radius: 4px;
+		position: relative;
+		top: @base / 2;
+		
+		
+	}	
+	
+
+ 

@@ -559,6 +559,7 @@ form ul {
 .icon-play:before {
   content: "\e385";
 }
+.pause .icon-play:before,
 .icon-pause:before {
   content: "\e386";
 }
@@ -568,14 +569,25 @@ form ul {
 .icon-forward:before {
   content: "\e389";
 }
+.high.icon-volume:before,
 .icon-volume-high:before {
   content: "\e38f";
 }
+.medium.icon-volume:before,
 .icon-volume-medium:before {
   content: "\e390";
 }
+.low.icon-volume:before,
 .icon-volume-low:before {
   content: "\e391";
+}
+.quiet.icon-volume:before,
+.icon-volume-mute:before {
+  content: "\e392";
+}
+.mute.icon-volume:before,
+.icon-volume-mute2:before {
+  content: "\e3a3";
 }
 .icon-loop:before {
   content: "\e3a8";
@@ -660,6 +672,10 @@ form ul {
 /* ==========================================================================
    Button Groups
    ========================================================================== */
+html,
+body {
+  -webkit-overflow-scrolling: touch;
+}
 body {
   position: relative;
   background: #69a366;
@@ -675,6 +691,7 @@ body {
   padding-top: 16px;
   padding-left: 16px;
   zoom: 1;
+  clear: both;
 }
 .space {
   overflow: hidden;
@@ -873,6 +890,9 @@ body {
 }
 .clear {
   clear: both;
+}
+.clearleft {
+  clear: left;
 }
 .clearfix:after {
   content: "";
@@ -2034,12 +2054,25 @@ input {
   user-select: none;
   text-decoration: none;
   box-shadow: none;
-  line-height: 32px;
-  padding: 0 8px;
+  -webkit-box-shadow: 1px 1px 4px -2px #9c9c9c, 2px 2px 3px #1f1f1f;
+  box-shadow: 1px 1px 4px -2px #9c9c9c, 2px 2px 3px #1f1f1f;
+  position: relative;
+  bottom: 8px;
 }
 .btn::-moz-focus-inner {
   padding: 0;
   border: 0;
+}
+.btn .icon {
+  line-height: 48px;
+  font-size: 32px;
+  padding: 0 8px;
+  margin: 0;
+}
+.btn.round {
+  background: #efd480;
+  padding: 8px;
+  border-radius: 50%;
 }
 .btn.full {
   width: 100%;
@@ -2220,8 +2253,134 @@ img {
   height: auto;
   display: block;
 }
+.size-medium {
+  float: left;
+  margin: 0 24px 24px 0;
+}
 .img--left {
   float: left;
   padding-right: 32px;
   padding-bottom: 8px;
+}
+audio {
+  margin-bottom: 16px;
+  width: 100%;
+  max-width: 500px;
+}
+/* 
+   Audio Player
+   ========================================================================== */
+.audio-container {
+  max-width: 500px;
+  margin-bottom: 16px;
+}
+.audio-container .download {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+.audioPlayer {
+  width: 100%;
+  max-width: 500px;
+  height: 40px;
+  background: #424242;
+  overflow: hidden;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.audioPlayer .time {
+  margin-right: 8px;
+  margin-left: 8px;
+  color: #efd480;
+}
+.audioPlayer .icon,
+.audioPlayer span,
+.audioPalayer b {
+  color: #69a366;
+  line-height: 40px;
+}
+.audioPlayer .flex {
+  padding: 8px 0;
+  position: relative;
+}
+.audioPlayer .icon {
+  font-size: 32px;
+  width: 32px;
+}
+.buffer {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  margin-top: 8px;
+  height: 12px;
+  border-radius: 5px;
+}
+input.audio-bar {
+  outline: 0;
+  -webkit-appearance: none !important;
+  width: 100%;
+  height: 8px;
+  background-color: #efd480;
+  border: 1px solid #edce6e;
+  border-radius: 8px;
+  margin: auto;
+  position: relative;
+  bottom: 4px;
+}
+input.audio-bar::-webkit-slider-thumb {
+  position: relative;
+  bottom: 12px;
+}
+input.audio-bar::-moz-range-thumb {
+  position: relative;
+  bottom: 6px;
+}
+.audio-bar::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  border-radius: 8px;
+  margin: auto;
+  position: relative;
+}
+::-moz-range-track {
+  background: transparent;
+  border: none;
+  outline: 0;
+}
+::-moz-range-track:focus {
+  border: none;
+  outline: 0;
+}
+.audio-bar::-moz-range-thumb {
+  width: 24px;
+  height: 16px;
+  background: #69a366;
+  border-radius: 8px;
+  box-shadow: 0px 0px 3px #497647;
+  position: relative;
+  bottom: 6px;
+}
+::-moz-range-thumb {
+  background: #69a366;
+}
+::-webkit-slider-thumb {
+  -webkit-appearance: none !important ;
+  width: 24px;
+  height: 24px;
+  background: #69a366;
+  box-shadow: 0px 0px 3px #497647;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+input.range-volume {
+  -webkit-appearance: none !important;
+  max-width: 120px;
+  margin: 8px;
+  height: 8px;
+  background: #efd480;
+  border-radius: 4px;
+  position: relative;
+  top: 4px;
 }
