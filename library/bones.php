@@ -173,7 +173,8 @@ function bones_scripts_and_styles() {
   }
 }
 
-/*********************
+
+/**********************
 THEME SUPPORT
 *********************/
 
