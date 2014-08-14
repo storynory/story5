@@ -1499,61 +1499,6 @@ nav .nav__heading,
 .dropper {
   overflow: visible;
 }
-.menu--group {
-  width: 100%;
-  position: relative;
-  float: left;
-  overflow: visible;
-  color: #efd480;
-}
-.menu--group li {
-  border: none;
-  padding: 0;
-  margin: 0;
-  width: 20%;
-  border-right: 1px solid #efd480;
-}
-.menu--group li:last-child {
-  border-right: none;
-}
-.menu--group .icon {
-  color: #efd480;
-}
-@media only screen and (max-width: 1100px) {
-  .menu--group .menu-title .icon {
-    width: 100%;
-  }
-}
-.menu--group a {
-  padding: 7px 16px;
-  background: #7281a1;
-}
-.menu--group a:hover {
-  background: #5a6886;
-}
-.menu--group h3.menu-title {
-  border-bottom-color: transparent;
-  color: #efd480;
-  font-size: 24px;
-  line-height: 32px;
-}
-@media only screen and (max-width: 710px) {
-  .menu--group .icon-right,
-  .menu--group .carot,
-  .menu--group .title {
-    display: none;
-  }
-  .menu--group .menu-title .icon {
-    padding-right: 0;
-    text-align: center;
-  }
-}
-@media only screen and (max-width: 1000px) {
-  .menu--group h3.menu-title {
-    font-size: 18px;
-    line-height: 24px;
-  }
-}
 .drop {
   position: static;
   z-index: 1000;
