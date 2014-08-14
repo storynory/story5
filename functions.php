@@ -432,32 +432,10 @@ function thumb () {
 	
 	 		if($thumb !== '') { ?>
 	 	
-				<a class="img" href="<?php the_permalink() ?>"><img  src="<?php echo $thumb; ?>" alt="<?php echo the_title(); ?>" width="100" height="100" /></a>
+				<a class="img" href="<?php the_permalink() ?>"><img class="img--left thumb" src="<?php echo $thumb; ?>" alt="<?php echo the_title(); ?>" width="100" height="100" /></a>
 	
 			<?php } 
 			
 			else { echo '<img height=100 width=100 src="/wp-content/themes/story5/library/img/bertie.svg" />'; 
 			}
-}
-
-function getEnclosure () {
-$post_id = $GLOBALS['post']->ID; 
-	$enclosure = get_enclosed($post_id);
-			if ($enclosure) {
-			 foreach ($enclosure as $mp3) {
-						  // get file extension
-				  			$fext = strtolower(substr(strrchr($mp3,"."),1));
-				  				if ($fext == 'mp3') {
-					return $mp3;
-				  	
-                               }
-
-	         }
-		}
-	  			
-}
-
-
-
-
-	?>
+}?>

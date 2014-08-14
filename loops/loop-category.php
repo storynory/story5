@@ -20,7 +20,10 @@ $more = 0 ; ?>
 
 <div class="media"> 
  <?php   thumb (); ?>
-<figcaption><?php the_excerpt(); ?></figcaption>
+<figcaption><?php the_excerpt(); ?>
+
+
+</figcaption>
 </div>
 <?php
 

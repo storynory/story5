@@ -8,6 +8,71 @@ Author: hugh fraser
 Author URI: http://storynory.com
 */
 
+header("Access-Control-Allow-Origin: http://traffic.libsyn.com");
+
+function getEnclosure () {
+$post_id = $GLOBALS['post']->ID; 
+    $enclosure = get_enclosed($post_id);
+            if ($enclosure) {
+             foreach ($enclosure as $mp3) {
+                          // get file extension
+                            $fext = strtolower(substr(strrchr($mp3,"."),1));
+                                if ($fext == 'mp3') {
+                    return $mp3;
+                    
+                               }
+
+             }
+        }
+                
+}
+
+function playerControls ($mp3) {
+  echo  '
+    
+<div class="audio-container clear">
+<div class=" audioPlayer js-audioPlayer nav">
+
+    <ul>
+    <li class="left">
+    <a href="'.  $mp3 .'" class="playPause" title="Play : Pause"><span class="icon icon-play"></span></a>
+    </li>
+        <li class="right volume--r">
+        
+<input type="range" class="range-volume"  min=0 value=10 max=10 />
+        </li>
+    <li class="right">
+    <b class="icon mute icon-volume"></b>
+    </li>
+    <li class="right">
+    <span class="time">00:00</span> 
+    </li>
+
+
+    <li class="left flex">
+
+    <div class="buffer"></div>
+        <input type="range" class="audio-bar js-audioRange " min="0" max="500" value="0" />  
+
+    
+    </li>
+    
+    </ul>
+
+ 
+
+</div>
+
+
+<a class="download" href="'.  $mp3 .'" download > <b class="icon icon-download" >  Download</b> </a>
+
+</div>
+
+
+';
+
+};
+
 
 
 add_shortcode('audio', 'audio_player');
@@ -21,52 +86,13 @@ function audio_player ($atts) {
      $title = $post->post_title;
 
      $mp3 = getEnclosure ();
+     $path_parts = pathinfo($mp3);
+     $filename = $path_parts['basename'];
+   
 
 if (! is_feed()) {
-
-     return '
-	
-<div class="audio-container">
-<div class=" audioPlayer nav">
-
-	<ul>
-	<li class="left">
-	<a href="'.  $mp3 .'" class="playPause" title="Play : Pause"><span class="icon icon-play"></span></a>
-	</li>
-		<li class="right">
-    	
-<input type="range" class="range-volume" min=0 value=10 max=10 />
-    	</li>
-	<li class="right">
-    <b class="icon mute icon-volume"></b>
-    </li>
-    <li class="right">
-    <span class="time">00:00</span> 
-    </li>
-
-
-	<li class="left flex">
-
-	<div class="buffer"></div>
-		<input type="range" class="audio-bar js-audioRange" min="0" max="500" value="0" />	
-
-	
-	</li>
-    
-	</ul>
-
- 
-
-</div>
-
-<a class="download" href="'.  $mp3 .'   " download=". $mp3 ." > <b class="icon icon-download" >  Download</b> </a>
-
-</div>
-
-'
-;
-
-
+playerControls ($mp3);
+   
 
 }
 

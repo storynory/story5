@@ -45,6 +45,28 @@ Template Name: archives
 	<div class="grid__item one-whole">
 
 	 <footer class="footer" role="contentinfo">
+
+<div class="grid__item one-whole">
+
+
+<nav>
+<ul class="social-icons-horiz centered" >
+
+	
+							
+            <li class="left"><a href="mailto:myfriend@change-this-email-address.com?subject=<?php the_title(); ?>&body=I've just been listening to <?php the_title();?> on Storynory.  Here's the link: <?php echo get_permalink( ); ?>. I think you would love it too"><span class="icon icon-mail-send"></span></a></li>							
+							
+             <li class="left"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink (); ?>&kidDirectedSite=1"><span class="icon icon-facebook"></a></li>
+							
+             <li class="left"><a href="https://plus.google.com/share?url=<?php the_permalink (); ?>"><span class="icon icon-googleplus"></a></li>
+							
+             <li class="left"><a href="https://twitter.com/home?status=<?php the_permalink (); ?>"><span class="icon icon-twitter"></a></li>
+            							
+             <li class="left"><a href="http://feeds.feedburner.com/storynory"><span class="icon icon-feed"></a></li>
+	</ul>
+</nav>
+</div>
+
 	 	<nav role="navigation">
 
 	 		<?php bones_footer_links(); ?>
@@ -56,4 +78,6 @@ Template Name: archives
 	
 	</div> <!-- end grid-->
 	
+
+
 	<?php get_footer(); // ends .wrap  footer hooker, ends body and html?>

@@ -112,6 +112,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/junior.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/junior.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/library\/admin.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1115,6 +1124,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/library\/js\/min\/plugin-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/js\/min\/plugin-min.js",
+		"outputAbbreviatedPath": "\/library\/js\/min\/min\/plugin-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/library\/js\/min\/scripts-ck.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -1165,6 +1185,28 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/library\/js\/overthrow.js",
 		"outputAbbreviatedPath": "\/library\/js\/min\/overthrow-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/library\/js\/plugin.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/js\/plugin.js",
+		"outputAbbreviatedPath": "\/library\/js\/min\/plugin-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/library\/js\/rangeslider.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/js\/rangeslider.js",
+		"outputAbbreviatedPath": "\/library\/js\/min\/rangeslider-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

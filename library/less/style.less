@@ -42,6 +42,7 @@ body {
 	padding-left: @line / 2;
 	zoom: 1;
 	clear: both;
+	padding-bottom: @line;
  }
 
 
@@ -50,6 +51,8 @@ body {
 	margin-bottom: (@line / 2) -1; 
 	border-bottom: 1px solid transparent;
 }
+
+
 
 .space--top {
 	margin-top: @line / 2;
@@ -78,6 +81,7 @@ body {
  	.wrap {
  		padding-left: @line / 2;
  		padding-right: 0;
+
  		
  	}
 
@@ -236,7 +240,11 @@ body {
 }	
 
 
-
+.fixed-bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
 
 
 /* 
@@ -696,6 +704,16 @@ nav ul li {
 	}
 }
 
+.rss {
+	color: red;
+}
+
+.itunes {
+	color: @blue;
+}
+
+
+
 .list-icons {
 	span {
 		font-size: 1em;
@@ -996,6 +1014,7 @@ nav,.nav {
 	overflow: visible;
 
 
+
 		color: @gold;
 
 	//.kiss-obj-lists-ul-group (@color: @green, @radius: 0em);
@@ -1271,6 +1290,7 @@ nav {
 
 
 //centered list
+ul.centered,
 .page-navigation {
 	display: table;
 	margin: auto;
@@ -1313,6 +1333,7 @@ pre
 
 .note-tiny {
 	.kiss-obj-mods-box (@space: @base * 2, @border: 1px);
+	margin-bottom: @base * 2;
 }
 
 
@@ -1502,6 +1523,13 @@ input {
 
 .btn {
 	.kiss-obj-buttons-base ();
+	
+}
+
+.btn.round {
+	background: @gold;
+	padding: @base;
+	border-radius: 50%;
 	-webkit-box-shadow: 1px 1px 4px -2px #9C9C9C, 2px 2px 3px  #1F1F1F ;
  box-shadow: 1px 1px 4px -2px #9C9C9C , 2px 2px 3px  #1F1F1F;;
 	position: relative;
@@ -1513,12 +1541,6 @@ input {
 		margin: 0;
 
 	}
-}
-
-.btn.round {
-	background: @gold;
-	padding: @base;
-	border-radius: 50%;
 }
 
 .btn.full {
@@ -1597,20 +1619,39 @@ textarea.comment {
 
 }
 
-.input-group {
+.button-group {
+	padding: 0;
 
-.kiss-obk-forms-input-group ();
-	
-}
+	button.default.active {
+	color: rgba(0, 0, 0, 0.6);
+    -moz-box-shadow:    inset 0 0 12px rgba(0, 0, 0, 0.6);
+   -webkit-box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.6);
+   box-shadow:         inset 0 0 12px rgba(0, 0, 0, 0.6);
 
-.input-group.default .input--text {
+		
+	}
+
+
+
+	button.default {
 	border-radius: 0;
-	border-top-left-radius: 4px;
-	border-bottom-left-radius: 4px;
-}
+	border: 0;
+	padding: @base * 2;
+	line-height: @base * 3;
 
-.input-group.default button {
-	border: 1px solid gray;
+
+	&:first-child {
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	}
+
+	&:last-child {
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	margin-left: -3px;
+	}
+
+}
 }
 
 
@@ -1691,6 +1732,7 @@ img {
 }
 
 
+
 audio {
    margin-bottom: @line / 2;
     width: 100%;
@@ -1705,6 +1747,7 @@ audio {
 .audio-container {
 	max-width: 500px;
 	margin-bottom: @line / 2;
+	margin-right: @base * 2;
 	.download {
 		display: block;
 		width: 100%;
@@ -1715,13 +1758,20 @@ audio {
 .audioPlayer {
 	 width: 100%;
     max-width: 500px;
-	height: @base * 5;
+	height: @base * 7;
 	background: #424242;
+	background: #222;
 	overflow: hidden;
 	margin-bottom: @base;
 	border-radius: 5px;
+	padding-top: @base;
 	padding-left: @line / 4;
 	padding-right: @line / 4;
+
+	li {
+		margin-right: @base;
+		overflow: visible;
+	}
 	
 
 
@@ -1777,7 +1827,7 @@ input.audio-bar {
  outline: 0;
   -webkit-appearance: none !important;
   width: 100%;
-  height: @base;
+  height: @base ;
   background-color: @gold;
   border: 1px solid darken(@gold, 4%);
    border-radius: @base;
@@ -1856,19 +1906,63 @@ border-radius: 50%;
 }
 
 //volume 
+.icon-volume {
+	min-width: 34px;
+}
+
+@media only screen and (max-width: 460px) {
+	.volume--r {
+		display: none;
+	}
+}	
 
 input.range-volume {
 	 -webkit-appearance: none !important;
-	max-width: 120px;
-	margin: @base;
-	height: @base;
+	max-width: 100px;
+	margin: 0  @base;
+	height: @base ;
 		background: @gold;
 		border-radius: 4px;
 		position: relative;
 		top: @base / 2;
-		
+	
+&:focus {
+	outline: 0;
+}
+
+	
 		
 	}	
 	
+.fixed-bottom {
+	background: #f5f5f5;
+	width: 100%;
+		padding: @base;
+	.audioPlayer {
+		margin: 0 auto;
+		background: #f5f5f5;
+	}
+}
+
+
+
+.download-info {
+	font-size: 24px;
+	margin-left: @line;
+	position: relative;
+	top: @line;
+
+}
+
+.tooltip {
+	display:none;
+	position:absolute;
+	border:1px solid #333;
+	background-color:@gold;
+	border-radius:5px;
+	padding:10px;
+	color:@green;
+}
+
 
  

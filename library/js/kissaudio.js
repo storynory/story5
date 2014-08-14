@@ -1,3 +1,4 @@
+
 // polyfill for request animation frame from paul irish et al
 
 (function (window, rAF, cAF) {
@@ -27,28 +28,27 @@
     }
 }(this, 'requestAnimationFrame', 'cancelAnimationFrame'));
 
-
-// unify an end touch / click event
-var isTouch = 'ontouchstart' in window,
-  eClick  = isTouch ? 'touchend' : 'click';
+//************************************************************
 
 //  The Plugin
 
 
 (function( $ ){
 
+// unify an end touch / click event
+var isTouch = 'ontouchstart' in window,
+eClick  = isTouch ? 'touchend' : 'click';
+var options,checkaudio;
+
 
   var methods = {
 
-    mp3: $("a.playPause").attr("href"),
-
-    audio: new Audio(),
+   
 
     init: function() {
 
-      methods.audio.src = methods.mp3;
       methods.moveForward = methods.setMoveForward;
-      return methods.audio.src;
+     
 
     },
     formatTime: function(seconds) {
@@ -60,201 +60,268 @@ var isTouch = 'ontouchstart' in window,
       if (seconds < 10) { seconds = "0" + seconds ;}
       return minutes + ":" + seconds;
     },
-    getDuration: function(myAudio) {
+    getDuration: function(myaudio,range,span) {
       var duration;
-      duration = methods.formatTime(myAudio.duration);
-      $(".js-audioRange").attr("max",myAudio.duration);
+      $(range).attr("max",myaudio.duration);
+      duration = methods.formatTime(myaudio.duration);
+      $(span).text(duration);
       return $("span.duration").text(duration);
     },
 
-    playPause: function() {
+    playPause: function(myaudio) {
 
-      if (methods.audio.paused && methods.audio.readyState >= 1  ) {
+
+
+      if (myaudio.paused && myaudio.readyState >= 1  ) {
        
-        return methods.audio.play();
+        return myaudio.play();
 
 
       } else {
-        return methods.audio.pause();
+        return myaudio.pause();
       }
     },
 
-   update: function() {
+   update: function(range,span) {
     var time;
-    time = $(".js-audioRange").val();
+    time = $(range).val();
     time = methods.formatTime(time);
-   $("span.time").text(time);
+  
+    $(span).text(time);
 },
     
     moveForward : function () {},
 
-    setMoveForward: function () {
-     $('.js-audioRange').val(methods.audio.currentTime);
+    setMoveForward: function (myaudio, range) {
+      var anim = function () { $(range).val(myaudio.currentTime);};
+        requestAnimationFrame(anim);
    },
 
    cancelMoveForward : function () {},  // we need cancel move forward for scrubbing in fireFox
 
-   buffered: function () {
+   buffered: function (myaudio) {
     var percent;
     try {
-      percent = ( methods.audio.buffered.end(0) ) / ( methods.audio.duration) * 100;
-      $('.buffer').css("background-image", "linear-gradient( to right, #F5F5F5  "  + percent + "%, #69b07f  " + percent + "% )");
+      percent = ( myaudio.buffered.end(0) ) / ( myaudio.duration) * 100;
+      var anim = function () {
+        $('.buffer').css("background-image", "linear-gradient( to right, #F5F5F5  "  + percent + "%, #69b07f  " + percent + "% )");
+      };
+      requestAnimationFrame(anim);
     }
 
     catch (err) { }
      },
 
-    scrubWhite : function () {
+    scrubWhite : function (myaudio, range) {
     var percent;
-    percent =  ( methods.audio.currentTime )  / ( methods.audio.duration ) * 100;
-    $('.js-audioRange').css("background-image", "linear-gradient( to right, white "  + percent + "%,   #EFD480 " + percent + "% )");
-
+    percent =  ( myaudio.currentTime )  / ( myaudio.duration ) * 100;
+    var anim = function () {
+      $(range).css("background-image", "linear-gradient( to right, white "  + percent + "%,   #EFD480 " + percent + "% )");
+     };
+     requestAnimationFrame(anim);
   },
 
-  scrub : function () {
-    var time = $(".js-audioRange").val();
-    methods.audio.currentTime = time;
+
+  scrub : function (myaudio,range) {
+    
+    var time = $(range).val();
+    myaudio.currentTime = time;
+   
     var percent;
-    percent =  ( methods.audio.currentTime )  / ( methods.audio.duration ) * 100;
-    if ( methods.audio.buffered.end(0) >= methods.audio.currentTime) {
-     $('.js-audioRange').css("background-image", "linear-gradient( to right, white "  + percent + "%,  #EFD480 " + percent + "% )");
+    percent =  ( myaudio.currentTime )  / ( myaudio.duration ) * 100;
+  
+    if ( myaudio.buffered.end(0) >= myaudio.currentTime) {
+      var anim = function () {
+        $(range ).css("background-image", "linear-gradient( to right, white "  + percent + "%,  #EFD480 " + percent + "% )");
+      };
+      requestAnimationFrame(anim);
    }
  },
 
-  volume : function () {
+  volume : function (myaudio,range, icon) {
    var vol;
-   vol = $(".range-volume").val();
-   methods.audio.volume = vol / 10;
+   vol = $(range).val();
+   myaudio.volume = vol / 10;
    if (vol <= 7.5  && vol > 5) {
-      $(".icon-volume").removeClass("high").removeClass("low").addClass("medium");
+      $(icon ).removeClass("high").removeClass("low").addClass("medium");
 
    }
 
    if (vol >= 7.5 ){
-      $(".icon-volume").removeClass("medium").addClass("high");
+      $(icon ).removeClass("medium").addClass("high");
 
    }
    
  
 
    if (vol < 5 && vol >= 2.5) {
-        $(".icon-volume").removeClass("medium").removeClass("quiet").addClass("low");
+        $(icon).removeClass("medium").removeClass("quiet").addClass("low");
    }
 
     if (vol < 2.5 && vol > 0.1) {
-        $(".icon-volume").removeClass("mute").removeClass("low").addClass("quiet");
+        $(icon).removeClass("mute").removeClass("low").addClass("quiet");
    }
 
 
  
 
    if (vol <= 0.1 ) {
-       $(".icon-volume").removeClass("quiet").addClass("mute");
+       $(icon).removeClass("quiet").addClass("mute");
    }
 
   
  },
 
- ready : function () {
-  $(".icon-volume").removeClass("mute").addClass("high");
+ ready : function (icon) {
+  $(icon).removeClass("mute").addClass("high");
  },
 
- duration : function ()  {
-  var time;
-    time = methods.audio.duration;
-    time = methods.formatTime(time);
-    $("span.time").text(time);
-
- }
+ 
 };
 
-
 methods.init();
+methods.MoveForward = methods.setMoveForward;
+
+// setup plugin
+
+$.fn.kissaudio = function( options ) {
+ 
+    this.each( function(i) {
+        // Do something to each element here.
+
+var player = $(this);
+var audioRange  = $(settings.audioRange,player);
+var playPause = $(settings.playPause,player);
+var volumeRange = $(settings.volumeRange,player);
+var iconVolume = $(settings.iconVolume,player);
+var spanTime    = $(settings.spanTime,player);
 
 
-$("a.playPause").on("click",
-  function() {
-    //methods.audio.src = $(this).attr("href");
-     methods.playPause(methods.audio);
-     methods.audio.addEventListener('timeupdate',function () {
-     requestAnimationFrame( methods.update );
+var nextaudio = $("a.playPause").eq(i+1);
+
+
+var myaudio = new Audio();
+myaudio.src= $(playPause, this).attr("href");
+
+$(playPause).on("click", function() {
+   
+if (myaudio.readyState === 0) {
+  console.log(myaudio.readyState);
+  myaudio.load();
+}
+
+      
+     methods.playPause(myaudio);
+     myaudio.addEventListener('timeupdate',function () {
+     methods.update(audioRange,spanTime);
 });
 
    return false;
  });
 
+$(myaudio).on('ended', function() {
+  myaudio.currentTime = 0;
+  $(nextaudio).trigger("click");
+ 
+    
+  });
 
+$(audioRange).on("input", function() {
 
-$(".js-audioRange").on("input", function() {
+// myaudio.pause(); 
+methods.moveForward = methods.cancelMoveForward();
 
-// methods.audio.pause(); 
-methods.moveForward = methods.cancelMoveForward;
-cancelAnimationFrame(methods.moveForward);
-requestAnimationFrame( methods.update );
- requestAnimationFrame(methods.scrub);
+methods.update(audioRange,spanTime);
+
+ methods.scrub(myaudio,audioRange);
 
 });
 
 
-$(".range-volume").on("input", function() {
-    methods.volume();
+$(volumeRange).on("input", function() {
+    methods.volume(myaudio, volumeRange, iconVolume);
  });
 
 
-$(".js-audioRange").on(eClick, function () {
-  methods.moveForward = methods.setMoveForward;
- requestAnimationFrame(methods.moveForward);
- // methods.audio.play(); 
+$(audioRange ).on(eClick, function () {
+  methods.moveForward  =  methods.setMoveForward; 
+  methods.scrub(myaudio, audioRange);
 });
 
 
-methods.audio.addEventListener('timeupdate',function (){
- // requestAnimationFrame( methods.update );
 
-  requestAnimationFrame( methods.moveForward );
-  requestAnimationFrame( methods.scrubWhite );
+myaudio.addEventListener('timeupdate',function (){
+methods.update(spanTime);
+
+  methods.MoveForward(myaudio, audioRange);
+   methods.scrubWhite(myaudio, audioRange);
 });
 
 
-//methods.audio.addEventListener('progress',function (){
+//methods.myaudio.addEventListener('progress',function (){
  // requestAnimationFrame(methods.buffered);
 
 //});
 
 
-$(methods.audio).on('canplay', function() {
-    methods.ready();
+
+
+$(myaudio).on('canplay', function() {
+   methods.ready(iconVolume);
 
   });
 
-$(methods.audio).on('loadedmetadata', function() {
-   methods.duration(); // might add to different place
+$(myaudio).on('loadedmetadata', function() {
+   methods.getDuration(myaudio,audioRange,spanTime); // might add to different place
 
   });
 
-$(methods.audio).on('play',
+$(myaudio).on('play',function(e) {
+    
+    if ( checkaudio !== e.target  && checkaudio !== undefined ) {
+      checkaudio.pause();
+    }
+
+    checkaudio = e.target;
+   
+
+
+    $(playPause).removeClass("play");
+    $(playPause).addClass("pause");
+
+
+  });
+
+$(myaudio).on('pause',
   function() {
 
-
-    $("a.playPause").removeClass("play");
-    $("a.playPause").addClass("pause");
-
-
-  });
-
-$(methods.audio).on('pause',
-  function() {
-
-    $("a.playPause").removeClass("pause");
-    $("a.playPause").addClass("play");
+    $(settings.playPause, player).removeClass("pause");
+    $(settings.playPause, player).addClass("play");
   });
 
 
-$(methods.audio).on('loadedmetadata',
+
+
+
+$(myaudio).on('loadedmetadata',
   function() {
 
-   methods.getDuration(methods.audio);
+   methods.getDuration(myaudio,audioRange);
 
  });
+
+
+    });
+ 
+};
+
+var settings = $.extend({
+    playPause       : 'a.playPause',
+    audioRange       : '.js-audioRange',
+    volumeRange    : '.range-volume',
+    iconVolume     :".icon-volume",
+    spanTime  :    ".time",
+}, options);
+
 
 })(window.jQuery || window.Zepto || window.$);
