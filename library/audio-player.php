@@ -30,8 +30,8 @@ $post_id = $GLOBALS['post']->ID;
 function playerControls ($mp3) {
   echo  '
     
-<div class="audio-container clear">
-<div class=" audioPlayer js-audioPlayer nav">
+<div class="audio-container js-audioPlayer clear">
+<div class=" audioPlayer  nav">
 
     <ul>
     <li class="left">
@@ -63,9 +63,10 @@ function playerControls ($mp3) {
 
 </div>
 
-
+<div class="info">
+<span class="audioLoading">Loading</span>
 <a class="download" href="'.  $mp3 .'" download > <b class="icon icon-download" >  Download</b> </a>
-
+</div>
 </div>
 
 

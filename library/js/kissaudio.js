@@ -72,7 +72,7 @@ var options,checkaudio;
 
 
 
-      if (myaudio.paused && myaudio.readyState >= 1  ) {
+      if (myaudio.paused && myaudio.readyState === 4) {
        
         return myaudio.play();
 
@@ -195,22 +195,23 @@ var playPause = $(settings.playPause,player);
 var volumeRange = $(settings.volumeRange,player);
 var iconVolume = $(settings.iconVolume,player);
 var spanTime    = $(settings.spanTime,player);
+var audioLoading = $(settings.audioLoading, player);
+
 
 
 var nextaudio = $("a.playPause").eq(i+1);
 
 
 var myaudio = new Audio();
+myaudio.preload = "metadata";
+
 myaudio.src= $(playPause, this).attr("href");
 
 $(playPause).on("click", function() {
    
 if (myaudio.readyState === 0) {
-  console.log(myaudio.readyState);
   myaudio.load();
 }
-
-      
      methods.playPause(myaudio);
      myaudio.addEventListener('timeupdate',function () {
      methods.update(audioRange,spanTime);
@@ -221,19 +222,15 @@ if (myaudio.readyState === 0) {
 
 $(myaudio).on('ended', function() {
   myaudio.currentTime = 0;
-  $(nextaudio).trigger("click");
- 
-    
+  $(nextaudio).trigger("click");   
   });
 
 $(audioRange).on("input", function() {
 
-// myaudio.pause(); 
+// myaudio.pause(); // we need to figure out how to make sure that percentage is of correct audio
 methods.moveForward = methods.cancelMoveForward();
-
 methods.update(audioRange,spanTime);
-
- methods.scrub(myaudio,audioRange);
+methods.scrub(myaudio,audioRange);
 
 });
 
@@ -246,6 +243,7 @@ $(volumeRange).on("input", function() {
 $(audioRange ).on(eClick, function () {
   methods.moveForward  =  methods.setMoveForward; 
   methods.scrub(myaudio, audioRange);
+
 });
 
 
@@ -268,6 +266,7 @@ methods.update(spanTime);
 
 $(myaudio).on('canplay', function() {
    methods.ready(iconVolume);
+   $(audioLoading).fadeOut("slow");
 
   });
 
@@ -321,6 +320,7 @@ var settings = $.extend({
     volumeRange    : '.range-volume',
     iconVolume     :".icon-volume",
     spanTime  :    ".time",
+    audioLoading  :    ".audioLoading",
 }, options);
 
 

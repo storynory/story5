@@ -18,6 +18,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-home:before {
+  content: "\e600";
+}
 .icon-podcast:before {
   content: "\e065";
 }
@@ -27,14 +30,8 @@
 .icon-mail-send:before {
   content: "\e0ed";
 }
-.icon-stats:before {
-  content: "\e1fe";
-}
 .icon-tree:before {
   content: "\e22f";
-}
-.icon-target:before {
-  content: "\e27a";
 }
 .icon-earth:before {
   content: "\e2c7";
@@ -42,14 +39,32 @@
 .icon-info:before {
   content: "\e363";
 }
+.icon-close:before {
+  content: "\e36c";
+}
+.icon-volume-high:before {
+  content: "\e38f";
+}
+.icon-volume-medium:before {
+  content: "\e390";
+}
+.icon-volume-low:before {
+  content: "\e391";
+}
+.icon-volume-mute:before {
+  content: "\e392";
+}
+.icon-volume-mute2:before {
+  content: "\e3a3";
+}
 .icon-instagram:before {
   content: "\e49c";
 }
+.icon-pinterest:before {
+  content: "\e4d6";
+}
 .icon-paypal:before {
   content: "\e4dd";
-}
-.icon-home:before {
-  content: "\e009";
 }
 .icon-pencil:before {
   content: "\e012";
@@ -65,9 +80,6 @@
 }
 .icon-headphones:before {
   content: "\e040";
-}
-.icon-pacman:before {
-  content: "\e054";
 }
 .icon-bullhorn:before {
   content: "\e05f";
@@ -144,9 +156,6 @@
 .icon-medal:before {
   content: "\e217";
 }
-.icon-rocket:before {
-  content: "\e234";
-}
 .icon-lamp:before {
   content: "\e24c";
 }
@@ -189,12 +198,14 @@
 .icon-question:before {
   content: "\e35d";
 }
-.icon-close:before {
+.icon-close2:before {
   content: "\e36e";
 }
 .icon-play:before {
   content: "\e385";
 }
+
+.pause .icon-play:before,
 .icon-pause:before {
   content: "\e386";
 }
@@ -203,15 +214,6 @@
 }
 .icon-forward:before {
   content: "\e389";
-}
-.icon-volume-high:before {
-  content: "\e38f";
-}
-.icon-volume-medium:before {
-  content: "\e390";
-}
-.icon-volume-low:before {
-  content: "\e391";
 }
 .icon-loop:before {
   content: "\e3a8";
@@ -258,11 +260,6 @@
 .icon-windows:before {
   content: "\e4c9";
 }
-.icon-pinterest:before {
-  content: "\e4d7";
-}
 .icon-file-pdf:before {
   content: "\e4e2";
 }
-
-

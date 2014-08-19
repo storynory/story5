@@ -1,10 +1,8 @@
 @import 'kiss/normalize.less';
 @import 'kiss/obj/reset.less';
-@import 'kiss/obj/reset.less';
 @import 'kiss/obj/grids.less';
 @import 'kiss/obj/typography.less';
 @import 'kiss/obj/navs.less';
-
 @import 'kiss/obj/fonts.less';
 @import 'icons.less';
 @import 'kiss/obj/mods.less';
@@ -52,7 +50,18 @@ body {
 	border-bottom: 1px solid transparent;
 }
 
+.space--r {
 
+@media only screen and (max-width: 790px) {	
+	overflow: hidden;
+	margin-bottom: @line;
+
+	}
+}
+
+.half-line {
+	padding-top: @line / 2;
+}
 
 .space--top {
 	margin-top: @line / 2;
@@ -679,6 +688,15 @@ nav ul li {
 
 }	
 
+	
+
+.icon-pinterest {
+
+	background: #F61718;
+
+}	
+
+
 .icon-mail-send {
 	background: @green;
 }
@@ -695,6 +713,9 @@ nav ul li {
 	background: red;
 }
 
+.icon-podcast {
+	background: @blue ;
+}
 	
 	a {
 		
@@ -1066,6 +1087,8 @@ nav,.nav {
 
 	}
 
+
+
 @media only screen and (max-width: 710px) {  
 // at this point the title  disappear completely and we just have icons
 	.icon-right,
@@ -1375,11 +1398,24 @@ pre {
 	width: auto;
 }
 
-.panel.modthree .panel__body {
+.panel.modthree .modthree {
 	border-bottom-color: rgb( 221,221,221 ) ;
 	border-bottom-left-radius: 0.3em;
 	border-bottom-right-radius: 0.3em;
+
 }
+
+.modthree {
+	with: 100%;
+	max-width: 600px;
+	margin: auto;
+
+}
+
+.panel form.panel__body {
+		padding-top: @line;
+		padding-bottom: @line;
+	}
 
 .panel {
 	.kiss-obj-mods-panel (@vert-space: @base, @hor-space: (@base * 3), @border: 1px);
@@ -1518,6 +1554,21 @@ input {
 	line-height: (@base * 4) -2px;
 }
 
+.checkbox  {
+
+margin-bottom: @base;
+label {
+    display: block;
+   
+}
+input {
+    margin-right: @base;
+   
+    *overflow: hidden;
+}
+
+}
+
 
 .btn {
 	.kiss-obj-buttons-base ();
@@ -1552,16 +1603,14 @@ input {
 	padding: 0 @line;
 	background: @green;
 	color: white;
-	border-radius: 100px;
+	border-radius: 8px;
 	.icon {
 		color: white;
 	}
 
 }
 
-btn.default.submit {
-	background: blue;
-}
+
 
 
 
@@ -1578,11 +1627,15 @@ btn.default.submit {
 .input--text {
 	.kiss-obj-forms-text-input (@space: 8px, @border: 1px);
 	font-size: 16px;
-	line-height: 16px;
+	line-height: @line;
 	margin-bottom: @line / 2;
 	border-color: @green;
 	border-radius: 4px;
 	height: @base * 4;
+}
+
+.input-full-width {
+	width: 100%;
 }
 
 #cse-search-box {
@@ -1650,6 +1703,17 @@ textarea.comment {
 	}
 
 }
+}
+
+#submit input[type=submit] {
+	background: @blue;
+}
+
+
+input[type=number] {
+	line-height: @line;
+	width: @line * 5;
+	padding-left: @base;
 }
 
 
@@ -1746,10 +1810,16 @@ audio {
 	max-width: 500px;
 	margin-bottom: @line / 2;
 	margin-right: @base * 2;
-	.download {
+	.info {
 		display: block;
 		width: 100%;
 		text-align: right;
+	}
+
+	.audioLoading {
+		font-style: italic;
+		margin-right: @base;
+
 	}
 }
 

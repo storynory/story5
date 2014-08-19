@@ -57,7 +57,7 @@ require_once('library/custom-post-type.php'); // you can disable this if you lik
 
 
 require_once('library/audio-player.php'); // audio player plugin
-
+require_once('library/email-form.php'); // audio player plugin
 
 
 /**
@@ -220,6 +220,16 @@ function remove_more_link_scroll( $link ) {
 	return $link;
 }
 add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
+
+
+/****allow html in category descriptions ****/
+foreach ( array( 'pre_term_description' ) as $filter ) {
+    remove_filter( $filter, 'wp_filter_kses' );
+}
+ 
+foreach ( array( 'term_description' ) as $filter ) {
+    remove_filter( $filter, 'wp_kses_data' );
+}
 
 
 /************* COMMENT LAYOUT *********************/

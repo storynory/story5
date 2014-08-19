@@ -85,7 +85,7 @@ jQuery('.bpn-current a').on("click", function() {
 
 
 $(".js-audioPlayer").kissaudio();
-$(".quickplay").kissaudio();
+
 
 
 // simple tooltip
@@ -108,6 +108,38 @@ $('.masterTooltip').hover(function(){
         $('.tooltip')
         .css({ top: mousey, left: mousex });
 });
+
+// reset on back button
+ $('input:checkbox').prop('checked', false);
+ $('#donateXclick').val("_xclick");
+  $("#donatePrice").attr("name","amount");
+
+$("#donateRecur").on("change", function() {
+   var box = $(this);
+   if($(box).is(':checked')) {
+      $("#donatePrice").attr("name","a3");
+      $("#donateXclick").val("_xclick-subscriptions");
+
+   }
+  else {
+    $("#donatePrice").attr("name","amount");
+    $("#donateXclick").val("_xclick");
+  }
+
+
+});
+
+$('.form').on('submit', function (e) {
+    $('.required').each(function(){
+        var self = $(this);
+        if (self.val() === '') {
+            e.preventDefault();
+        } else {
+            // submit otherwise
+        }
+    });
+});
+
 
 
 
