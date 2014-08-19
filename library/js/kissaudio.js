@@ -70,7 +70,7 @@ var options,checkaudio;
 
     playPause: function(myaudio) {
 
-
+try {
 
       if (myaudio.paused && myaudio.readyState === 4) {
        
@@ -80,6 +80,9 @@ var options,checkaudio;
       } else {
         return myaudio.pause();
       }
+}
+catch(err) {}
+
     },
 
    update: function(range,span) {
