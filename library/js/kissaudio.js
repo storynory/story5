@@ -72,7 +72,7 @@ var options,checkaudio;
 
 try {
 
-      if (myaudio.paused && myaudio.readyState === 4) {
+      if (myaudio.paused) {
        
         return myaudio.play();
 
@@ -182,6 +182,8 @@ catch(err) {}
  
 };
 
+//INIT ********************
+
 methods.init();
 methods.MoveForward = methods.setMoveForward;
 
@@ -201,12 +203,10 @@ var spanTime    = $(settings.spanTime,player);
 var audioLoading = $(settings.audioLoading, player);
 
 
-
+// create audio
 var nextaudio = $("a.playPause").eq(i+1);
-
-
 var myaudio = new Audio();
-myaudio.preload = "metadata";
+
 
 myaudio.src= $(playPause, this).attr("href");
 
