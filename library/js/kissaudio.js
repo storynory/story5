@@ -115,7 +115,7 @@ catch(err) {}
     catch (err) { }
      },
 
-    scrubWhite : function (myaudio, range) {
+    scrubWhite : function (myaudio, range) {  // on time update
     var percent;
     percent =  ( myaudio.currentTime )  / ( myaudio.duration ) * 100;
     var anim = function () {
@@ -126,7 +126,7 @@ catch(err) {}
 
 
   scrub : function (myaudio,range) {
-    
+ try {   
     var time = $(range).val();
     myaudio.currentTime = time;
    
@@ -139,6 +139,14 @@ catch(err) {}
       };
       requestAnimationFrame(anim);
    }
+
+  }
+  catch(err){
+
+
+  } 
+
+ 
  },
 
   volume : function (myaudio,range, icon) {
@@ -182,8 +190,6 @@ catch(err) {}
  
 };
 
-//INIT ********************
-
 methods.init();
 methods.MoveForward = methods.setMoveForward;
 
@@ -203,10 +209,12 @@ var spanTime    = $(settings.spanTime,player);
 var audioLoading = $(settings.audioLoading, player);
 
 
-// create audio
-var nextaudio = $("a.playPause").eq(i+1);
-var myaudio = new Audio();
 
+var nextaudio = $("a.playPause").eq(i+1);
+
+
+var myaudio = new Audio();
+//myaudio.preload = "metadata";
 
 myaudio.src= $(playPause, this).attr("href");
 
@@ -244,7 +252,7 @@ $(volumeRange).on("input", function() {
 
 
 $(audioRange ).on(eClick, function () {
-  methods.moveForward  =  methods.setMoveForward; 
+  methods.moveForward  =  methods.setMoveForward;
   methods.scrub(myaudio, audioRange);
 
 });
