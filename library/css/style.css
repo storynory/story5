@@ -114,7 +114,8 @@ dfn {
  */
 hr {
   -moz-box-sizing: content-box;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
 }
 /**
@@ -276,7 +277,9 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -965,20 +968,18 @@ p {
   font-family: Georgia, serif;
 }
 .check {
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.3) 100%);
   /* FF3.6+ */
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(95%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.3)));
   /* Chrome,Safari4+ */
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.3) 100%);
   /* Chrome10+,Safari5.1+ */
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.3) 100%);
   /* Opera11.10+ */
-  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.3) 100%);
   /* IE10+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(95%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 95%, rgba(0, 0, 0, 0.3) 100%);
   background-image: linear-gradient(top, rgba(0, 0, 0, 0.3) 95%, rgba(0, 0, 0, 0.3) 100%);
   /* W3C */
   -webkit-background-size: 100% 16px;
-  -o-background-size: 100% 16px;
   background-size: 100% 16px;
 }
 .check p,
@@ -1809,7 +1810,8 @@ pre {
 }
 .modtwo,
 .card {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px 0px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px 0px;
   border-radius: 0.3em;
   margin-right: 32px;
   width: auto;
@@ -2092,7 +2094,8 @@ input {
   -ms-user-select: none;
   user-select: none;
   text-decoration: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 .btn::-moz-focus-inner {
   padding: 0;
@@ -2198,7 +2201,6 @@ textarea.comment {
 }
 .button-group button.default.active {
   color: rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.6);
   box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.6);
 }
@@ -2241,9 +2243,7 @@ input[type=number] {
   background-color: rgba(98, 186, 236, 0.8);
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, rgba(143, 206, 242, 0.8)), color-stop(51%, rgba(98, 186, 236, 0.8)));
   background: -webkit-linear-gradient(rgba(143, 206, 242, 0.8) 50%, rgba(98, 186, 236, 0.8) 51%);
-  background: -moz-linear-gradient(rgba(143, 206, 242, 0.8) 50%, rgba(98, 186, 236, 0.8) 51%);
-  background: -o-linear-gradient(rgba(143, 206, 242, 0.8) 50%, rgba(98, 186, 236, 0.8) 51%);
-  background: -ms-linear-gradient(rgba(143, 206, 242, 0.8) 50%, rgba(98, 186, 236, 0.8) 51%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(143, 206, 242, 0.8)), color-stop(51%, rgba(98, 186, 236, 0.8)));
   background: linear-gradient(rgba(143, 206, 242, 0.8) 50%, rgba(98, 186, 236, 0.8) 51%);
   border-color: #222;
 }
@@ -2251,9 +2251,7 @@ input[type=number] {
   background-color: #62baec;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #8fcef2), color-stop(51%, #62baec));
   background: -webkit-linear-gradient(#8fcef2 50%, #62baec 51%);
-  background: -moz-linear-gradient(#8fcef2 50%, #62baec 51%);
-  background: -o-linear-gradient(#8fcef2 50%, #62baec 51%);
-  background: -ms-linear-gradient(#8fcef2 50%, #62baec 51%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #8fcef2), color-stop(51%, #62baec));
   background: linear-gradient(#8fcef2 50%, #62baec 51%);
 }
 .nav--group.soft li:first-child > a {
@@ -2407,7 +2405,8 @@ input.audio-bar::-moz-range-thumb {
   width: 24px;
   height: 24px;
   background: #69a366;
-  box-shadow: 0px 0px 3px #497647;
+  -webkit-box-shadow: 0px 0px 3px #497647;
+          box-shadow: 0px 0px 3px #497647;
   border-radius: 50%;
   opacity: 0.8;
 }

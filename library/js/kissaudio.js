@@ -125,26 +125,27 @@ catch(err) {}
   },
 
 
-  scrub : function (myaudio,range) {
- try {   
-    var time = $(range).val();
-    myaudio.currentTime = time;
-   
-    var percent;
-    percent =  ( myaudio.currentTime )  / ( myaudio.duration ) * 100;
-  
-    if ( myaudio.buffered.end(0) >= myaudio.currentTime) {
-      var anim = function () {
-        $(range ).css("background-image", "linear-gradient( to right, white "  + percent + "%,  #EFD480 " + percent + "% )");
-      };
-      requestAnimationFrame(anim);
-   }
+scrub : function (myaudio,range) {
+    try {   
+      var time = $(range).val();
+      myaudio.currentTime = time;
+     
+      var percent;
+      percent =  ( myaudio.currentTime )  / ( myaudio.duration ) * 100;
+     // console.log("scrub :" + myaudio.currentTime + " " + myaudio.buffered.end(0));
+    
+      if ( myaudio.buffered.end(0) >= myaudio.currentTime) {
+        var anim = function () {
+          $(range ).css("background-image", "linear-gradient( to right, white "  + percent + "%,  #EFD480 " + percent + "% )");
+        };
+        requestAnimationFrame(anim);
+     }
 
-  }
-  catch(err){
+    }
+    catch(err){
 
 
-  } 
+    }
 
  
  },
@@ -153,6 +154,7 @@ catch(err) {}
    var vol;
    vol = $(range).val();
    myaudio.volume = vol / 10;
+
    if (vol <= 7.5  && vol > 5) {
       $(icon ).removeClass("high").removeClass("low").addClass("medium");
 
@@ -220,9 +222,7 @@ myaudio.src= $(playPause, this).attr("href");
 
 $(playPause).on("click", function() {
    
-if (myaudio.readyState === 0) {
-  myaudio.load();
-}
+
      methods.playPause(myaudio);
      myaudio.addEventListener('timeupdate',function () {
      methods.update(audioRange,spanTime);
