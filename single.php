@@ -1,4 +1,6 @@
-<?php get_header(); // meta, html, body, opens .wrap ?>
+<?php get_header(); // meta, html, body, opens .wrap
+	 global $more; $more=0; the_content(''); $more=1;
+ ?>
 
 
 	<div class="grid">
@@ -23,14 +25,13 @@
 	 --><div class="grid__item one-whole"> 
 
 	<div class="gutter">
-		<? // include main article loops //
-
+	
 <?php get_template_part( 'loops/loop-single' ); ?>
 
 		
 
 
-		 ?>
+		
 		</div>
 
 </div>
