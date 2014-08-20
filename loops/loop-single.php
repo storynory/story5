@@ -1,8 +1,8 @@
  <?php 
  $postid = get_the_ID(); 
- $title =  get_the_title( $postid ); ?> 
-
- ?> 
+ $title =  get_the_title( $postid ); 
+global $more; $more=0;
+ ?>
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); 
 		
@@ -32,7 +32,7 @@
 					</header> <!-- end article header -->
 
 
-					<?php global $more; $more=0; the_content(''); $more=1; ?>
+					<?php  the_content(''); $more=1; ?>
 
 
 
