@@ -246,7 +246,7 @@ methods.scrub(myaudio,audioRange);
 });
 
 
-$(volumeRange).on("input", function() {
+$(volumeRange).on("input change", function() {
     methods.volume(myaudio, volumeRange, iconVolume);
  });
 
