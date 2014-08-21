@@ -16,6 +16,7 @@
 
 
 
+
 html, body {
     -webkit-overflow-scrolling: touch;
     // improves overflow scrolling - eg in scrub bar of audio
@@ -1967,10 +1968,6 @@ width: @base * 3;
   box-shadow: 0px 0px 3px darken(@green, 15%);
 border-radius: 50%;
  opacity: 0.8;
-
-
-  
-
 }
 
 //volume 
@@ -2002,6 +1999,24 @@ input.range-volume {
 		
 	}	
 	
+::-ms-fill-lower {
+    background: transparent;
+}
+::-ms-fill-upper {
+    background: transparent;
+}
+
+::-ms-thumb {
+    background: @green;
+}
+
+::-ms-track {
+    color: transparent;
+    position: absolute;
+    top: @line;
+}
+
+
 .fixed-bottom {
 	background: #f5f5f5;
 	width: 100%;

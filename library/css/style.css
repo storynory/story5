@@ -2431,6 +2431,20 @@ input.range-volume {
 input.range-volume:focus {
   outline: 0;
 }
+::-ms-fill-lower {
+  background: transparent;
+}
+::-ms-fill-upper {
+  background: transparent;
+}
+::-ms-thumb {
+  background: #69a366;
+}
+::-ms-track {
+  color: transparent;
+  position: absolute;
+  top: 32px;
+}
 .fixed-bottom {
   background: #f5f5f5;
   width: 100%;
