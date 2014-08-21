@@ -1110,7 +1110,16 @@ module.exports = require("handlebars/runtime")["default"];
 perfBar.init({
     // list of the built-in metrics http://lafikl.github.io/perfBar/#list 
     budget: { 
-      
+      // the key is the metric id
+      'loadTime': {
+        max: 400
+      },
+      'redirectCount': {
+        max: 1
+      },
+      'globalJS': {
+        min: 2,
+        max: 5
       }
     }
   });
