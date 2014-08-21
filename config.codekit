@@ -1023,6 +1023,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/library\/js\/allscripts.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/js\/allscripts.js",
+		"outputAbbreviatedPath": "\/library\/js\/min\/allscripts-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/library\/js\/fastclick.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -1133,6 +1144,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/library\/js\/min\/perfbar-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/js\/min\/perfbar-min.js",
+		"outputAbbreviatedPath": "\/library\/js\/min\/min\/perfbar-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/library\/js\/min\/plugin-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -1201,7 +1223,7 @@
 		},
 	"\/library\/js\/perfbar.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/library\/js\/perfbar.js",
 		"outputAbbreviatedPath": "\/library\/js\/min\/perfbar-min.js",
@@ -2005,6 +2027,14 @@
 	],
 "lastSavedByUser": "HUGH FRASER",
 "manualImportLinks": {
+	"\/library\/js\/allscripts.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/library\/js\/perfbar.js",
+			"position": 0,
+			"type": 0
+			}
+		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
