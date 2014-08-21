@@ -57,6 +57,7 @@ global $more;
 
 
 </nav>	
+	<?php get_template_part( '../library/lingosForm' ); ?>
 
 <hr class="vertical" />
 <div id="main-content" class="drop">

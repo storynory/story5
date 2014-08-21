@@ -1,3 +1,11 @@
+// select individual words
+var select;
+select = function() {
+    var sel = (document.selection && document.selection.createRange().text) ||
+    (window.getSelection && window.getSelection().toString());
+    return sel;
+};
+
 
   (function( $ ){
    
@@ -144,7 +152,6 @@ $('.form').on('submit', function (e) {
 
 
  })( jQuery );
-
 
 
 

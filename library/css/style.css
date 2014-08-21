@@ -666,6 +666,130 @@ form ul {
 /* ==========================================================================
    Button Groups
    ========================================================================== */
+#perfBar,
+#perfBar:before,
+#perfBar:after,
+#perfBar *,
+#perfBar *:before,
+#perfBar *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#perfBar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  color: #333;
+  font-weight: 200;
+  font-family: 'Proxima Nova', arial;
+  font-size: 16px;
+  background: #EFEFEF;
+  border-top: 1px solid #dedede;
+}
+#perfBar:hover {
+  background: #EFEFEF;
+}
+#perfBar.perfBar-is-active {
+  background: #EFEFEF;
+  height: 250px;
+}
+#perfBar.perfBar-is-active .perfBar-bar:hover {
+  background: #ededed;
+}
+.perfBar-bar {
+  padding: 0 30px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+.perfBar-is-active .perfBar-bar {
+  border-bottom: 1px solid #ededed;
+  -webkit-box-shadow: 0 1px 0 #dedede;
+          box-shadow: 0 1px 0 #dedede;
+}
+.perfBar-bar-circle {
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  background: #999;
+  border-radius: 50%;
+}
+.perfBar-stats {
+  display: none;
+}
+.perfBar-is-active .perfBar-stats {
+  display: block;
+  overflow: auto;
+  max-height: 200px;
+}
+.perfBar-stats ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto 0;
+  display: block;
+  width: 90%;
+}
+.perfBar-stats li {
+  padding: 15px;
+  width: 50%;
+  height: 100px;
+  float: left;
+}
+.perfBar-stat {
+  text-align: center;
+}
+.perfBar-valueUnit {
+  -webkit-font-smoothing: antialiased;
+}
+.perfBar-valueUnit.is-good {
+  color: #00AD61;
+}
+.perfBar-valueUnit.is-bad {
+  color: #FF3535;
+}
+.perfBar-value {
+  font-size: 2em;
+  font-weight: 600;
+}
+.perfBar-unit {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.perfBar-label {
+  margin-top: 5px;
+  color: #999;
+  font-weight: 200;
+  font-size: .8em;
+}
+.perfBar-cf:before,
+.perfBar-cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.perfBar-cf:after {
+  clear: both;
+}
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.perfBar-cf {
+  *zoom: 1;
+}
+@media screen and (min-width: 700px) {
+  .perfBar-stats li {
+    width: 20%;
+  }
+}
 html,
 body {
   -webkit-overflow-scrolling: touch;
@@ -2468,4 +2592,84 @@ input.range-volume:focus {
   border-radius: 5px;
   padding: 10px;
   color: #69a366;
+}
+.rangeslider {
+  position: relative;
+  background: #efd480;
+  width: 100%;
+  height: 16px;
+}
+.rangeslider__handle {
+  background: #69a366;
+  width: 32px;
+  height: 32px;
+}
+.rangeslider,
+.rangeslider__fill {
+  background: #e6e6e6;
+  display: block;
+  height: 20px;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+.rangeslider {
+  position: relative;
+}
+.rangeslider--disabled {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+.rangeslider__fill {
+  background: #00ff00;
+  position: absolute;
+  top: 0;
+}
+.rangeslider__handle {
+  background: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -10px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(0, 0, 0, 0.1)));
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.1)));
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.rangeslider__handle:after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.13)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.13)), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0));
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.rangeslider__handle:active {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.12)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.12)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
+}
+input[type="range"]:focus + .rangeslider .rangeslider__handle {
+  -webkit-box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
 }
