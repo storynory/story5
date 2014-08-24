@@ -31,4 +31,3 @@ $string = tranny($what, $from, $to);
  
  echo $string;
 ?>
-
