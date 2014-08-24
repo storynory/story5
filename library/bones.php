@@ -139,7 +139,7 @@ function bones_scripts_and_styles() {
      //adding jquery file in the footer
    
      wp_register_script( 'fastclick', get_stylesheet_directory_uri() . '/library/js/fastclick.js', array( 'jquery' ), '', true );
-
+ wp_register_script( 'CaptainFade', get_stylesheet_directory_uri() . '/library/js/jquery.CaptainFade.js', array( 'jquery' ), '', true );
  //adding scripts file in the footer
     wp_register_script( 'audio', get_stylesheet_directory_uri() . '/library/js/kissaudio.js', array( 'jquery' ), '', true );
  //adding scripts file in the footer
