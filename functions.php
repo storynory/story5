@@ -437,8 +437,9 @@ function thumb () {
 		
 	 	$thumb = get_post_meta($id, 'thumb', $single = true);
 	     } 
-	$thumb= str_replace("storynory.dev", "storynory.cachefly.net", $thumb);
-	$thumb= str_replace("static.storynory.com", "storynory.cachefly.net", $thumb);  
+	$thumb= str_replace("storynory.dev", "storynory.com", $thumb);
+	$thumb= str_replace("static.storynory.com", "storynory.com", $thumb);  
+
 	$thumb= str_replace("hughfraser.co.uk", "storynory.com", $thumb);
 	
 	
