@@ -1,0 +1,35 @@
+server  {
+         server_name   www.storynory.com;
+         listen   80;
+
+error_log /home/bertie/www/wordpress/error.log;
+ client_max_body_size 64M;
+        location ~ \.php$ {
+                include fastcgi_params;
+                fastcgi_pass  127.0.0.1:9000;
+                fastcgi_index index.php;
+ fastcgi_param  SCRIPT_FILENAME  /home/bertie/www/wordpress/$fastcgi_script_name;
+        }
+        location / {
+		gzip  on;
+               gzip_http_version 1.0;
+               gzip_vary on;
+               gzip_comp_level 3;
+               gzip_proxied any;
+               gzip_types text/plain  text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+               gzip_buffers 16 8k;
+              root /home/bertie/www/wordpress/;
+               index  index.php index.html index.htm;
+# if the requested file exists, return it immediately
+if (-f $request_filename) {
+	break;
+}
+
+
+# all other requests go to WordPress
+if (!-e $request_filename) {
+	rewrite . /index.php last;
+}
+
+}
+}

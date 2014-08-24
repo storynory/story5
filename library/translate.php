@@ -1,10 +1,9 @@
-<head>
-	<meta charset="UTF-8">
-</head>	
-
-
-
 <?php 
+header('Cache-Control: no-cache, must-revalidate');
+header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+header('content-type: application/json; charset=utf-8');
+
+
 $what = $_GET["what"];
 $from = $_GET["from"];
 $to = $_GET["to"];
@@ -24,21 +23,12 @@ function curl($url)
 function tranny($what, $from, $to)
 {
 $url = 'http://translate.google.com/translate_a/t?client=p&q='.urlencode($what).'&hl='.$to.'&sl='.$from.'&tl='.$to.'&ie=UTF-8&oe=UTF-8&multires=0!';
-
-$out = json_decode(curl($url), 1);
-$ret = "";
-foreach($out['sentences'] as $sentence) {
-$ret .= $sentence['trans'].' ' ;
-
-}
+$ret = curl($url);
 return stripslashes(trim($ret));
 };
 
+$string = tranny($what, $from, $to); 
+ 
+ echo $string;
+?>
 
-
-$string = tranny($what, $from, $to); ?>
-
-{
-    "word":  "<?php echo $string  ?>"
-
-}

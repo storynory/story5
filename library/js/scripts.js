@@ -102,6 +102,10 @@ $('.masterTooltip').hover(function(){
         // Hover over code
         var title = $(this).attr('title');
         $(this).data('tipText', title).removeAttr('title');
+
+ )};
+ 
+ var tip = function (title) {       
         $('<p class="tooltip"></p>')
         .text(title)
         .appendTo('body')
@@ -116,6 +120,8 @@ $('.masterTooltip').hover(function(){
         $('.tooltip')
         .css({ top: mousey, left: mousex });
 });
+}
+
 
 // reset on back button
  $('input:checkbox').prop('checked', false);
@@ -147,6 +153,32 @@ $('.form').on('submit', function (e) {
         }
     });
 });
+
+
+// select individual words
+select = function() {
+    var sel = (document.selection && document.selection.createRange().text) ||
+    (window.getSelection && window.getSelection().toString());
+    return sel;
+};
+
+
+$.ajax({
+        type: "GET",
+        url: "/wp-content/themes/story5/library/translate.php",
+        data: {
+          what : "witch",
+          from : "en",
+          to : "fr"
+        },
+        dataType: 'json',
+        success: function(data) {
+            console.log(data.sentences[0].trans);
+        },
+        error: function(data) {
+            console.log('sorry, translation did not work');
+        }
+    });
 
 
 
