@@ -187,4 +187,7 @@ function cleaner_gallery( $output, $attr ) {
 	return $output;
 }
 
+
+
+
 ?>
