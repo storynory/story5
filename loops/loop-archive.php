@@ -197,9 +197,3 @@ if ($parentid) {
 											</ul>
 										</nav>
 									<?php } ?>
-
-							
-
-									
-
-

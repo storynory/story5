@@ -1,5 +1,3 @@
-
-
 <header class="gutter clearleft">
 
 

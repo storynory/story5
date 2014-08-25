@@ -35,4 +35,3 @@ $more = 0 ; ?>
      		} else {
      	/* No posts found */
           } ?>
-      
