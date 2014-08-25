@@ -209,6 +209,7 @@ var volumeRange = $(settings.volumeRange,player);
 var iconVolume = $(settings.iconVolume,player);
 var spanTime    = $(settings.spanTime,player);
 var audioLoading = $(settings.audioLoading, player);
+var preload = $(settings.preload, player);
 
 
 
@@ -216,7 +217,7 @@ var nextaudio = $("a.playPause").eq(i+1);
 
 
 var myaudio = new Audio();
-//myaudio.preload = "metadata";
+myaudio.preload = preload;
 
 myaudio.src= $(playPause, this).attr("href");
 
@@ -332,6 +333,7 @@ var settings = $.extend({
     iconVolume     :".icon-volume",
     spanTime  :    ".time",
     audioLoading  :    ".audioLoading",
+    preload      : "auto"  // auto|metadata|none">
 }, options);
 
 

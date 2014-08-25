@@ -122,7 +122,7 @@ if (isset($_REQUEST["order"])) {
 								<?php thumb()
 // the_post_thumbnail(); 
 								?>
-								<figcaption>
+								<figcaption class="">
 									<?php $excerpt = strip_tags(get_the_excerpt());?>
 									<p><?php echo $excerpt; ?><a href="<?php the_permalink(); ?>" ><b class="icon icon-arrow-right"></b> Read More</a></p>
 									<?php  
