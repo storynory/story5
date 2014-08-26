@@ -28,6 +28,12 @@ if (isset($_REQUEST["order"])) {
 		$opposite =  "ASC";
 	}
 }
+
+if ( is_category('people') ) {
+	$order = 'order'; 
+
+}
+
 ?>
 <h1 class="archive-title h2">
 	<?php single_cat_title(); ?>
