@@ -29,7 +29,7 @@ if (isset($_REQUEST["order"])) {
 	}
 }
 
-if ( is_category('people') ) {
+if ( is_category('People') ) {
 	$order = 'order'; 
 
 }
