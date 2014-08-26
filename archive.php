@@ -15,8 +15,7 @@ $order = 'DESC' ;
 $opposite =  "ASC";
 $orderby = 'date';
 $checked =  $order;
-$indicator = "latest";
-$category = get_the_category(); 
+$indicator = "latest"; 
 if (isset($_REQUEST["order"])) {
 	$order = $_REQUEST["order"];
 	if ( $order == "ASC") {
@@ -29,10 +28,8 @@ if (isset($_REQUEST["order"])) {
 	}
 }
 
-if ( is_category('People') ) {
-	$order = 'order'; 
 
-}
+
 
 ?>
 <h1 class="archive-title h2">
@@ -109,10 +106,15 @@ if ( is_category('People') ) {
 						<span><?php _e("Yearly Archives:", "bonestheme"); ?></span> <?php the_time('Y'); ?>
 					</h1>
 					<?php } 
+					if ($thisCat ->slug == "people") {
+						$orderby = "menu_order";
+	
+					}
+
 					$args = array(
 						'cat'        =>    get_query_var('cat'),
 						'order'           => $order,
-						'orderby'           => 'date',
+						'orderby'           => $orderby,
 						'paged'           => $paged,
 						);	
 						?>		
