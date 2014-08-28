@@ -222,7 +222,7 @@ myaudio.preload = preload;
 myaudio.src= $(playPause, this).attr("href");
 
 $(playPause).on("click", function() {
-   
+   $(audioLoading).text("Loading");
 
      methods.playPause(myaudio);
      myaudio.addEventListener('timeupdate',function () {
@@ -234,7 +234,7 @@ $(playPause).on("click", function() {
 
 $(myaudio).on('ended', function() {
   myaudio.currentTime = 0;
-  $(nextaudio).trigger("click");   
+$(nextaudio).trigger("click"); 
   });
 
 $(audioRange).on("input", function() {
@@ -278,7 +278,7 @@ methods.update(spanTime);
 
 $(myaudio).on('canplay', function() {
    methods.ready(iconVolume);
-   //$(audioLoading).fadeOut("slow");
+   $(audioLoading).fadeOut("slow");
 
   });
 
