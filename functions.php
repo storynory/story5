@@ -310,4 +310,6 @@ function thumb () {
 	else { echo '<img height=100 width=100 src="/wp-content/themes/story5/library/img/bertie.svg" />'; 
 }
 }
+
+
 ?>

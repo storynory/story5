@@ -1,5 +1,5 @@
 <?php get_header(); // meta, html, body, opens .wrap
-global $more; 
+
 $postid = get_the_ID(); 
 $title =  get_the_title( $postid ); // we need this not to conflict with Barley
 ?>
@@ -24,7 +24,9 @@ $title =  get_the_title( $postid ); // we need this not to conflict with Barley
 				<span class="Commments right--r"><span class="icon icon-bubble "></span><a href="#comments"><?php comments_number( 'no comments yet', 'one comment', '% comments' ); ?></a></span>
 			</div>
 		</header> <!-- end article header -->
-		<?php   $more=0; the_content(''); $more=1; ?>
+		<?php global $more;  $more=0; the_content(''); $more=1;
+
+		 ?>
 		<nav class="nav">
 			<p> <i>Share this page - parents, teachers, anyone 13 years old or older</i></p>	
 			<ul class="social-icons-horiz" >
