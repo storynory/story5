@@ -42,7 +42,7 @@ function playerControls ($mp3) {
 <input type="range" class="range-volume"  min=0 value=10 max=10 />
         </li>
     <li class="right">
-    <b class="icon max icon-volume"></b>
+    <b class="icon high icon-volume"></b>
     </li>
     <li class="right">
     <span class="time">00:00</span> 
