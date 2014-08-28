@@ -312,8 +312,6 @@ $(myaudio).on('pause',
 
 
 
-
-
 $(myaudio).on('loadedmetadata',
   function() {
 
