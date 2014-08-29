@@ -1524,7 +1524,7 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/library\/less\/kiss\/obj\/fonts.less",
 		"outputAbbreviatedPath": "\/library\/less\/kiss\/css\/fonts.css",

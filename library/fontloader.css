@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'fontesquesanscompregular';
+    src: url('/wp-content/themes/story5/library/fonts/fontesque/fontesquesanscomp-webfont.eot');
+    src: url('/wp-content/themes/story5/library/fonts/fontesque/fontesquesanscomp-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/wp-content/themes/story5/library/fonts/fontesque/fontesquesanscomp-webfont.woff') format('woff'),
+         url('/wp-content/themes/story5/library/fonts/fontesque/fontesquesanscomp-webfont.ttf') format('truetype'),
+         url('/wp-content/themes/story5/library/fonts/fontesque/fontesquesanscomp-webfont.svg#fontesquesanscompregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('/wp-content/themes/story5/library/fonts/icons/icomoon.eot?fwpirh');
+  src: url('/wp-content/themes/story5/library/fonts/icons/icomoon.eot?#iefixfwpirh') format('embedded-opentype'), 
+  url('/wp-content/themes/story5/library/fonts/icons/icomoon.woff?fwpirh') format('woff'),
+   url('/wp-content/themes/story5/library/fonts/icons/fonts/icomoon.ttf?fwpirh') format('truetype'), 
+   url('/wp-content/themes/story5/library/fonts/icons/fonts/icomoon.svg?fwpirh#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

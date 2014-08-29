@@ -230,11 +230,7 @@ function bones_comments($comment, $args, $depth) {
 			<!-- </li> is added by WordPress automatically -->
 			<?php
 } // don't remove this bracket!
-function load_fonts() {
-	wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Sanchez');
-	wp_enqueue_style( 'googleFonts');
-}
-add_action('wp_print_styles', 'load_fonts');
+
 /************* BreadCrumb *********************/
 function archivebox () { 
 	$id = $GLOBALS['post']->ID;

@@ -27,6 +27,20 @@
 <!--[if lt IE 9]>
 <script src="/wp-content/themes/story5/library/js/respond.js" />
 <![endif]-->
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Sanchez']
+    },
+    custom: {
+    families: ['fontesquesanscompregular',],
+    urls: ['/wp-content/themes/story5/library/fontloader.css']
+  }
+  });
+</script>
+
+
 </head>
 <body>
 	<nav class="nav dropper">
