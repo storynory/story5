@@ -23,6 +23,9 @@ Template Name: homepage
 // the query
 		$the_query = new WP_Query( $args); ?>
 		<?php if ( $the_query->have_posts() ) : ?>
+
+
+		
 		<!-- pagination here -->
 		<!-- the loop -->
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
