@@ -116,9 +116,9 @@ if (isset($_REQUEST["order"])) {
 								<?php thumb()
 // the_post_thumbnail(); 
 								?>
-								<div class="">
-									<?php // $excerpt = strip_tags(get_the_excerpt());?>
-									<p><?php the_excerpt(); ?><a href="<?php the_permalink(); ?>" ><b class="icon icon-arrow-right"></b> Read More</a></p>
+								<div class="gutter">
+									<?php $excerpt = strip_tags(get_the_excerpt());?>
+									<p class=""><?php echo $excerpt; ?><a href="<?php the_permalink(); ?>" ><b class="icon icon-arrow-right"></b> Read More</a></p>
 															
 								</div>
 							</div> <!-- end article section -->
