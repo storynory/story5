@@ -8,7 +8,7 @@ Author: hugh fraser
 Author URI: http://storynory.com
 */
 
-header("Access-Control-Allow-Origin: http://traffic.libsyn.com");
+
 
 function getEnclosure () {
 $post_id = $GLOBALS['post']->ID; 
