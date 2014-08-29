@@ -30,10 +30,30 @@
 
 //************************************************************
 
+
+
+
+
 //  The Plugin
 
-
 (function( $ ){
+
+
+
+var testAudio = function() {
+    try {
+        var canplay = document.createElement('audio').canPlayType('audio/mpeg');
+        if (canplay === "probably" || canplay === "maybe"){
+            return true;
+         }
+        }
+    catch(error) {
+        return false;
+    }
+
+};
+
+
 
 // unify an end touch / click event
 var isTouch = 'ontouchstart' in window,
@@ -198,6 +218,10 @@ methods.MoveForward = methods.setMoveForward;
 // setup plugin
 
 $.fn.kissaudio = function( options ) {
+  if (testAudio () === false) {
+    return false;
+}
+
  
     this.each( function(i) {
         // Do something to each element here.
