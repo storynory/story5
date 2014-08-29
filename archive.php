@@ -28,9 +28,6 @@ if (isset($_REQUEST["order"])) {
 	}
 }
 
-
-
-
 ?>
 <h1 class="archive-title h2">
 	<?php single_cat_title(); ?>
@@ -82,34 +79,23 @@ if (isset($_REQUEST["order"])) {
 					<?php	} ?>
 				</aside>
 				<p class="fancy"><i>Showing <?php echo $indicator ?> stories first.</i> <b class="icon icon-arrow-right"></b><a href="?order=<?php echo $opposite ?>">Switch Order</a></p>				
-				<?php } elseif (is_tag()) { ?>
-				<h1 class="archive-title h2">
-					<span><?php _e("Posts Tagged:", "bonestheme"); ?></span> <?php single_tag_title(); ?>
-				</h1>
-				<?php } elseif (is_author()) {
-					global $post;
-					$author_id = $post->post_author;
-					?>
-					<h1 class="archive-title h2">
-						<span><?php _e("Posts By:", "bonestheme"); ?></span> <?php the_author_meta('display_name', $author_id); ?>
-					</h1>
-					<?php } elseif (is_day()) { ?>
-					<h1 class="archive-title h2">
-						<span><?php _e("Daily Archives:", "bonestheme"); ?></span> <?php the_time('l, F j, Y'); ?>
-					</h1>
-					<?php } elseif (is_month()) { ?>
-					<h1 class="archive-title h2">
-						<span><?php _e("Monthly Archives:", "bonestheme"); ?></span> <?php the_time('F Y'); ?>
-					</h1>
-					<?php } elseif (is_year()) { ?>
-					<h1 class="archive-title h2">
-						<span><?php _e("Yearly Archives:", "bonestheme"); ?></span> <?php the_time('Y'); ?>
-					</h1>
-					<?php } 
-					if ($thisCat ->slug == "people") {
-						$orderby = "menu_order";
-	
-					}
+
+	<div class="grid__item one-whole">		
+	<div class="note-tiny">	
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- story5 - cat -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3254202940297578"
+     data-ad-slot="2665519509"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+
+				<?php } 
 
 					$args = array(
 						'cat'        =>    get_query_var('cat'),
@@ -126,23 +112,16 @@ if (isset($_REQUEST["order"])) {
 							<header class="article-header">
 								<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 							</header> <!-- end article header -->
-							<section class="entry-content vertical media--r clearfix">
+							<div class="entry-content vertical media--r clearfix">
 								<?php thumb()
 // the_post_thumbnail(); 
 								?>
-								<figcaption class="">
-									<?php $excerpt = strip_tags(get_the_excerpt());?>
-									<p><?php echo $excerpt; ?><a href="<?php the_permalink(); ?>" ><b class="icon icon-arrow-right"></b> Read More</a></p>
-									<?php  
-									$mp3 = getEnclosure ();
-									$path_parts = pathinfo($mp3);
-									$filename = $path_parts['basename'];
-									if ($mp3) {
-										playerControls($mp3); 
-									}
-									?>							
-								</figcaption>
-							</section> <!-- end article section -->
+								<div class="">
+									<?php // $excerpt = strip_tags(get_the_excerpt());?>
+									<p><?php the_excerpt(); ?><a href="<?php the_permalink(); ?>" ><b class="icon icon-arrow-right"></b> Read More</a></p>
+															
+								</div>
+							</div> <!-- end article section -->
 							<footer class="article-footer">
 							</footer> <!-- end article footer -->
 						</article> <!-- end article -->
@@ -162,22 +141,8 @@ if (isset($_REQUEST["order"])) {
 					<?php get_sidebar(); ?>	
 				</div>
 				<div class="grid__item one-whole">
-					<div class="grid__item one-whole">
-						<figure class="notice media gutter">
-							<img src="/wp-content/themes/story5/library/img/beatrice-frog.svg" alt="Beatrice Fog" width="100" height="100" class="alignnone size-full wp-image-12822" />
-							<figcaption>
-								Listen to 100s of free audio books for kids beautifully read.  Bertie has: 
-								<ul class="list--inline">
-									<li><a href="/archives/">Original Stories</a></li>
-									<li><a href="/archives/classic-authors/">Classic Audio Books</a></li>
-									<li><a href="/archives/poems-music/">Poems and Music</a></li>
-									<li><a href="/archives/fairy-tales/">Fairy Tales</a></li>
-									<li><a href="/archives/educational-stories/">Educational Stories</a></li>
-									<li><a href="/archives/myths-world-stories/">Myths and World Stories</a></li>
-									<li><a href="/archives/stories-for-younger-children/">Junior Stories</a></li>
-								</ul>
-							</figcaption>
-						</figure>
+					
+						
 						<footer class="footer" role="contentinfo">
 							<nav role="navigation">
 								<?php bones_footer_links(); ?>
