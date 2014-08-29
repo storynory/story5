@@ -78,21 +78,14 @@ if (isset($_REQUEST["order"])) {
 					</p>
 					<?php	} ?>
 				</aside>
+				<div class="grid__item one-whole">		
+
+					<div class="note-tiny">	
+ <?php get_template_part( 'adsense' ); ?> 
+</div>
 				<p class="fancy"><i>Showing <?php echo $indicator ?> stories first.</i> <b class="icon icon-arrow-right"></b><a href="?order=<?php echo $opposite ?>">Switch Order</a></p>				
 
-	<div class="grid__item one-whole">		
-	<div class="note-tiny">	
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- story5 - cat -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-3254202940297578"
-     data-ad-slot="2665519509"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
+	
 </div>
 
 				<?php } 

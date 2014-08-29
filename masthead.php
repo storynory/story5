@@ -42,15 +42,6 @@
 		</div>
 	</nav>					
 	<aside class=" add add space space--top note-tiny clear">
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- story5 - cat -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-3254202940297578"
-     data-ad-slot="2665519509"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+ <?php get_template_part( 'adsense' ); ?> 
 	</aside>	
 </header> <?php } ?>
