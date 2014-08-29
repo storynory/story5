@@ -25,7 +25,7 @@ Template Name: homepage
 		<?php if ( $the_query->have_posts() ) : ?>
 
 
-		
+
 		<!-- pagination here -->
 		<!-- the loop -->
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
@@ -56,7 +56,7 @@ Template Name: homepage
 				<figure class="media">
 					<img alt="gladys" class="left" src="http://storynory.com/wp-content/uploads/2014/05/gladyssquare-1400-100x100.jpg" />
 					<figcaption>
-						Our musical series about Gladys who aims to be a pop diva.
+						Our musical series about Gladys who aims to be a pop star.
 					</figcaption>
 					<a class="btn right" href="/2014/06/01/o1-gladys-alone-advice/"><b class="icon icon-arrow-right"></b>Go To</a>
 				</figure>
