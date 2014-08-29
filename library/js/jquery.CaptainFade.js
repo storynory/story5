@@ -57,9 +57,9 @@
 					counter = counter + 1;
 
 
-					if (counter === length) {	
+					if (counter === length) {
 						counter = 0;
-					}   
+					}
 
 
 					goTo(counter);
@@ -70,7 +70,7 @@
 
 						var start = function() {
 							play = setInterval(function()
-							{ 
+							{
 
 								loop ();
 
