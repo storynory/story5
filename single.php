@@ -24,23 +24,10 @@ $title =  get_the_title( $postid ); // we need this not to conflict with Barley
 				<span class="Commments right--r"><span class="icon icon-bubble "></span><a href="#comments"><?php comments_number( 'no comments yet', 'one comment', '% comments' ); ?></a></span>
 			</div>
 		</header> <!-- end article header -->
-		<?php global $more;  $more=0; the_content(''); $more=1;
-
-		 ?>
-		<nav class="nav">
-			<p> <i>Share this page - parents, teachers, anyone 13 years old or older</i></p>	
-			<ul class="social-icons-horiz" >
-				<li class="left"><a href="mailto:myfriend@change-this-email-address.com?subject=<?php echo $title; ?>&body=I've just been listening to <?php echo $title ?> on Storynory.  Here's the link: <?php echo get_permalink( ); ?>. I think you would love it too"><span class="icon icon-mail-send"></span></a></li>							
-				<li class="left"><a target="target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink (); ?>&kidDirectedSite=1"><span class="icon icon-facebook"></span></a></li>
-				<li class="left"><a target="target="_blank"  href="https://plus.google.com/share?url=<?php the_permalink (); ?>"><span class="icon icon-googleplus"></span></a></li>
-				<li class="left"><a target="target="_blank" href="https://twitter.com/home?status=<?php the_permalink (); ?>"><span class="icon icon-twitter"></span></a></li>   
-				<li class="left"><a target="target="_blank" href="http://pinterest.com/pinthis?url=<?php the_permalink (); ?>"><span class="icon icon-pinterest"></span></a></li>      							
-			</ul>
-		</nav>	
-		<hr class="vertical" />
-		<div id="main-content" class="drop">
+		
+	
 <?php  //
-the_content('', true); ?>
+the_content(); ?>
 <footer class="article-footer">
 	<p class="clearfix"><?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
 </footer> <!-- end article footer -->
@@ -61,7 +48,7 @@ the_content('', true); ?>
 	</article>
 <?php endif; ?>
 </div>
-</div>
+
 <div id="sidebar" class="sidebar grid__item two-thirds">
 	<?php get_sidebar(); ?>	
 </div>
