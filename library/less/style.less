@@ -48,13 +48,13 @@ body {
 
 .space {
 	overflow: hidden;
-	margin-bottom: (@line / 2) -1; 
+	margin-bottom: (@line / 2) -1;
 	border-bottom: 1px solid transparent;
 }
 
 .space--r {
 
-@media only screen and (max-width: 790px) {	
+@media only screen and (max-width: 790px) {
 	overflow: hidden;
 	margin-bottom: @line;
 
@@ -76,27 +76,27 @@ body {
 }
 
 
- /* 
+ /*
     Gutters
     ========================================================================== */
- 
+
 
 
  .gutter {
 		margin-right: @line / 2;
-}	
+}
 
- 
+
  @media only screen and (min-width : 940px) {
 
  	.wrap {
  		padding-left: @line / 2;
  		padding-right: 0;
 
- 		
+
  	}
 
-	
+
 
 
 .gutter--left {
@@ -135,7 +135,7 @@ body {
 .gallery-item,
 .inline__item {
 	 display:inline-block;
-	 vertical-align: top;	 
+	 vertical-align: top;
 }
 
 .first {
@@ -149,7 +149,7 @@ body {
 
 }
 
-/* 
+/*
    comments
    ========================================================================== */
 
@@ -206,7 +206,7 @@ body {
 .comment.comment-author-matthew {
 	background: lighten(@green, 30%);
 }
-/* 
+/*
    Responsive Blocks
    ========================================================================== */
 @media only screen and (min-width : 940px) {
@@ -220,7 +220,7 @@ body {
 
 .r-two-thirds {
 .kiss-obj-grids-percent(@fraction : 2 / 3)
-	}			
+	}
 
 
 }
@@ -248,7 +248,7 @@ body {
 }
 
 
-}	
+}
 
 
 .fixed-bottom {
@@ -258,14 +258,14 @@ body {
 }
 
 
-/* 
+/*
    floats
    ========================================================================== */
 
 
 .flex {
 	overflow: hidden !important;
-	
+
 	display: block !important;
 	float: none !important;
 
@@ -287,11 +287,11 @@ body {
 
 @media only screen and (min-width: 730px) {
 
-	.right--r {	
+	.right--r {
 		float: right;
 	}
 
-	.left--r {	
+	.left--r {
 		float: left;
 	}
 
@@ -323,7 +323,7 @@ body {
 
 
 
-/* 
+/*
    Positioning
    ========================================================================== */
 
@@ -412,7 +412,7 @@ font-family: "Sanchez", serif;
 
 .site-title, h2, .brand, a {
 	color: @green;
-	
+
 }
 
 
@@ -423,7 +423,7 @@ h1,h2,h3, h4,
 
 .fancy {
 	font-family: 'fontesquesanscompregular';
-	
+
 }
 
 
@@ -442,17 +442,17 @@ ul.site-title {
 	max-width: 360px;
 }
 
-h1.site-title {	
+h1.site-title {
 	margin: 0;
-	padding: 0;	
-	line-height: 1;	
+	padding: 0;
+	line-height: 1;
 	float: right;
-	  text-shadow: 
+	  text-shadow:
 	      -1px -1px 0 @blue,
     1px -1px 0 @blue,
     -1px 1px 0 @blue,
-    1px 1px 0 @blue;  
-    -webkit-font-smoothing: antialiased; 
+    1px 1px 0 @blue;
+    -webkit-font-smoothing: antialiased;
 }
 
 
@@ -500,7 +500,7 @@ cite {
 }
 
 
-/* 
+/*
    Links
    ========================================================================== */
 
@@ -531,6 +531,7 @@ a:hover {
 	font-family: 'icomoon';
 	.icon ();
 	color: @green;
+	margin-right: @base;
 }
 
 .icon-right {
@@ -603,7 +604,7 @@ nav ul li {
 
 	li {
 		margin-left: 0;
-		
+
 
 	}
 
@@ -641,7 +642,7 @@ nav ul li {
 	list-style-position: inside;
 
 	& li {
-		float: left;
+		display: inline;
 		margin-left: @base;
 
 	}
@@ -668,25 +669,25 @@ nav ul li {
 	line-height: @base * 6;
 	font-size: 30px;
 	vertical-align: middle;
-	
+
 .icon {
 	color: white;
 	width: @base * 6;
 	line-height: @base * 6;
 	margin-bottom: @base * 2;
-}	
+}
 .icon-facebook {
 	background: #3D5A99;
 
-}	
+}
 
-	
+
 
 .icon-pinterest {
 
 	background: #F61718;
 
-}	
+}
 
 
 .icon-mail-send {
@@ -708,9 +709,9 @@ nav ul li {
 .icon-podcast {
 	background: @blue ;
 }
-	
+
 	a {
-		
+
 		padding-right:  ( @base * 3 );
 
 
@@ -801,7 +802,7 @@ h3.menu-title {
 	line-height: 48px;
 }
 
-/* 
+/*
    Responsive sizes in header
    ========================================================================== */
 
@@ -818,9 +819,9 @@ h1.site-title {
 	line-height: 1;
 	color: @red;
 	letter-spacing: 0.5px;
-	
-	
-}	
+
+
+}
 
 .nav--header .sticker {
 	height: 65px;
@@ -839,18 +840,18 @@ h1.site-title {
 		}
 
 
-}	
+}
 
-		
+
 	@media only screen and (max-width: 500px) {
 		.beatrice
 		 {
 			display: none;
 		}
 }
-	
+
 @media only screen and (min-width: 620px) {
-		
+
 .nav--header .sticker {
 	height: 100px;
 	width: 100px;
@@ -869,7 +870,7 @@ h1.site-title {
 }
 
 @media only screen and (min-width: 700px) {
-		
+
 
 h1.site-title {
 	font-size: 80px;
@@ -895,8 +896,8 @@ ul.border {
 .kiss-obj-lists-stacked (
 				 @border-top: 0px,
 				 @border-bottom: 1px,
-				 @padding-top: @base * 2, 
-				 @padding-bottom: @base * 2 
+				 @padding-top: @base * 2,
+				 @padding-bottom: @base * 2
 				);
 
 	position: relative;
@@ -917,7 +918,7 @@ ul.border--flush  li {
 	img {
 		max-height: 95px;
 	}
-  
+
   line-height: 95px;
 
 }
@@ -947,7 +948,7 @@ background: pink;
 		position: relative;
 		width: 300%;
 		list-style: none;
-	}	
+	}
 		li {
 			clear: none;
 			display: block;
@@ -1001,7 +1002,7 @@ nav,.nav {
 }
 
 
-/* 
+/*
    Sidebar
    ========================================================================== */
 
@@ -1060,7 +1061,7 @@ nav,.nav {
 
 	a {
 		padding: ( @base - 1 ) @base * 2;
-	
+
 		background: lighten(@blue, 10%);
 
 	}
@@ -1075,19 +1076,19 @@ nav,.nav {
 		border-bottom-color: transparent;
 		color: @gold;
 		font-size: 24px;
-		line-height: 32px; 
+		line-height: 32px;
 
 	}
 
 
 
-@media only screen and (max-width: 710px) {  
+@media only screen and (max-width: 710px) {
 // at this point the title  disappear completely and we just have icons
 	.icon-right,
 	.carot,
 	.title {
 		display: none;
-	
+
 
 	}
 
@@ -1115,7 +1116,7 @@ nav,.nav {
 	z-index: 1000;
 
 > ul {
-	
+
 	position: absolute;
 	top: -1000%;
 	left: -1000%;
@@ -1127,14 +1128,14 @@ nav,.nav {
 
 	li {
 		width: 100%;
-	
+
 		padding-right: @line;
-	
+
 	}
 
 
 	a {
-		
+
 		color: @gold;
 		&:hover
 
@@ -1230,10 +1231,10 @@ body {
 
 nav {
 	position: relative;
-	
+
 }
 
- 
+
 .overlay:after{
 	 content: "";
   display: block;
@@ -1339,7 +1340,7 @@ ul.centered,
 .notify,
 .pullout,
 .card,
-pre 
+pre
 {
 .kiss-obj-mods-box (@space: @base * 3, @border: 1px);
 }
@@ -1452,7 +1453,7 @@ pre {
 	padding: 0;
 	width: 250px;
 	margin: auto;
-	
+
 	img {
 		max-width: 100%;
 	}
@@ -1474,7 +1475,7 @@ pre {
 
 .media--r {
 
-@media only screen and (min-width: 570px) {	
+@media only screen and (min-width: 570px) {
 	.kiss-obj-media-mediaobj (@space: @line);
 }
 }
@@ -1551,11 +1552,11 @@ input {
 margin-bottom: @base;
 label {
     display: block;
-   
+
 }
 input {
     margin-right: @base;
-   
+
     *overflow: hidden;
 }
 
@@ -1564,7 +1565,7 @@ input {
 
 .btn {
 	.kiss-obj-buttons-base ();
-	
+
 }
 
 .btn.round {
@@ -1671,7 +1672,7 @@ textarea.comment {
    -webkit-box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.6);
    box-shadow:         inset 0 0 12px rgba(0, 0, 0, 0.6);
 
-		
+
 	}
 
 
@@ -1728,9 +1729,9 @@ input[type=number] {
 .nav--group.gradient--bam > li a,
 .gradient--bam {
 	.gradient-bam ( @background:  rgba(98,186,236,0.8) );
-	border-color: #222;	
+	border-color: #222;
 
-	
+
 }
 
 .nav--group.gradient--bam > li a:hover {
@@ -1740,7 +1741,7 @@ input[type=number] {
 .nav--group.soft li {
 
 	  &:first-child > a {
-         
+
             border-top-left-radius: 2em;
             border-bottom-left-radius: 2em;
         }
@@ -1753,7 +1754,7 @@ input[type=number] {
 }
 
 
-/* 
+/*
    Page layouts sub sections
    ========================================================================== */
 
@@ -1794,7 +1795,7 @@ audio {
 }
 
 
-/* 
+/*
    Audio Player
    ========================================================================== */
 
@@ -1832,7 +1833,7 @@ audio {
 		margin-right: @base;
 		overflow: visible;
 	}
-	
+
 
 
 
@@ -1849,7 +1850,7 @@ audio {
 
 
 
-.audioPlayer .icon, 
+.audioPlayer .icon,
 .audioPlayer span,
 .audioPalayer b {
 color: @green;
@@ -1878,7 +1879,7 @@ color: @green;
 	//background: #CDC9C9;
 	border-radius: 5px;
 	//background: white;
-	
+
 }
 
 
@@ -1899,15 +1900,15 @@ input.audio-bar {
 
 
 	&::-webkit-slider-thumb {
-		 position: relative;		
+		 position: relative;
 		bottom: 12px;
-	
+
 		}
 
-	&::-moz-range-thumb {	
-		position: relative;		
+	&::-moz-range-thumb {
+		position: relative;
 		bottom: 6px;
-	}	
+	}
 
  }
 
@@ -1916,9 +1917,9 @@ input.audio-bar {
   height: @base - 6px;
 	 border-radius: @base;
   margin: auto;
- 
+
   	position: relative;
- 
+
 }
 
 
@@ -1953,7 +1954,7 @@ width: @base * 3;
 
 
  ::-webkit-slider-thumb {
-  -webkit-appearance: none !important ; 
+  -webkit-appearance: none !important ;
   width: @base * 3;
   height: @base * 3;
   background: @green;
@@ -1962,7 +1963,7 @@ border-radius: 50%;
  opacity: 0.8;
 }
 
-//volume 
+//volume
 .icon-volume {
 	min-width: 34px;
 }
@@ -1971,7 +1972,7 @@ border-radius: 50%;
 	.volume--r {
 		display: none;
 	}
-}	
+}
 
 input.range-volume {
 	 -webkit-appearance: none !important;
@@ -1982,15 +1983,15 @@ input.range-volume {
 		border-radius: 4px;
 		position: relative;
 		top: @base / 2;
-	
+
 &:focus {
 	outline: 0;
 }
 
-	
-		
-	}	
-	
+
+
+	}
+
 ::-ms-fill-lower {
     background: transparent;
 }
@@ -2148,4 +2149,3 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
   box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
 }
 
- 

@@ -709,7 +709,7 @@ body {
   border-color: gray;
   padding-bottom: 16px;
 }
-/* 
+/*
     Gutters
     ========================================================================== */
 .gutter {
@@ -804,7 +804,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
 }
-/* 
+/*
    comments
    ========================================================================== */
 .comment {
@@ -843,7 +843,7 @@ body {
 .comment.comment-author-matthew {
   background: #c7dcc6;
 }
-/* 
+/*
    Responsive Blocks
    ========================================================================== */
 @media only screen and (min-width: 940px) {
@@ -871,7 +871,7 @@ body {
   bottom: 0;
   left: 0;
 }
-/* 
+/*
    floats
    ========================================================================== */
 .flex {
@@ -916,7 +916,7 @@ body {
   width: 100%;
   text-align: right;
 }
-/* 
+/*
    Positioning
    ========================================================================== */
 .abs {
@@ -1109,7 +1109,7 @@ cite:before {
   float: left;
   padding-right: 4px;
 }
-/* 
+/*
    Links
    ========================================================================== */
 h2 a,
@@ -1140,6 +1140,7 @@ a:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #69a366;
+  margin-right: 8px;
 }
 .icon-right {
   padding-left: 8px;
@@ -1220,7 +1221,7 @@ nav ul li {
   list-style-position: inside;
 }
 .list--inline li {
-  float: left;
+  display: inline;
   margin-left: 8px;
 }
 .social {
@@ -1321,7 +1322,7 @@ h3.menu-title {
   font-size: 18px;
   line-height: 48px;
 }
-/* 
+/*
    Responsive sizes in header
    ========================================================================== */
 h1.site-title {
@@ -1483,7 +1484,7 @@ nav .nav__heading,
 .logo {
   padding-left: 16px;
 }
-/* 
+/*
    Sidebar
    ========================================================================== */
 .table {
@@ -2250,7 +2251,7 @@ input[type=number] {
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;
 }
-/* 
+/*
    Page layouts sub sections
    ========================================================================== */
 /* ==========================================================================
@@ -2279,7 +2280,7 @@ audio {
   width: 100%;
   max-width: 500px;
 }
-/* 
+/*
    Audio Player
    ========================================================================== */
 .audio-container {
